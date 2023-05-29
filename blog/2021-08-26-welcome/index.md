@@ -1,25 +1,18 @@
 ---
 slug: welcome
 title: Welcome
-authors: [slorber, yangshun]
-tags: [facebook, hello, docusaurus]
+authors: [default]
+tags: [news, first]
 ---
 
-[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
+Welcome to the new DBD Documentation website. This website is still a work in progress and will be updated over time. If you have any suggestions or feedback feel free to join our [Discord](https://discord.gg/5xEwm8e6Vy) and let us know.
 
-Simply add Markdown files (or folders) to the `blog` directory.
+![Logo](./banner.png)
 
-Regular blog authors can be added to `authors.yml`.
+## Contributing
 
-The blog post date can be extracted from filenames, such as:
+If you want to contribute to the documentation you can do so by creating a pull request on our [GitHub](https://github.com/Default-01/DBD-Documentations)
 
-- `2019-05-30-welcome.md`
-- `2019-05-30-welcome/index.md`
+## Support
 
-A blog post folder can be convenient to co-locate blog post images:
-
-![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)
-
-The blog supports tags as well!
-
-**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config.
+If you need any help with the documentation or have any questions feel free to join our [Discord](https://discord.gg/5xEwm8e6Vy) and ask in the `#documentation` channel.
