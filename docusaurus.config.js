@@ -65,7 +65,7 @@ const config = {
 				title: 'DBD Docs',
 				logo: {
 					alt: 'DBD Logo',
-					src: 'img/logo.svg',
+					src: 'img/logo.png',
 				},
 				items: [
 					{
