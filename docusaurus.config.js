@@ -86,7 +86,7 @@ const config = {
 						position: 'right',
 					},
 					{
-						href: 'https://github.com/facebook/docusaurus',
+						href: 'https://github.com/Default-01/DBD-Documentations',
 						label: 'GitHub',
 						position: 'right',
 					},
