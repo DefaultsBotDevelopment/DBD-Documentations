@@ -41,6 +41,19 @@ All options inside the `botPresence` config option.
 | `activity` | `{totalplayers} players on {servers} servers` | The bot activity message that should be displayed                            |
 | `type`     | `Watching`                                    | The status type. (Options: Playing, Streaming, Listening, Watching)          |
 
+<details>
+<summary>Available Placeholders for the main bot presence</summary>
+
+These placeholders can be used in the `server` and `totals` fields.
+
+| Placeholder         | Description                                             |
+| ------------------- | ------------------------------------------------------- |
+| `{totalplayers}`    | Displays the total amount of players on all servers     |
+| `{totalmaxplayers}` | Displays the total amount of max players on all servers |
+| `{servers}`         | Displays the total amount of servers                    |
+
+</details>
+
 </TabItem>
 <TabItem value="servers" label="Servers">
 
@@ -230,3 +243,15 @@ These placeholders can be used in `counterBots.presence.activity`.
 
 </TabItem>
 </Tabs>
+
+## Cache File
+
+:::warning
+Never edit the cache file yourself, this can cause issues with the bot!
+:::
+
+The cache file is used to store data, you never have to edit this file yourself. editing this file can cause issues with the bot. If you want to reset the cache file, you can replace the current cache file with the default cache file you get when you download the bot.
+
+:::info
+The bot stores server data to use while the server is offline, when the servers are back online the bot will update the data. also the panel messages are stored in the cache file.
+:::
