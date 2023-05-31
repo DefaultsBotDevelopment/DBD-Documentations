@@ -33,10 +33,12 @@ The `config.js` file is located in the same folder as the app executable. This f
 
 All options inside the `databases` config option.
 
-| Command   | Default     | Description                                                                      |
-| --------- | ----------- | -------------------------------------------------------------------------------- |
-| `enabled` | `true`      | If the database should be used by the app                                        |
-| `sources` | `sources[]` | The sources that should be used by the app, the sources options are listed below |
+| Command                 | Default                   | Description                                                                                                      |
+| ----------------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `enabled`               | `true`                    | If the database should be used by the app                                                                        |
+| `sources`               | `sources[]`               | The sources that should be used by the app, the sources options are listed below                                 |
+| `destination`           | `-`                       | The destination that should be used by the app, the destination options are listed below                         |
+| `columnNameConversions` | `columnNameConversions[]` | The column name conversions that should be used by the app, the column name conversions options are listed below |
 
 #### Sources Options
 
@@ -50,7 +52,7 @@ All options inside the `databases.sources` config option.
 | `database` | `-`         | The name of the database                                                    |
 | `tables`   | `tables[]`  | The tables of the database the options inside this option are listed below. |
 
-#### Tables Options
+##### Tables Options
 
 All options inside the `databases.sources.tables` config option.
 
@@ -60,11 +62,7 @@ All options inside the `databases.sources.tables` config option.
 | `searchByColumn` | `-`     | The column to search by                                                |
 | `mergeColumns`   | `-`     | The columns to merge, these columns will be added into the merge table |
 
-</TabItem>
-
-<TabItem value="destination" label="Destination">
-
-### Destination Options
+#### Destination Options
 
 All options inside the `destination` config option.
 
@@ -75,6 +73,15 @@ All options inside the `destination` config option.
 | `password` | `-`         | The password of the database                                                      |
 | `database` | `-`         | The name of the database where the merged table should be created/updated         |
 | `table`    | `-`         | The name of the table that should be created, this table has all the merged data. |
+
+#### Column Name Conversions Options
+
+All options inside the `columnNameConversions` config option.
+
+| Command | Default | Description                                                 |
+| ------- | ------- | ----------------------------------------------------------- |
+| `from`  | `-`     | The column name that should be converted                    |
+| `to`    | `-`     | The column name that the column name should be converted to |
 
 </TabItem>
 </Tabs>
