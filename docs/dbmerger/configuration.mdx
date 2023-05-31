@@ -1,0 +1,80 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configuration
+
+Here is some information about the configuration of the app.
+
+## Configuration File
+
+The `config.js` file is located in the same folder as the app executable. This file contains all the configuration options for the app. You can find a list of all the configuration options below.
+
+## Configuration Options
+
+<Tabs>
+<TabItem value="general" label="General">
+
+### General Options
+
+| Command             | Default       | Description                                                                                         |
+| ------------------- | ------------- | --------------------------------------------------------------------------------------------------- |
+| `dbdAccountId`      | `-`           | Your account ID of your DBD account, more info about this [here](/docs/information#bot-activation)  |
+| `updateIntervalSec` | `60`          | The amount of seconds between data updates by the app                                               |
+| `databases`         | `databases[]` | The databases that should be used by the app, options for databases are listed in the databases tab |
+
+</TabItem>
+<TabItem value="databases" label="Databases">
+
+### Databases Options
+
+All options inside the `databases` config option.
+
+| Command   | Default     | Description                                                                      |
+| --------- | ----------- | -------------------------------------------------------------------------------- |
+| `enabled` | `true`      | If the database should be used by the app                                        |
+| `sources` | `sources[]` | The sources that should be used by the app, the sources options are listed below |
+
+#### Sources Options
+
+All options inside the `databases.sources` config option.
+
+| Command    | Default     | Description                                                                 |
+| ---------- | ----------- | --------------------------------------------------------------------------- |
+| `host`     | `localhost` | The host of the database                                                    |
+| `user`     | `root`      | The user of the database                                                    |
+| `password` | `-`         | The password of the database                                                |
+| `database` | `-`         | The name of the database                                                    |
+| `tables`   | `tables[]`  | The tables of the database the options inside this option are listed below. |
+
+#### Tables Options
+
+All options inside the `databases.sources.tables` config option.
+
+| Command          | Default | Description                                                            |
+| ---------------- | ------- | ---------------------------------------------------------------------- |
+| `table`          | `-`     | The name of the table                                                  |
+| `searchByColumn` | `-`     | The column to search by                                                |
+| `mergeColumns`   | `-`     | The columns to merge, these columns will be added into the merge table |
+
+</TabItem>
+
+<TabItem value="destination" label="Destination">
+
+### Destination Options
+
+All options inside the `destination` config option.
+
+| Command    | Default     | Description                                                                       |
+| ---------- | ----------- | --------------------------------------------------------------------------------- |
+| `host`     | `localhost` | The host of the database                                                          |
+| `user`     | `root`      | The user of the database                                                          |
+| `password` | `-`         | The password of the database                                                      |
+| `database` | `-`         | The name of the database where the merged table should be created/updated         |
+| `table`    | `-`         | The name of the table that should be created, this table has all the merged data. |
+
+</TabItem>
+</Tabs>
