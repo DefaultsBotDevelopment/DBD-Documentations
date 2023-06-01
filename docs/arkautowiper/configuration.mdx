@@ -1,0 +1,221 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configuration
+
+Here is some information about the configuration of the app.
+
+## Configuration File
+
+The `config.js` file is located in the same folder as the app executable. This file contains all the configuration options for the app. You can find a list of all the configuration options below.
+
+## Configuration Options
+
+<Tabs>
+<TabItem value="general" label="General">
+
+### General Options
+
+| Command                 | Default        | Description                                                                                                                   |
+| ----------------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `token`                 | `-`            | The token of the bot, you can get this token from the [Discord Developer Portal](https://discord.com/developers/applications) |
+| `guildId`               | `-`            | The ID of the guild where the bot should be activated, more info about this [here](/docs/information)                         |
+| `dbdAccountId`          | `-`            | Your account ID of your DBD account, more info about this [here](/docs/information#bot-activation)                            |
+| `logChannelId`          | `-`            | The ID of the channel where the bot should send logs to.                                                                      |
+| `asmProfilesFolderPath` | `-`            | The path to the folder where the ASM profiles are located.                                                                    |
+| `debugMode`             | `false`        | If the app should be in debug mode.                                                                                           |
+| `clusters`              | `clusters[]`   | The ark clusters that should be used by the app, the clusters options are listed below.                                       |
+| `mapNamings`            | `mapNamings[]` | The map namings that should be used by the app, the namings options are listed below.                                         |
+
+</TabItem>
+<TabItem value="clusters" label="Clusters">
+
+### Cluster Options
+
+Below are all options inside the `clusters` list. You can add as many clusters as you want.
+
+| Command              | Default                                                  | Description                                                                          |
+| -------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `identifier`         | `-`                                                      | The identifier of the cluster, this is used to identify the cluster in the app.      |
+| `name`               | `-`                                                      | The name of the cluster, this is used to display the cluster in the app.             |
+| `discord`            | [**discordOptions**](#cluster-discord-options)           | The discord options for the cluster, the options are listed below.                   |
+| `vote`               | [**voteOptions**](#cluster-vote-options)                 | The vote options for the cluster, the options are listed below.                      |
+| `reminder`           | [**reminderOptions**](#cluster-reminder-options)         | The reminder options for the cluster, the options are listed below.                  |
+| `wipe`               | [**wipeOptions**](#cluster-wipe-options)                 | The wipe options for the cluster, the options are listed below.                      |
+| `announcement`       | [**announcementOptions**](#cluster-announcement-options) | The announcement options for the cluster, the options are listed below.              |
+| `servers`            | [**serverOptions**](#cluster-server-options)             | The servers that should be used by the cluster, the server options are listed below. |
+| `steamCMDFolderPath` | `D:\\asmdata\\SteamCMD`                                  | The path to the folder where the steamcmd files are located.                         |
+| `savesFolderPath`    | `D:\\asmdata\\Clusters\\test`                            | The path to the folder where the save files are located.                             |
+| `databases`          | [**databasesOptions**](#cluster-database-options)        | The database options for the cluster, the options are listed below.                  |
+| `deleteFilePaths`    | `[]`                                                     | The file paths that should be deleted when the cluster wipes.                        |
+
+#### Cluster Discord Options
+
+Below are all options inside the `cluster.discord` object.
+
+| Command             | Default | Description                                                               |
+| ------------------- | ------- | ------------------------------------------------------------------------- |
+| `removeRolesOnWipe` | `true`  | If the bot should remove the roles of the players when the cluster wipes. |
+| `removeRoleNames`   | `[]`    | The names of the roles that should be removed when the cluster wipes.     |
+
+#### Cluster Vote Options
+
+Below are all options inside the `cluster.vote` object.
+
+| Command              | Default                         | Description                                                                                                               |
+| -------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `autoStart`          | `true`                          | If the vote should automatically start when the cluster is ready to be wiped                                              |
+| `channelId`          | `-`                             | The ID of the channel where the vote should be started in.                                                                |
+| `mapEmojis`          | `['0️⃣', '1️⃣', '2️⃣',...]`        | The emojis that should be used for the maps.                                                                              |
+| `mapNames`           | `['Ragnarok', 'TheIsland',...]` | The names of the maps that should be used for the vote.                                                                   |
+| `allowMultipleVotes` | `true`                          | If the players should be allowed to vote multiple times.                                                                  |
+| `startDate`          | `0 0 15 1/1 * ? *`              | The cron expression for the start date of the vote. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/)) |
+| `endDate`            | `0 5 15 1/1 * ? *`              | The cron expression for the end date of the vote. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/))   |
+| `embedTitle`         | `-`                             | The title of the vote embed.                                                                                              |
+| `embedDescription`   | `-`                             | The description of the vote embed.                                                                                        |
+| `embedColor`         | `#038CB5`                       | The color of the vote embed.                                                                                              |
+| `embedImage`         | `-`                             | The image of the vote embed.                                                                                              |
+| `embedFooterText`    | `-`                             | The footer text of the vote embed.                                                                                        |
+| `embedFooterIcon`    | `-`                             | The footer icon of the vote embed.                                                                                        |
+| `embedThumbnail`     | `-`                             | The thumbnail of the vote embed.                                                                                          |
+| `embedAuthorName`    | `-`                             | The author name of the vote embed.                                                                                        |
+| `embedAuthorIcon`    | `-`                             | The author icon of the vote embed.                                                                                        |
+| `embedUrl`           | `-`                             | The url of the vote embed.                                                                                                |
+
+#### Cluster Reminder Options
+
+Below are all options inside the `cluster.reminder` object.
+
+| Command            | Default            | Description                                                                                                          |
+| ------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| `autoRemind`       | `true`             | If the reminder should automatically start when the cluster is ready to be wiped                                     |
+| `interval`         | `0 7 22 1/1 * ? *` | The cron expression for the reminder interval. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/)) |
+| `channelId`        | `-`                | The ID of the channel where the reminder should be sent in.                                                          |
+| `content`          | `-`                | The content of the reminder message.                                                                                 |
+| `embedTitle`       | `-`                | The title of the reminder embed.                                                                                     |
+| `embedDescription` | `-`                | The description of the reminder embed.                                                                               |
+| `embedColor`       | `#038CB5`          | The color of the reminder embed.                                                                                     |
+| `embedImage`       | `-`                | The image of the reminder embed.                                                                                     |
+| `embedFooterText`  | `-`                | The footer text of the reminder embed.                                                                               |
+| `embedFooterIcon`  | `-`                | The footer icon of the reminder embed.                                                                               |
+| `embedThumbnail`   | `-`                | The thumbnail of the reminder embed.                                                                                 |
+| `embedAuthorName`  | `-`                | The author name of the reminder embed.                                                                               |
+| `embedAuthorIcon`  | `-`                | The author icon of the reminder embed.                                                                               |
+| `embedUrl`         | `-`                | The url of the reminder embed.                                                                                       |
+
+#### Cluster Wipe Options
+
+Below are all options inside the `cluster.wipe` object.
+
+| Command         | Default            | Description                                                                                                              |
+| --------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `downtimeStart` | `0 0 22 1/1 * ? *` | The cron expression for the start of the downtime. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/)) |
+| `wipeStart`     | `0 5 22 1/1 * ? *` | The cron expression for the start of the wipe. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/))     |
+| `serverStart`   | `0 0 23 1/1 * ? *` | The cron expression for the start of the servers. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/))  |
+
+#### Cluster Announcement Options
+
+Below are all options inside the `cluster.announcement` object.
+
+| Command            | Default   | Description                                                                          |
+| ------------------ | --------- | ------------------------------------------------------------------------------------ |
+| `autoAnnounce`     | `true`    | If the announcement should automatically start when the cluster is ready to be wiped |
+| `channelId`        | `-`       | The ID of the channel where the announcement should be sent in.                      |
+| `content`          | `-`       | The content of the announcement message.                                             |
+| `embedTitle`       | `-`       | The title of the announcement embed.                                                 |
+| `embedDescription` | `-`       | The description of the announcement embed.                                           |
+| `embedColor`       | `#038CB5` | The color of the announcement embed.                                                 |
+| `embedImage`       | `-`       | The image of the announcement embed.                                                 |
+| `embedFooterText`  | `-`       | The footer text of the announcement embed.                                           |
+| `embedFooterIcon`  | `-`       | The footer icon of the announcement embed.                                           |
+| `embedThumbnail`   | `-`       | The thumbnail of the announcement embed.                                             |
+| `embedAuthorName`  | `-`       | The author name of the announcement embed.                                           |
+| `embedAuthorIcon`  | `-`       | The author icon of the announcement embed.                                           |
+| `embedUrl`         | `-`       | The url of the announcement embed.                                                   |
+
+#### Cluster Server Options
+
+Below are all options inside the `cluster.servers` array.
+
+| Command                   | Default                         | Description                                |
+| ------------------------- | ------------------------------- | ------------------------------------------ |
+| `name`                    | `-`                             | The name of the server.                    |
+| `ip`                      | `-`                             | The IP of the server.                      |
+| `queryPort`               | `-`                             | The query port of the server.              |
+| `rconPort`                | `-`                             | The RCON port of the server.               |
+| `rconPassword`            | `-`                             | The RCON password of the server.           |
+| `gameUserSettingsIniPath` | `D:\\asmdata\\Servers...`       | The path to the GameUserSettings.ini file. |
+| `dynamicServerName`       | `true`                          | If the server name should be dynamic.      |
+| `serverName`              | `-`                             | The server name.                           |
+| `updateServer`            | `true`                          | If the server should be updated.           |
+| `updateMods`              | `true`                          | If the mods should be updated.             |
+| `installFolderPath`       | `D:\\asmdata\\Servers\\Server1` | The install folder path.                   |
+| `runServerFilePath`       | `D:\\asmdata\\Servers...`       | The path to the runserver.bat file.        |
+| `savesFolderPath`         | `D:\\asmdata\\Servers...`       | The path to the saves folder.              |
+| `logsFolderPath`          | `D:\\asmdata\\Servers...`       | The path to the logs folder.               |
+
+#### Cluster database Options
+
+Below are all options inside the `cluster.databases` object.
+
+| Command        | Default              | Description                   |
+| -------------- | -------------------- | ----------------------------- |
+| `host`         | `-`                  | The host of the database.     |
+| `user`         | `-`                  | The user of the database.     |
+| `password`     | `-`                  | The password of the database. |
+| `database`     | `wipetest`           | The database name.            |
+| `tablesToDrop` | `['test1', 'test2']` | The tables to drop.           |
+
+</TabItem>
+<TabItem value="mapNamings" label="Map Namings">
+
+### Map Namings
+
+Below are all options inside the `mapNamings` object.
+
+| Command | Default | Description                              |
+| ------- | ------- | ---------------------------------------- |
+| `name`  | `-`     | The name how you want it to be displayed |
+| `mapId` | `-`     | The map ID of the ark map                |
+
+#### Example
+
+```json
+"mapNamings": [
+    {
+			"name": "Valguero",
+			"mapId": "Valguero_P",
+		},
+		{
+			"name": "Genesis2",
+			"mapId": "Gen2",
+		},
+		{
+			"name": "Aberration",
+			"mapId": "Aberration_P",
+		},
+		{
+			"name": "ScorchedEarth",
+			"mapId": "ScorchedEarth_P",
+		},
+		{
+			"name": "Fjördur",
+			"mapId": "Fjordur",
+		},
+]
+```
+
+</TabItem>
+</Tabs>
+
+## Cache File
+
+:::warning
+Never edit the cache file yourself, this can cause issues with the bot!
+:::
+
+The cache file is used to store data, you never have to edit this file yourself. editing this file can cause issues with the bot. If you want to reset the cache file, you can replace the current cache file with the default cache file you get when you download the bot.
