@@ -42,16 +42,16 @@ Below are all options inside the `clusters` list. You can add as many clusters a
 | -------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | `identifier`         | `-`                                                      | The identifier of the cluster, this is used to identify the cluster in the app.      |
 | `name`               | `-`                                                      | The name of the cluster, this is used to display the cluster in the app.             |
+| `steamCMDFolderPath` | `D:\\asmdata\\SteamCMD`                                  | The path to the folder where the steamcmd files are located.                         |
+| `savesFolderPath`    | `D:\\asmdata\\Clusters\\test`                            | The path to the folder where the save files are located.                             |
+| `deleteFilePaths`    | `[]`                                                     | The file paths that should be deleted when the cluster wipes.                        |
 | `discord`            | [**discordOptions**](#cluster-discord-options)           | The discord options for the cluster, the options are listed below.                   |
 | `vote`               | [**voteOptions**](#cluster-vote-options)                 | The vote options for the cluster, the options are listed below.                      |
 | `reminder`           | [**reminderOptions**](#cluster-reminder-options)         | The reminder options for the cluster, the options are listed below.                  |
 | `wipe`               | [**wipeOptions**](#cluster-wipe-options)                 | The wipe options for the cluster, the options are listed below.                      |
 | `announcement`       | [**announcementOptions**](#cluster-announcement-options) | The announcement options for the cluster, the options are listed below.              |
 | `servers`            | [**serverOptions**](#cluster-server-options)             | The servers that should be used by the cluster, the server options are listed below. |
-| `steamCMDFolderPath` | `D:\\asmdata\\SteamCMD`                                  | The path to the folder where the steamcmd files are located.                         |
-| `savesFolderPath`    | `D:\\asmdata\\Clusters\\test`                            | The path to the folder where the save files are located.                             |
 | `databases`          | [**databasesOptions**](#cluster-database-options)        | The database options for the cluster, the options are listed below.                  |
-| `deleteFilePaths`    | `[]`                                                     | The file paths that should be deleted when the cluster wipes.                        |
 
 #### Cluster Discord Options
 
@@ -107,6 +107,25 @@ Below are all options inside the `cluster.reminder` object.
 | `embedAuthorIcon`  | `-`                | The author icon of the reminder embed.                                                                               |
 | `embedUrl`         | `-`                | The url of the reminder embed.                                                                                       |
 
+<details>
+<summary>Available Placeholders for the reminder message</summary>
+
+These placeholders can be used in the reminder message.
+
+| Placeholder     | Description                                                               |
+| --------------- | ------------------------------------------------------------------------- |
+| `{clusterName}` | The name of the cluster.                                                  |
+| `{season}`      | The season count if the cluster. This will get increased by 1 every wipe. |
+| `{nextSeason}`  | The season number of next season.                                         |
+| `{prevSeason}`  | The season number of the previous season.                                 |
+| `{lastWipe}`    | The date of the last wipe.                                                |
+| `{nextWipe}`    | The date of the next wipe.                                                |
+| `{nextVote}`    | The date of the next vote.                                                |
+| `{mapNames}`    | The map names of all servers in the cluster                               |
+| `{mapCount}`    | The amount of maps in the cluster.                                        |
+
+</details>
+
 #### Cluster Wipe Options
 
 Below are all options inside the `cluster.wipe` object.
@@ -136,6 +155,25 @@ Below are all options inside the `cluster.announcement` object.
 | `embedAuthorName`  | `-`       | The author name of the announcement embed.                                           |
 | `embedAuthorIcon`  | `-`       | The author icon of the announcement embed.                                           |
 | `embedUrl`         | `-`       | The url of the announcement embed.                                                   |
+
+<details>
+<summary>Available Placeholders for the announcement message</summary>
+
+These placeholders can be used in the announcement message.
+
+| Placeholder     | Description                                                               |
+| --------------- | ------------------------------------------------------------------------- |
+| `{clusterName}` | The name of the cluster.                                                  |
+| `{season}`      | The season count if the cluster. This will get increased by 1 every wipe. |
+| `{nextSeason}`  | The season number of next season.                                         |
+| `{prevSeason}`  | The season number of the previous season.                                 |
+| `{lastWipe}`    | The date of the last wipe.                                                |
+| `{nextWipe}`    | The date of the next wipe.                                                |
+| `{nextVote}`    | The date of the next vote.                                                |
+| `{mapNames}`    | The map names of all servers in the cluster                               |
+| `{mapCount}`    | The amount of maps in the cluster.                                        |
+
+</details>
 
 #### Cluster Server Options
 
