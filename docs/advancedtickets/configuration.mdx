@@ -1,0 +1,114 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configuration
+
+Here is some information about the configuration of the app.
+
+## Configuration File
+
+The `config.js` file is located in the same folder as the app executable. This file contains all the configuration options for the app. You can find a list of all the configuration options below.
+
+## Configuration Options
+
+<Tabs>
+<TabItem value="general" label="General">
+
+### General Options
+
+| Command                 | Default                        | Description                                                                                        |
+| ----------------------- | ------------------------------ | -------------------------------------------------------------------------------------------------- |
+| `token`                 | `-`                            | The token of your bot.                                                                             |
+| `guildId`               | `-`                            | The ID of the guild you want to use the bot in.                                                    |
+| `accountId`             | `-`                            | Your account ID of your DBD account, more info about this [here](/docs/information#bot-activation) |
+| `database`              | `databaseOptions`              | The database options for the bot, options are listed below.                                        |
+| `styling`               | `stylingOptions`               | The styling options for the bot, options are listed below.                                         |
+| `playerDataIntegration` | `playerDataIntegrationOptions` | The player data integration options for the bot, options are listed below.                         |
+| `tickets`               | `ticketsOptions`               | The tickets options for the bot, options are listed below.                                         |
+
+</TabItem>
+<TabItem value="database" label="Database">
+
+### Database Options
+
+Below are all databasae options.
+
+| Command    | Default | Description                |
+| ---------- | ------- | -------------------------- |
+| `host`     | `-`     | The host for the database. |
+| `user`     | `-`     | The user for the database. |
+| `password` | `-`     | The database password.     |
+| `database` | `-`     | The database name.         |
+| `port`     | `-`     | The database port.         |
+
+</TabItem>
+<TabItem value="styling" label="Styling">
+
+### Styling Options
+
+Below are all styling options.
+
+| Command     | Default | Description                                          |
+| ----------- | ------- | ---------------------------------------------------- |
+| `colors`    | `-`     | The colors for the bot, options are listed below.    |
+| `thumbnail` | `-`     | The thumbnail for the bot, options are listed below. |
+| `image`     | `-`     | The image for the bot, options are listed below.     |
+
+</TabItem>
+<TabItem value="playerdata" label="Player Data">
+
+### Player Data Integration Options
+
+Below are all player data integration options.
+
+| Command              | Default                                                        | Description                                                             |
+| -------------------- | -------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `enabled`            | `true`                                                         | Whether or not the player data integration is enabled.                  |
+| `linkingDatabase`    | [**linkingDatabaseOptions**](#linking-database-options)        | The linking database options for the bot, options are listed below.     |
+| `playerInfoDatabase` | [**playerInfoDatabaseOptions**](#player-info-database-options) | The player info database options for the bot, options are listed below. |
+| `infoDisplayFields`  | [**infoDisplayFieldsOptions**](#info-display-fields-options)   | The info display fields options for the bot, options are listed below.  |
+
+#### Linking Database Options
+
+Below are all linking database options.
+
+| Command                       | Default             | Description                               |
+| ----------------------------- | ------------------- | ----------------------------------------- |
+| `host`                        | `localhost`         | The host for the database.                |
+| `user`                        | `root`              | The user for the database.                |
+| `password`                    | `-`                 | The database password.                    |
+| `database`                    | `kalscrosschat`     | The database name.                        |
+| `linkingTableName`            | `discordsteamlinks` | The linking table name.                   |
+| `linkingTableDiscordIdColumn` | `DiscordId`         | The linking table discord ID column name. |
+| `linkingTableUuIdColumn`      | `SteamId`           | The linking table UUID column name.       |
+
+#### Player Info Database Options
+
+Below are all player info database options.
+
+| Command               | Default          | Description                  |
+| --------------------- | ---------------- | ---------------------------- |
+| `host`                | `localhost`      | The host for the database.   |
+| `user`                | `root`           | The user for the database.   |
+| `password`            | `-`              | The database password.       |
+| `database`            | `kalscrosschat`  | The database name.           |
+| `playerInfoTableName` | `currentplayers` | The player info table name.  |
+| `playerUuidColumn`    | `SteamId`        | The player UUID column name. |
+
+#### Info Display Fields Options
+
+Below are all info display fields options.
+
+| Command  | Default   | Description                        |
+| -------- | --------- | ---------------------------------- |
+| `name`   | `-`       | The name of the field              |
+| `value`  | `{value}` | The value of the field             |
+| `column` | `-`       | The column of the field            |
+| `inline` | `true`    | Whether or not the field is inline |
+
+</TabItem>
+</Tabs>
