@@ -20,6 +20,16 @@ If you still want to use a simple text editor, you can use [**JSONLint**](https:
 
 In the configuration file you will see a lot of `{}`. These are objects, and they contain options. For example:
 
+```json
+{
+	"settings": {
+		"option1": "value1",
+		"option2": "value2",
+		"option3": "value3"
+	}
+}
+```
+
 ### Arrays
 
 In configurations you sometimes have an option with an array []. This means you can add multiple values to this option. For example, if you have an option called `prefix` and the value is `["!", "?"]`, this means you can use both `!` and `?` as prefix. If you want to add another prefix, you can add it like this: `["!", "?", "-"]`.
