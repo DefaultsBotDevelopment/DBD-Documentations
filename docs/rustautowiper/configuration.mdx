@@ -1,0 +1,144 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configuration
+
+Here is some information about the configuration of the app.
+
+## Configuration File
+
+The `config.js` file is located in the same folder as the app executable. This file contains all the configuration options for the app. You can find a list of all the configuration options below.
+
+## Configuration Options
+
+<Tabs>
+<TabItem value="general" label="General">
+
+### General Options
+
+| Command          | Default     | Description                                                                                                                   |
+| ---------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `token`          | `-`         | The token of the bot, you can get this token from the [Discord Developer Portal](https://discord.com/developers/applications) |
+| `guildId`        | `-`         | The ID of the guild where the bot should be activated, more info about this [here](/docs/information)                         |
+| `dbdAccountId`   | `-`         | Your account ID of your DBD account, more info about this [here](/docs/information#bot-activation)                            |
+| `rustMapsApiKey` | `-`         | Your API key of your [RustMaps](https://rustmaps.com/) account.                                                               |
+| `logChannelId`   | `-`         | The ID of the channel where the bot should log all the messages.                                                              |
+| `debugMode`      | `false`     | If the app should be in debug mode.                                                                                           |
+| `servers`        | `servers[]` | The servers that should be used by the bot, the server options are listed on the servers tab.                                 |
+
+</TabItem>
+<TabItem value="servers" label="Servers">
+
+### Server Options
+
+| Command                         | Default                        | Description                                                                                                |
+| ------------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `server_identifier`             | `-`                            | The identifier of the server, this is used to identify the server.                                         |
+| `server_name`                   | `-`                            | The name of the server.                                                                                    |
+| `server_ip`                     | `-`                            | The IP of the server.                                                                                      |
+| `server_port`                   | `-`                            | The port of the server.                                                                                    |
+| `server_queryPort`              | `-`                            | The query port of the server.                                                                              |
+| `server_rconPort`               | `-`                            | The RCON port of the server.                                                                               |
+| `server_rconPassword`           | `-`                            | The RCON password of the server.                                                                           |
+| `server_modded`                 | `true`                         | If the server is modded.                                                                                   |
+| `server_autoUpdate`             | `true`                         | If the server should auto update.                                                                          |
+| `wipe_Interval`                 | `0 0 17 1/1 * ? *`             | The wipe interval of the server. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/))     |
+| `wipe_bpWipe`                   | `false`                        | The BP wipe interval of the server. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/))  |
+| `files_steamCMDFolderPath`      | `C:\steamcmd`                  | The path to the steamcmd folder.                                                                           |
+| `files_serverRootPath`          | `C:\server`                    | The path to the server folder.                                                                             |
+| `files_savesFolderPath`         | `C:\server\saves`              | The path to the saves folder.                                                                              |
+| `files_serverCfgPath`           | `C:\server\server.cfg`         | The path to the server.cfg file.                                                                           |
+| `files_startFilePath`           | `C:\server\start.bat`          | The path to the start.bat file.                                                                            |
+| `files_oxideFolderPath`         | `C:\server\oxide`              | The path to the oxide folder.                                                                              |
+| `files_excludeSafeFiles`        | `['logs', 'cfg']`              | The files that should be excluded from the safe files.                                                     |
+| `files_deletables`              | ``                             | The file paths that should be deleted when the server is wiped.                                            |
+| `vote_autoStart`                | `true`                         | If the vote should auto start.                                                                             |
+| `vote_channelId`                | `-`                            | The ID of the channel where the vote should be started.                                                    |
+| `vote_StartAt`                  | `0 0 17 1/1 * ? *`             | The time when the vote should start. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/)) |
+| `vote_endAt`                    | `0 0 18 1/1 * ? *`             | The time when the vote should end. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/))   |
+| `vote_maps`                     | `['1000_1', '1000_50000']      | The maps that should be used for the vote.                                                                 |
+| `vote_mapCount`                 | `3`                            | The amount of maps that should be voted on.                                                                |
+| `vote_multiple`                 | `true`                         | If the vote should be multiple choice.                                                                     |
+| `update_dynamicTitle`           | `true`                         | If the title of the app should be dynamic.                                                                 |
+| `update_serverTitle`            | `Test Server wiped {wipeDate}` | The title of the server.                                                                                   |
+| `update_dynamicDescription`     | `true`                         | If the description of the app should be dynamic.                                                           |
+| `update_serverDescription`      | `Test Server wiped {wipeDate}` | The description of the server.                                                                             |
+| `announcement_autoAnnounce`     | `true`                         | If the announcement should auto announce.                                                                  |
+| `announcement_channelId`        | `-`                            | The ID of the channel where the announcement should be sent.                                               |
+| `announcement_content`          | `-`                            | The content of the announcement. See all announcement Placeholders [HERE](#placeholders)                   |
+| `announcement_embedTitle`       | `-`                            | The title of the announcement embed.                                                                       |
+| `announcement_embedDescription` | `-`                            | The description of the announcement embed.                                                                 |
+| `announcement_embedColor`       | `-`                            | The color of the announcement embed.                                                                       |
+| `announcement_embedFooterText`  | `-`                            | The footer text of the announcement embed.                                                                 |
+| `announcement_embedFooterIcon`  | `-`                            | The footer icon of the announcement embed.                                                                 |
+| `announcement_embedThumbnail`   | `-`                            | The thumbnail of the announcement embed.                                                                   |
+| `announcement_embedImage`       | `-`                            | The image of the announcement embed.                                                                       |
+| `announcement_embedAuthorName`  | `-`                            | The author name of the announcement embed.                                                                 |
+| `announcement_embedAuthorIcon`  | `-`                            | The author icon of the announcement embed.                                                                 |
+| `announcement_embedUrl`         | `-`                            | The URL of the announcement embed.                                                                         |
+| `reminder_autoRemind`           | `true`                         | If the reminder should auto remind.                                                                        |
+| `reminder_Interval`             | `0 0 17 1/1 * ? *`             | The reminder interval. (generate interval at [www.cronmaker.com](http://www.cronmaker.com/))               |
+| `reminder_channelId`            | `-`                            | The ID of the channel where the reminder should be sent.                                                   |
+| `reminder_content`              | `-`                            | The content of the reminder. See all reminder placeholders [HERE](#placeholders)                           |
+| `reminder_embedTitle`           | `-`                            | The title of the reminder embed.                                                                           |
+| `reminder_embedDescription`     | `-`                            | The description of the reminder embed.                                                                     |
+| `reminder_embedColor`           | `-`                            | The color of the reminder embed.                                                                           |
+| `reminder_embedImage`           | `-`                            | The image of the reminder embed.                                                                           |
+| `reminder_embedFooterText`      | `-`                            | The footer text of the reminder embed.                                                                     |
+| `reminder_embedFooterIcon`      | `-`                            | The footer icon of the reminder embed.                                                                     |
+| `reminder_embedThumbnail`       | `-`                            | The thumbnail of the reminder embed.                                                                       |
+| `reminder_embedAuthorName`      | `-`                            | The author name of the reminder embed.                                                                     |
+| `reminder_embedAuthorIcon`      | `-`                            | The author icon of the reminder embed.                                                                     |
+| `reminder_embedUrl`             | `-`                            | The URL of the reminder embed.                                                                             |
+
+### Placeholders
+
+<details>
+<summary>Announcement Placeholders</summary>
+
+#### Announcement Placeholders
+
+These placeholders can be used in the announcement message.
+
+| Placeholder      | Description                                             |
+| ---------------- | ------------------------------------------------------- |
+| `{serverName}`   | The name of the server.                                 |
+| `{mapSeed}`      | The seed of the map.                                    |
+| `{mapSize}`      | The size of the map.                                    |
+| `{mapImage}`     | The image of the map.                                   |
+| `{mapUrl}`       | The URL to the url to the rustmaps.com page of the map. |
+| `{wipeDate}`     | The date of the wipe.                                   |
+| `{nextWipeDate}` | The date of the next wipe.                              |
+| `{nextVoteDate}` | The date of the next vote.                              |
+
+</details>
+<details>
+<summary>Reminder Placeholders</summary>
+
+#### Reminder Placeholders
+
+These placeholders can be used in the reminder message.
+
+| Placeholder      | Description                |
+| ---------------- | -------------------------- |
+| `{serverName}`   | The name of the server.    |
+| `{serverIp}`     | The IP of the server.      |
+| `{serverPort}`   | The port of the server.    |
+| `{nextWipeDate}` | The date of the next wipe. |
+| `{nextVoteDate}` | The date of the next vote. |
+
+</details>
+</TabItem>
+</Tabs>
+
+## Cache File
+
+:::warning
+Never edit the cache file yourself, this can cause issues with the bot!
+:::
+
+The cache file is used to store data, you never have to edit this file yourself. editing this file can cause issues with the bot. If you want to reset the cache file, you can replace the current cache file with the default cache file you get when you download the bot.
