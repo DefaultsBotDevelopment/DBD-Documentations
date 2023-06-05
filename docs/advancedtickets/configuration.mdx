@@ -111,4 +111,166 @@ Below are all info display fields options.
 | `inline` | `true`    | Whether or not the field is inline |
 
 </TabItem>
+<TabItem value="tickets" label="Tickets">
+
+### Tickets Options
+
+Below are all tickets options inside the `tickets` object.
+
+| Command  | Default                        | Description                                       |
+| -------- | ------------------------------ | ------------------------------------------------- |
+| `panels` | [panelOptions](#panel-options) | The panels for the bot, options are listed below. |
+
+#### Panel Options
+
+Below are all panel options inside the `tickets.panels` object.
+
+| Command                         | Default                              | Description                                                              |
+| ------------------------------- | ------------------------------------ | ------------------------------------------------------------------------ |
+| `uniqueID`                      | `-`                                  | The unique ID of the panel. this can be any string, just keep it unique. |
+| `name`                          | `-`                                  | The name of the panel.                                                   |
+| `maxTicketsPerUser`             | `2`                                  | The maximum amount of tickets a user can have open at once.              |
+| `newTicketscategoryId`          | `-`                                  | The category ID for new tickets.                                         |
+| `activeTicketsCategoryId`       | `-`                                  | The category ID for active tickets.                                      |
+| `pendingTicketsCategoryId`      | `-`                                  | The category ID for pending tickets.                                     |
+| `transcriptChannelId`           | `-`                                  | The channel ID for the transcript channel.                               |
+| `staffRoleId`                   | `-`                                  | The role ID for the role that should have access to the panel tickets    |
+| `autoMarkTicketAsPending`       | `true`                               | Whether or not the bot should automatically mark tickets as pending.     |
+| `autoMarkTicketsAsActive`       | `true`                               | Whether or not the bot should automatically mark tickets as active.      |
+| `pendingTimerMinutes`           | `5`                                  | The amount of minutes before a ticket is marked as pending.              |
+| `pendingTicketDeleteTimerHours` | `48`                                 | The amount of hours before a pending ticket is deleted.                  |
+| `message`                       | [messageOptions](#message-options)   | The message for the panel, options are listed below.                     |
+| `categories`                    | [categoryOptions](#category-options) | The categories for the panel, options are listed below.                  |
+
+##### Message Options
+
+Below are all message options inside the `tickets.panels.message` object.
+
+| Command       | Default    | Description                     |
+| ------------- | ---------- | ------------------------------- |
+| `title`       | `-`        | The title of the message.       |
+| `description` | `-`        | The description of the message. |
+| `footer`      | `-`        | The footer of the message.      |
+| `color`       | `0x03adfc` | The color of the message.       |
+| `thumbnail`   | `-`        | The thumbnail of the message.   |
+| `image`       | `-`        | The image of the message.       |
+
+##### Category Options
+
+Below are all category options inside the `tickets.panels.categories` object.
+
+| Command     | Default                                       | Description                                               |
+| ----------- | --------------------------------------------- | --------------------------------------------------------- |
+| `uniqueID`  | `-`                                           | The unique ID of the category.                            |
+| `button`    | [buttonOptions](#category-button-options)     | The button for the category, options are listed below.    |
+| `message`   | [messageOptions](#category-message-options)   | The message for the category, options are listed below.   |
+| `questions` | [questionOptions](#category-question-options) | The questions for the category, options are listed below. |
+
+###### Category Button Options
+
+Below are all button options inside the `tickets.panels.categories.button` object.
+
+| Command    | Default     | Description                                                                                                                                      |
+| ---------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `label`    | `-`         | The label of the button.                                                                                                                         |
+| `style`    | `Secondary` | The style of the button.                                                                                                                         |
+| `emoji`    | `🎫`        | The emoji of the button. Options: [discord.com](https://discord.com/developers/docs/interactions/message-components#button-object-button-styles) |
+| `disabled` | `false`     | Whether or not the button is disabled.                                                                                                           |
+
+###### Category Message Options
+
+Below are all message options inside the `tickets.panels.categories.message` object.
+
+| Command       | Default    | Description                     |
+| ------------- | ---------- | ------------------------------- |
+| `title`       | `-`        | The title of the message.       |
+| `description` | `-`        | The description of the message. |
+| `footer`      | `-`        | The footer of the message.      |
+| `color`       | `0x03adfc` | The color of the message.       |
+| `thumbnail`   | `-`        | The thumbnail of the message.   |
+| `image`       | `-`        | The image of the message.       |
+
+###### Category Question Options
+
+Below are all question options inside the `tickets.panels.categories.questions` array.
+
+| Command       | Default                                           | Description                                                     |
+| ------------- | ------------------------------------------------- | --------------------------------------------------------------- |
+| `type`        | `question`                                        | The type of the question. Options: `question`, `button`, `menu` |
+| `question`    | `-`                                               | The question to ask.                                            |
+| `description` | `-`                                               | The description of the question.                                |
+| `buttons`     | [questionButtonOptions](#question-button-options) | The buttons for the question, options are listed below.         |
+| `options`     | [questionMenuOptions](#question-menu-options)     | The options for the question, options are listed below.         |
+
+###### Question Button Options
+
+Below are all button options inside the `tickets.panels.categories.questions.buttons` array.
+
+| Command | Default     | Description                                                                                                                                      |
+| ------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `label` | `Yes`       | The label of the button.                                                                                                                         |
+| `style` | `Secondary` | The style of the button. Options: [discord.com](https://discord.com/developers/docs/interactions/message-components#button-object-button-styles) |
+| `emoji` | `✅`        | The emoji of the button.                                                                                                                         |
+
+###### Question Menu Options
+
+Below are all menu options inside the `tickets.panels.categories.questions.options` array.
+
+| Command | Default | Description                   |
+| ------- | ------- | ----------------------------- |
+| `name`  | `-`     | The name for the menu option  |
+| `emoji` | `-`     | The emoji for the menu option |
+
+##### Questions Example
+
+Below is an example of the `questions` array. here are the types of questions:
+
+```js
+questions: [
+	{
+		type: 'message',
+		question: 'Question 1',
+		description: 'Description 1',
+	},
+	{
+		type: 'button',
+		question: 'Question 2',
+		description: 'Answer the question below:',
+		buttons: [
+			{
+				label: 'Yes',
+				style: 'Success',
+				emoji: '✅',
+			},
+			{
+				label: 'No',
+				style: 'Danger',
+				emoji: '❌',
+			},
+		],
+	},
+	{
+		type: 'menu',
+		question: 'Question 3',
+		description: 'Answer the question below:',
+		options: [
+			{
+				name: 'The Island',
+				emoji: '1️⃣',
+			},
+			{
+				name: 'Ragnarok',
+				emoji: '2️⃣',
+			},
+		],
+	},
+	{
+		type: 'message',
+		question: 'Question 3',
+		description: 'Answer the question below:',
+	},
+],
+```
+
+</TabItem>
 </Tabs>
