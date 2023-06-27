@@ -130,14 +130,11 @@ These placeholders can be used in all of the `create_report_*` options.
 
 These placeholders can only be used in the `create_report_error`, `create_report_success`, `create_report_embed_description` option.
 
-| Placeholder    | Description                                                   |
-| -------------- | ------------------------------------------------------------- |
-| `{reporter}`   | The user who created the report                               |
-| `{members}`    | The members of the tribe that was reported                    |
-| `{steamNames}` | the steam names of the members of the tribe that was reported |
-| `{steamIds}`   | the steam ids of the members of the tribe that was reported   |
-| `{punishment}` | The punishment for the tribe that was reported                |
-| `{date}`       | The date when the report was created                          |
+| Placeholder    | Description                                    |
+| -------------- | ---------------------------------------------- |
+| `{reporter}`   | The user who created the report                |
+| `{punishment}` | The punishment for the tribe that was reported |
+| `{date}`       | The date when the report was created           |
 
 </details>
 
@@ -153,22 +150,25 @@ These placeholders can only be used in the `create_report_error`, `create_report
 
 These placeholders can be used in all of the `remove_report_*` options.
 
-| Placeholder  | Description               |
-| ------------ | ------------------------- |
-| `{reportId}` | The ID of the report      |
-| `{tribe}`    | The tribe name            |
-| `{reason}`   | The reason for the report |
+| Placeholder    | Description                                    |
+| -------------- | ---------------------------------------------- |
+| `{reportId}`   | The ID of the report                           |
+| `{tribe}`      | The tribe name                                 |
+| `{reason}`     | The reason for the report                      |
+| `{punishment}` | The punishment for the tribe that was reported |
 
 These placeholders can only be used in the `remove_report_embed_description` option.
 
-| Placeholder    | Description                                                   |
-| -------------- | ------------------------------------------------------------- |
-| `{reporter}`   | The user who created the report                               |
-| `{members}`    | The members of the tribe that was reported                    |
-| `{steamNames}` | the steam names of the members of the tribe that was reported |
-| `{steamIds}`   | the steam ids of the members of the tribe that was reported   |
-| `{punishment}` | The punishment for the tribe that was reported                |
-| `{date}`       | The date when the report was created                          |
+| Placeholder             | Description                                                                       |
+| ----------------------- | --------------------------------------------------------------------------------- |
+| `{reporter}`            | The user who created the report                                                   |
+| `{members}`             | The members of the tribe that was reported                                        |
+| `{membersFormatted}`    | The members of the tribe that was reported formatted as a list                    |
+| `{steamNames}`          | the steam names of the members of the tribe that was reported                     |
+| `{steamNamesFormatted}` | the steam names of the members of the tribe that was reported formatted as a list |
+| `{steamIds}`            | the steam ids of the members of the tribe that was reported                       |
+| `{steamIdsFormatted}`   | the steam ids of the members of the tribe that was reported formatted as a list   |
+| `{date}`                | The date when the report was created                                              |
 
 </details>
 
