@@ -1,0 +1,197 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configuration
+
+Here is some information about the configuration of the bot.
+
+## Configuration file
+
+The `config.js` file is located in the same folder as the app executable. This file contains all the configuration options for the app. You can find a list of all the configuration options below.
+
+## Configuration options
+
+<Tabs>
+<TabItem value="general" label="General">
+
+### General Options
+
+| Option           | Default            | Description                                                                                                                   |
+| ---------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| `dbdAccountId`   | `-`                | The account ID of your DBD account, more info about this can be found [here](/docs/information#bot-activation)                |
+| `token`          | `-`                | The token of the bot, you can get this token from the [Discord Developer Portal](https://discord.com/developers/applications) |
+| `guildId`        | `-`                | The ID of the guild where the bot should be activated, more info about this can be found [here](/docs/information)            |
+| `database`       | `Database Options` | The database options for the bot. Options can be found on the _Database_ tab.                                                 |
+| `moderatorRoles` | `[]`               | The role IDs that can use the moderation commands.                                                                            |
+| `nextWipe`       | `NextWipe Options` | The next wipe options for the bot. Options can be found on the _Next Wipe_ tab.                                               |
+
+</TabItem>
+<TabItem value="database" label="Database">
+
+### Database Options
+
+Below you can find all the options for the database.
+
+| Option     | Default | Description                              |
+| ---------- | ------- | ---------------------------------------- |
+| `host`     | `-`     | The host of the database                 |
+| `user`     | `-`     | The username of the user you want to use |
+| `password` | `-`     | The password of the user you want to use |
+| `database` | `-`     | The name of the database                 |
+| `port`     | `-`     | The port of the database                 |
+
+</TabItem>
+<TabItem value="nextWipe" label="Next Wipe">
+
+### Next Wipe Options
+
+Below you can find all the options for the next wipe.
+
+| Option                | Default                                           | Description                                                                                                                          |
+| --------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `wipeInterval`        | `-`                                               | The interval of the wipe in cron format. See [**What is cron?**](/docs/dbdutilitybot/information#what-is-cron) for more information. |
+| `invalid_cron_string` | "Invalid cron string."                            | The message that should be sent when the cron string is invalid.                                                                     |
+| `embed_title`         | "Next Wipe"                                       | The title of the embed.                                                                                                              |
+| `embed_description`   | "The next wipe will be on {wipeDateLongDateTime}" | The description of the embed.                                                                                                        |
+| `embed_color`         | "#038cb5"                                         | The color of the embed in hex format.                                                                                                |
+| `embed_footer`        | "requested by {interactionUserName}"              | The footer of the embed.                                                                                                             |
+
+<details>
+<summary>Availabe placeholders for the Next Wipe embed </summary>
+
+These placeholders can be used in the `embed_description` and `embed_footer` options.
+
+| Placeholder             | Description                                   |
+| ----------------------- | --------------------------------------------- |
+| `{interactionUserName}` | The username of the user who used the command |
+| `{interactionUserId}`   | The ID of the user who used the command       |
+
+These placeholders can only be used in the `embed_description` option.
+
+| Placeholder               | Description                                                                                       |
+| ------------------------- | ------------------------------------------------------------------------------------------------- |
+| `{interactionUser}`       | The user who used the command                                                                     |
+| `{wipeDateShortDate}`     | The date of the next wipe in short date format (e.g. 01/01/2021)                                  |
+| `{wipeDateShortTime}`     | The time of the next wipe in short time format (e.g. 01:00)                                       |
+| `{wipeDateShortDateTime}` | The date and time of the next wipe in short date and time format (e.g. 01/01/2021 01:00)          |
+| `{wipeDateLongDate}`      | The date of the next wipe in long date format (e.g. January 1, 2021)                              |
+| `{wipeDateLongTime}`      | The time of the next wipe in long time format (e.g. 1:00:00 AM)                                   |
+| `{wipeDateLongDateTime}`  | The date and time of the next wipe in long date and time format (e.g. January 1, 2021 1:00:00 AM) |
+| `{wipeDateRelative}`      | The relative date of the next wipe (e.g. in 1 month)                                              |
+
+</details>
+</TabItem>
+<TabItem value="reports" label="Reports">
+
+### Report Options
+
+| Option      | Default | Description                                             |
+| ----------- | ------- | ------------------------------------------------------- |
+| `channelId` | `-`     | The ID of the channel where the reports should be sent. |
+
+#### Messages
+
+Below you can find all the messages for the reports.
+
+##### General Messages
+
+| Message Name               | Default                                                           | Description                                                              |
+| -------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `report_missing_arguments` | "You are missing some arguments. Please check the command usage." | The message that should be sent when the user is missing some arguments. |
+| `report_does_not_exist`    | "Report does not exist."                                          | The message that should be sent when the report does not exist.          |
+
+##### Create Report Messages
+
+| Message Name                           | Default                                                                             | Description                                                                                  |
+| -------------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `create_report_error`                  | "Something went wrong while trying to create the report."                           | The message that should be sent when something went wrong while trying to create the report. |
+| `create_report_success`                | "Report created -> {message}"                                                       | The message that should be sent when the report has been created.                            |
+| `create_report_embed_title`            | "Report {reportId}"                                                                 | The title of the embed.                                                                      |
+| `create_report_embed_description`      | "**Reported by:** {reporter}\n**Reason:** {reason}\n**Punishment:** {punishment}\n" | The description of the embed.                                                                |
+| `create_report_field_name_tribe`       | "Reported Tribe"                                                                    | The name of the field for the tribe.                                                         |
+| `create_report_field_name_members`     | "Tribe Members"                                                                     | The name of the field for the tribe members.                                                 |
+| `create_report_field_name_steam_names` | "Steam Names"                                                                       | The name of the field for the steam names.                                                   |
+| `create_report_field_name_steam_ids`   | "Steam IDs"                                                                         | The name of the field for the steam IDs.                                                     |
+| `create_report_footer`                 | "Reported on"                                                                       | The footer of the embed.                                                                     |
+
+<details> <summary>Availabe placeholders for the Create Report embed </summary>
+
+These placeholders can be used in all of the `create_report_*` options.
+
+| Placeholder  | Description               |
+| ------------ | ------------------------- |
+| `{reportId}` | The ID of the report      |
+| `{tribe}`    | The tribe name            |
+| `{reason}`   | The reason for the report |
+
+These placeholders can only be used in the `create_report_error`, `create_report_success`, `create_report_embed_description` option.
+
+| Placeholder    | Description                                                   |
+| -------------- | ------------------------------------------------------------- |
+| `{reporter}`   | The user who created the report                               |
+| `{members}`    | The members of the tribe that was reported                    |
+| `{steamNames}` | the steam names of the members of the tribe that was reported |
+| `{steamIds}`   | the steam ids of the members of the tribe that was reported   |
+| `{punishment}` | The punishment for the tribe that was reported                |
+| `{date}`       | The date when the report was created                          |
+
+</details>
+
+##### Remove Report Messages
+
+| Message Name                      | Default                                                                             | Description                                                                                  |
+| --------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `remove_report_error`             | "Something went wrong while trying to remove the report."                           | The message that should be sent when something went wrong while trying to remove the report. |
+| `remove_report_embed_title`       | "Report removed"                                                                    | The title of the embed.                                                                      |
+| `remove_report_embed_description` | "**Reported by:** {reporter}\n**Reason:** {reason}\n**Punishment:** {punishment}\n" | The description of the embed.                                                                |
+
+<details><summary> Availabe placeholders for the Remove Report embed </summary>
+
+These placeholders can be used in all of the `remove_report_*` options.
+
+| Placeholder  | Description               |
+| ------------ | ------------------------- |
+| `{reportId}` | The ID of the report      |
+| `{tribe}`    | The tribe name            |
+| `{reason}`   | The reason for the report |
+
+These placeholders can only be used in the `remove_report_embed_description` option.
+
+| Placeholder    | Description                                                   |
+| -------------- | ------------------------------------------------------------- |
+| `{reporter}`   | The user who created the report                               |
+| `{members}`    | The members of the tribe that was reported                    |
+| `{steamNames}` | the steam names of the members of the tribe that was reported |
+| `{steamIds}`   | the steam ids of the members of the tribe that was reported   |
+| `{punishment}` | The punishment for the tribe that was reported                |
+| `{date}`       | The date when the report was created                          |
+
+</details>
+
+##### List Reports Messages
+
+| Message Name                                             | Default                                                                             | Description                                                   |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `list_report_no_reports`                                 | "No reports found."                                                                 | The message that should be sent when there are no reports.    |
+| `list_report_multiple_reports_embed_title`               | "Reports"                                                                           | The title of the embed when there are multiple reports.       |
+| `list_report_multiple_reports_embed_description`         | "Use the buttons to navigate through the pages."                                    | The description of the embed when there are multiple reports. |
+| `list_report_multiple_reports_embed_field_name`          | "Report {reportId}"                                                                 | The name of the field for the report.                         |
+| `list_report_multiple_reports_embed_field_value`         | "> Reported by: {reporter}\n> Reported tribe: {tribe}\n> Reported on: {date}"       | The value of the field for the report.                        |
+| `list_report_single_report_embed_title`                  | "Report {reportId}"                                                                 | The title of the embed when there is a single report.         |
+| `list_report_single_report_embed_description`            | "**Reported by:** {reporter}\n**Reason:** {reason}\n**Punishment:** {punishment}\n" | The description of the embed when there is a single report.   |
+| `list_report_single_report_embed_field_name_tribe`       | "Reported Tribe"                                                                    | The name of the field for the tribe.                          |
+| `list_report_single_report_embed_field_name_members`     | "Tribe Members"                                                                     | The name of the field for the tribe members.                  |
+| `list_report_single_report_embed_field_name_steam_names` | "Steam Names"                                                                       | The name of the field for the steam names.                    |
+| `list_report_single_report_embed_field_name_steam_ids`   | "Steam IDs"                                                                         | The name of the field for the steam IDs.                      |
+| `list_report_single_report_embed_footer`                 | "Reported on"                                                                       | The footer of the embed.                                      |
+
+</TabItem>
+
+<TabItem value="trading" label="Trading">
+
+</TabItem>
+</Tabs>
