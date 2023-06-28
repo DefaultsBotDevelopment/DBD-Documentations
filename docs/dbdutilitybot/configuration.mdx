@@ -20,6 +20,8 @@ The `config.js` file is located in the same folder as the app executable. This f
 
 ### General Options
 
+Below you can find all the general options for the bot.
+
 | Option           | Default            | Description                                                                                                                   |
 | ---------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
 | `dbdAccountId`   | `-`                | The account ID of your DBD account, more info about this can be found [here](/docs/information#bot-activation)                |
@@ -28,6 +30,7 @@ The `config.js` file is located in the same folder as the app executable. This f
 | `database`       | `Database Options` | The database options for the bot. Options can be found on the _Database_ tab.                                                 |
 | `moderatorRoles` | `[]`               | The role IDs that can use the moderation commands.                                                                            |
 | `nextWipe`       | `NextWipe Options` | The next wipe options for the bot. Options can be found on the _Next Wipe_ tab.                                               |
+| `reports`        | `Report Options`   | The report options for the bot. Options can be found on the _Reports_ tab.                                                    |
 
 </TabItem>
 <TabItem value="database" label="Database">
@@ -74,7 +77,7 @@ These placeholders can only be used in the `embed_description` option.
 
 | Placeholder               | Description                                                                                       |
 | ------------------------- | ------------------------------------------------------------------------------------------------- |
-| `{interactionUser}`       | The user who used the command                                                                     |
+| `{interactionUser}`       | The user who used the command.                                                                    |
 | `{wipeDateShortDate}`     | The date of the next wipe in short date format (e.g. 01/01/2021)                                  |
 | `{wipeDateShortTime}`     | The time of the next wipe in short time format (e.g. 01:00)                                       |
 | `{wipeDateShortDateTime}` | The date and time of the next wipe in short date and time format (e.g. 01/01/2021 01:00)          |
@@ -88,6 +91,8 @@ These placeholders can only be used in the `embed_description` option.
 <TabItem value="reports" label="Reports">
 
 ### Report Options
+
+Below you can find all the options for the reports.
 
 | Option      | Default | Description                                             |
 | ----------- | ------- | ------------------------------------------------------- |
@@ -127,6 +132,7 @@ These placeholders can be used in all of the `create_report_*` options.
 | `{reportId}` | The ID of the report      |
 | `{tribe}`    | The tribe name            |
 | `{reason}`   | The reason for the report |
+| `{message}`  | The message that was sent |
 
 These placeholders can only be used in the `create_report_error`, `create_report_success`, `create_report_embed_description` option.
 
@@ -189,9 +195,155 @@ These placeholders can only be used in the `remove_report_embed_description` opt
 | `list_report_single_report_embed_field_name_steam_ids`   | "Steam IDs"                                                                         | The name of the field for the steam IDs.                      |
 | `list_report_single_report_embed_footer`                 | "Reported on"                                                                       | The footer of the embed.                                      |
 
+<details><summary> Availabe placeholders for the List Reports embeds </summary>
+
+These placeholders can be used in all of the `list_report_*` options.
+
+| Placeholder    | Description                                    |
+| -------------- | ---------------------------------------------- |
+| `{reportId}`   | The ID of the report                           |
+| `{tribe}`      | The tribe name                                 |
+| `{reason}`     | The reason for the report                      |
+| `{punishment}` | The punishment for the tribe that was reported |
+
+These placeholders can only be used in the `list_report_multiple_reports_embed_description` and `list_report_single_embed_description` option.
+
+| Placeholder    | Description                                                   |
+| -------------- | ------------------------------------------------------------- |
+| `{reporter}`   | The user who created the report                               |
+| `{members}`    | The members of the tribe that was reported                    |
+| `{steamNames}` | the steam names of the members of the tribe that was reported |
+| `{steamIds}`   | the steam ids of the members of the tribe that was reported   |
+| `{date}`       | The date when the report was created                          |
+
+</details>
 </TabItem>
 
-<TabItem value="trading" label="Trading">
+<TabItem value="trade" label="Trade">
 
+### Trade Options
+
+Below you can find all the options for the trade.
+
+| Option              | Default | Description                                                        |
+| ------------------- | ------- | ------------------------------------------------------------------ |
+| `channelId`         | `-`     | The ID of the channel where the trade messages should be sent.     |
+| `categoryId`        | `-`     | The ID of the category where the trade channels should be created. |
+| `maxNumberOfTrades` | `-`     | The maximum number of trades that can be created.                  |
+
+#### Messages
+
+Below you can find all the messages for the trade.
+
+##### General Messages
+
+| Message Name                   | Default                      | Description                                                    |
+| ------------------------------ | ---------------------------- | -------------------------------------------------------------- |
+| `general_offer_does_not_exist` | "This offer does not exist." | The message that should be sent when the offer does not exist. |
+| `general_offer_not_pending`    | "This offer is not pending." | The message that should be sent when the offer is not pending. |
+| `general_trade_does_not_exist` | "This trade does not exist." | The message that should be sent when the trade does not exist. |
+| `general_trade_not_open`       | "This trade is not open."    | The message that should be sent when the trade is not open.    |
+| `general_no_reason_provided`   | "No reason provided."        | The message that should be sent when no reason is provided.    |
+
+##### Create Trade Messages
+
+| Message Name                      | Default                                                                                                     | Description                                                                                  |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `create_missing_arguments`        | "You are missing some arguments. Please check the command usage."                                           | The message that should be sent when the user is missing some arguments.                     |
+| `create_missing_items`            | "You are missing some items. Please check the command usage."                                               | The message that should be sent when the user is missing some items.                         |
+| `create_invalid_amount`           | "The amount you provided is invalid. Please provide a number"                                               | The message that should be sent when the amount of items is invalid.                         |
+| `create_error_occurred`           | "Something went wrong while trying to create the trade."                                                    | The message that should be sent when something went wrong while trying to create the trade.  |
+| `create_success`                  | "Trade created"                                                                                             | The message that should be sent when the trade has been created.                             |
+| `create_max_open_trades`          | "You have reached the maximum number of open trades. Please close or cancel one before creating a new one." | The message that should be sent when the user has reached the maximum number of open trades. |
+| `create_channel_not_set`          | "The trade channel has not been set yet. Please contact a moderator."                                       | The message that should be sent when the trade channel has not been set yet.                 |
+| `create_embed_title`              | "Trade Offer"                                                                                               | The title of the embed.                                                                      |
+| `create_embed_description`        | "{interactionUser} offers the following trade:"                                                             | The description of the embed.                                                                |
+| `create_embed_field_name_selling` | "Selling"                                                                                                   | The name of the field for the items that are being sold.                                     |
+| `create_embed_field_name_cost`    | "Cost"                                                                                                      | The name of the field for the items that are being bought.                                   |
+| `create_embed_field_name_map`     | "Map"                                                                                                       | The name of the field for the map.                                                           |
+| `create_embed_footer`             | "Created by {interactionUserTag}\nTrade ID: {tradeId}"                                                      | The footer of the embed.                                                                     |
+| `create_embed_color`              | "#038cb5"                                                                                                   | The color of the embed in hex format.                                                        |
+| `create_button_label`             | "Offer"                                                                                                     | The label of the button.                                                                     |
+| `create_button_emoji`             | "💰"                                                                                                        | The emoji of the button.                                                                     |
+
+<details><summary> Availabe placeholders for the Create Trade embed </summary>
+
+These placeholders can be used in all of the `create_*` options except for the `create_button_*`, `create_missing_arguments`, `create_missing_items`, `create_invalid_amount` and `create_error_occurred` options.
+
+| Placeholder            | Description                                         |
+| ---------------------- | --------------------------------------------------- |
+| `{interactionUserId}`  | The ID of the user who used the command             |
+| `{interactionUserTag}` | The tag of the user who used the command            |
+| `{id}`                 | The ID of the trade                                 |
+| `{items}`              | The items that are being sold                       |
+| `{itemsFormatted}`     | The items that are being sold formatted as a list   |
+| `{cost}`               | The items that are being bought                     |
+| `{costFormatted}`      | The items that are being bought formatted as a list |
+| `{map}`                | The map                                             |
+
+These placeholders can only be used in the `create_embed_description` option.
+
+| Placeholder         | Description                                  |
+| ------------------- | -------------------------------------------- |
+| `{interactionUser}` | The user who used the command                |
+| `{image}`           | The image url of the image the user provided |
+
+</details>
+
+##### Cancel Trade Messages
+
+| Message Name                  | Default                                                                                                    | Description                                                                                            |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `cancel_not_your_trade`       | "You cannot cancel a trade that is not yours."                                                             | The message that should be sent when the user tries to cancel a trade that is not theirs.              |
+| `cancel_error_occurred`       | "Something went wrong while trying to cancel."                                                             | The message that should be sent when something went wrong while trying to cancel a trade.              |
+| `cancel_success`              | "Trade offer cancelled"                                                                                    | The message that should be sent when the trade has been cancelled.                                     |
+| `cancel_dm_embed_title`       | "Trade Offer Cancelled"                                                                                    | The title of the embed that should be sent in the DM of the user who created the trade.                |
+| `cancel_dm_embed_description` | "Your trade has been cancelled."                                                                           | The description of the embed that should be sent in the DM of the user who created the trade.          |
+| `cancel_dm_embed_footer`      | "Trade ID: {tradeId}"                                                                                      | The footer of the embed that should be sent in the DM of the user who created the trade.               |
+| `cancel_dm_embed_color`       | "#038cb5"                                                                                                  | The color of the embed that should be sent in the DM of the user who created the trade. In hex format. |
+| `cancel_embed_title`          | "Trade Offer Cancelled"                                                                                    | The new title of the trade offer embed.                                                                |
+| `cancel_embed_description`    | "This trade offer was cancelled by {interactionUserTag}.\n\n**Trade ID:** {tradeId}\n**Reason:** {reason}" | The new description of the trade offer embed.                                                          |
+| `cancel_embed_footer`         | "Trade ID: {tradeId}"                                                                                      | The new footer of the trade offer embed.                                                               |
+| `cancel_embed_color`          | "#038cb5"                                                                                                  | The new color of the trade offer embed. In hex format.                                                 |
+| `cancel_embed_keep_image`     | `YES`                                                                                                      | `YES` or `NO` - Whether the image should be kept in the trade offer embed.                             |
+
+<details><summary> Availabe placeholders for the Cancel Trade embeds </summary>
+
+These placeholders can be used in all of the `cancel_*` options except for the `cancel_embed_keep_image`, `cancel_not_your_trade`, `cancel_error_occurred`, `cancel_dm_embed_color` and `cancel_embed_color` options.
+
+| Placeholder            | Description                                                   |
+| ---------------------- | ------------------------------------------------------------- |
+| `{interactionUserId}`  | The ID of the user who used the command                       |
+| `{interactionUserTag}` | The tag of the user who used the command                      |
+| `{sellerId}`           | The ID of the user who created the trade                      |
+| `{sellerTag}`          | The tag of the user who created the trade                     |
+| `{items}`              | The items that are being sold                                 |
+| `{itemsFormatted}`     | The items that are being sold formatted as a list             |
+| `{cost}`               | The cost of the items that are being sold.                    |
+| `{costFormatted}`      | The cost of the items that are being sold formatted as a list |
+| `{map}`                | The map                                                       |
+| `{reason}`             | The reason why the trade was cancelled                        |
+| `{tradeId}`            | The ID of the trade                                           |
+
+These placeholders can only be used in the `cancel_dm_embed_description` and `cancel_embed_description` option.
+
+| Placeholder         | Description                    |
+| ------------------- | ------------------------------ |
+| `{interactionUser}` | The user who used the command  |
+| `{seller}`          | The user who created the trade |
+
+</details>
+
+##### Create Offer Messages
+
+| Message Name                                    | Default                                        | Description                                                                       |
+| ----------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------------------------------- |
+| `create_offer_button_cannot_offer_on_own_trade` | "You cannot maken an offer on your own trade." | The message that should be sent when the user tries to offer on their own trade.  |
+| `create_offer_button_already_made_offer`        | "You already made an offer on this trade."     | The message that should be sent when the user already made an offer on the trade. |
+| `create_offer_button_modal_title`               | "Create Trade Offer"                           | The title of the modal.                                                           |
+| `create_offer_modal_input_label`                | "What are you offering?"                       | The label of the input.                                                           |
+
+<details><summary> Availabe placeholders for the Create Offer button and modal </summary>
+</details>
 </TabItem>
 </Tabs>
