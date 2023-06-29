@@ -64,7 +64,7 @@ Below you can find all the options for the next wipe.
 | `embed_footer`        | "requested by {interactionUserName}"              | The footer of the embed.                                                                                                             |
 
 <details>
-<summary>Availabe placeholders for the Next Wipe embed </summary>
+<summary>Availabe placeholders for the Next Wipe messages </summary>
 
 These placeholders can be used in the `embed_description` and `embed_footer` options.
 
@@ -123,7 +123,7 @@ Below you can find all the messages for the reports.
 | `create_report_field_name_steam_ids`   | "Steam IDs"                                                                         | The name of the field for the steam IDs.                                                     |
 | `create_report_footer`                 | "Reported on"                                                                       | The footer of the embed.                                                                     |
 
-<details> <summary>Availabe placeholders for the Create Report embed </summary>
+<details> <summary>Availabe placeholders for the Create Report messages </summary>
 
 These placeholders can be used in all of the `create_report_*` options.
 
@@ -152,7 +152,7 @@ These placeholders can only be used in the `create_report_error`, `create_report
 | `remove_report_embed_title`       | "Report removed"                                                                    | The title of the embed.                                                                      |
 | `remove_report_embed_description` | "**Reported by:** {reporter}\n**Reason:** {reason}\n**Punishment:** {punishment}\n" | The description of the embed.                                                                |
 
-<details><summary> Availabe placeholders for the Remove Report embed </summary>
+<details><summary> Availabe placeholders for the Remove Report messages </summary>
 
 These placeholders can be used in all of the `remove_report_*` options.
 
@@ -195,7 +195,7 @@ These placeholders can only be used in the `remove_report_embed_description` opt
 | `list_report_single_report_embed_field_name_steam_ids`   | "Steam IDs"                                                                         | The name of the field for the steam IDs.                      |
 | `list_report_single_report_embed_footer`                 | "Reported on"                                                                       | The footer of the embed.                                      |
 
-<details><summary> Availabe placeholders for the List Reports embeds </summary>
+<details><summary> Availabe placeholders for the List Reports messages </summary>
 
 These placeholders can be used in all of the `list_report_*` options.
 
@@ -266,7 +266,7 @@ Below you can find all the messages for the trade.
 | `create_button_label`             | "Offer"                                                                                                     | The label of the button.                                                                     |
 | `create_button_emoji`             | "💰"                                                                                                        | The emoji of the button.                                                                     |
 
-<details><summary> Availabe placeholders for the Create Trade embed </summary>
+<details><summary> Availabe placeholders for the Create Trade messages </summary>
 
 These placeholders can be used in all of the `create_*` options except for the `create_button_*`, `create_missing_arguments`, `create_missing_items`, `create_invalid_amount` and `create_error_occurred` options.
 
@@ -307,7 +307,7 @@ These placeholders can only be used in the `create_embed_description` option.
 | `cancel_embed_color`          | "#038cb5"                                                                                                  | The new color of the trade offer embed. In hex format.                                                 |
 | `cancel_embed_keep_image`     | `YES`                                                                                                      | `YES` or `NO` - Whether the image should be kept in the trade offer embed.                             |
 
-<details><summary> Availabe placeholders for the Cancel Trade embeds </summary>
+<details><summary> Availabe placeholders for the Cancel Trade messages </summary>
 
 These placeholders can be used in all of the `cancel_*` options except for the `cancel_embed_keep_image`, `cancel_not_your_trade`, `cancel_error_occurred`, `cancel_dm_embed_color` and `cancel_embed_color` options.
 
@@ -343,7 +343,72 @@ These placeholders can only be used in the `cancel_dm_embed_description` and `ca
 | `create_offer_button_modal_title`               | "Create Trade Offer"                           | The title of the modal.                                                           |
 | `create_offer_modal_input_label`                | "What are you offering?"                       | The label of the input.                                                           |
 
-<details><summary> Availabe placeholders for the Create Offer button and modal </summary>
+<details><summary> Availabe placeholders for the Create Offer Button messages </summary>
+
+These placeholders can be used in all of the `create_offer_*` options.
+
+| Placeholder            | Description                                |
+| ---------------------- | ------------------------------------------ |
+| `{interactionUserId}`  | The ID of the user who used the command    |
+| `{interactionUserTag}` | The tag of the user who used the command   |
+| `{tradeId}`            | The ID of the trade                        |
+| `{sellerId}`           | The ID of the user who created the trade   |
+| `{sellerTag}`          | The tag of the user who created the trade  |
+| `{items}`              | The items that are being sold              |
+| `{cost}`               | The cost of the items that are being sold. |
+| `{map}`                | The map                                    |
+
+These placeholders can be used in the `create_offer_button_cannot_offer_on_own_trade` and `create_offer_button_already_made_offer` options.
+
+| Placeholder         | Description                                                   |
+| ------------------- | ------------------------------------------------------------- |
+| `{interactionUser}` | The user who used the command                                 |
+| `{seller}`          | The user who created the trade                                |
+| `{itemsFormatted}`  | The items that are being sold formatted as a list             |
+| `{costFormatted}`   | The cost of the items that are being sold formatted as a list |
+| `{image}`           | The image url of the image the user provided                  |
+
 </details>
+
+##### Create Offer Modal Messages
+
+| Message Name                                  | Default                                                                                                                                                                                              | Description                                                                                                  |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `create_offer_modal_error_occurred`           | "Something went wrong while trying to create the offer. Please try again later."                                                                                                                     | The message that should be sent when something went wrong while trying to create the offer.                  |
+| `create_offer_modal_seller_embed_title`       | "New Trade Offer"                                                                                                                                                                                    | The title of the embed that should be sent in the DM of the user who created the trade.                      |
+| `create_offer_modal_seller_embed_description` | "You have received a new trade offer from {interactionUserTag}.\n\n**You Are Selling**\n{itemsFormatted}\n\n**They Are Offering:**\n{OfferedItemsFormatted}\n\nWould you like to accept this offer?" | The description of the embed that should be sent in the DM of the user who created the trade.                |
+| `create_offer_modal_seller_embed_footer`      | "Trade ID: {tradeId}"                                                                                                                                                                                | The footer of the embed that should be sent in the DM of the user who created the trade.                     |
+| `create_offer_modal_seller_embed_color`       | "#038cb5"                                                                                                                                                                                            | The color of the embed that should be sent in the DM of the user who created the trade.                      |
+| `create_offer_modal_seller_button_accept`     | "Accept"                                                                                                                                                                                             | The text of the accept button in the embed that should be sent in the DM of the user who created the trade.  |
+| `create_offer_modal_seller_button_decline`    | "Decline"                                                                                                                                                                                            | The text of the decline button in the embed that should be sent in the DM of the user who created the trade. |
+| `create_offer_modal_buyer_embed_title`        | "Trade Offer"                                                                                                                                                                                        | The title of the embed that should be sent in the DM of the user who made the offer.                         |
+| `create_offer_modal_buyer_embed_description`  | "You have made a new trade offer to {sellerTag}.\n\n**You Are Offering**\n{OfferedItemsFormatted}\n\n**They Are Selling:**\n{itemsFormatted}\n\nWould you like to cancel this offer?"                | The description of the embed that should be sent in the DM of the user who made the offer.                   |
+| `create_offer_modal_buyer_embed_footer`       | "Trade ID: {tradeId}"                                                                                                                                                                                | The footer of the embed that should be sent in the DM of the user who made the offer.                        |
+| `create_offer_modal_buyer_embed_color`        | "#038cb5"                                                                                                                                                                                            | The color of the embed that should be sent in the DM of the user who made the offer.                         |
+
+<details><summary> Availabe placeholders for the Create Offer Modal messages </summary>
+
+These placeholders can be used in all of the `create_offer_modal_*` options except for the `create_offer_modal_seller_button_accept`, `create_offer_modal_seller_button_decline` and `create_offer_modal_error_occurred` options.
+
+| Placeholder            | Description                               |
+| ---------------------- | ----------------------------------------- |
+| `{interactionUserId}`  | The ID of the user who used the command   |
+| `{interactionUserTag}` | The tag of the user who used the command  |
+| `{sellerId}`           | The ID of the user who created the trade  |
+| `{sellerTag}`          | The tag of the user who created the trade |
+| `{tradeId}`            | The ID of the trade                       |
+| `{offerId}`            | The ID of the offer                       |
+| `{items}`              | The items that are being sold             |
+| `{cost}`               | The cost of the items that are being sold |
+| `{map}`                | The map                                   |
+
+These placeholders can only be used in the `create_offer_modal_seller_embed_description` and `create_offer_modal_buyer_embed_description` options.
+
+| Placeholder           | Description                             |
+| --------------------- | --------------------------------------- |
+| `{interactionUserId}` | The ID of the user who used the command |
+
+</details>
+
 </TabItem>
 </Tabs>
