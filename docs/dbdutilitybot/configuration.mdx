@@ -54,14 +54,14 @@ Below you can find all the options for the database.
 
 Below you can find all the options for the next wipe.
 
-| Option                | Default                                           | Description                                                                                                                          |
-| --------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `wipeInterval`        | `-`                                               | The interval of the wipe in cron format. See [**What is cron?**](/docs/dbdutilitybot/information#what-is-cron) for more information. |
-| `invalid_cron_string` | "Invalid cron string."                            | The message that should be sent when the cron string is invalid.                                                                     |
-| `embed_title`         | "Next Wipe"                                       | The title of the embed.                                                                                                              |
-| `embed_description`   | "The next wipe will be on {wipeDateLongDateTime}" | The description of the embed.                                                                                                        |
-| `embed_color`         | "#038cb5"                                         | The color of the embed in hex format.                                                                                                |
-| `embed_footer`        | "requested by {interactionUserName}"              | The footer of the embed.                                                                                                             |
+| Option                | Default                                           | Description                                                                                                                              |
+| --------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `wipeInterval`        | `-`                                               | The interval of the wipe in cron format. See [\*\*What is cron?\*\*](/docs/dbdutilitybot/information#what-is-cron) for more information. |
+| `invalid_cron_string` | "Invalid cron string."                            | The message that should be sent when the cron string is invalid.                                                                         |
+| `embed_title`         | "Next Wipe"                                       | The title of the embed.                                                                                                                  |
+| `embed_description`   | "The next wipe will be on {wipeDateLongDateTime}" | The description of the embed.                                                                                                            |
+| `embed_color`         | "#038cb5"                                         | The color of the embed in hex format.                                                                                                    |
+| `embed_footer`        | "requested by {interactionUserName}"              | The footer of the embed.                                                                                                                 |
 
 <details>
 <summary>Availabe placeholders for the Next Wipe messages </summary>
@@ -111,17 +111,17 @@ Below you can find all the messages for the reports.
 
 ##### Create Report Messages
 
-| Message Name                           | Default                                                                             | Description                                                                                  |
-| -------------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `create_report_error`                  | "Something went wrong while trying to create the report."                           | The message that should be sent when something went wrong while trying to create the report. |
-| `create_report_success`                | "Report created -> {message}"                                                       | The message that should be sent when the report has been created.                            |
-| `create_report_embed_title`            | "Report {reportId}"                                                                 | The title of the embed.                                                                      |
-| `create_report_embed_description`      | "**Reported by:** {reporter}\n**Reason:** {reason}\n**Punishment:** {punishment}\n" | The description of the embed.                                                                |
-| `create_report_field_name_tribe`       | "Reported Tribe"                                                                    | The name of the field for the tribe.                                                         |
-| `create_report_field_name_members`     | "Tribe Members"                                                                     | The name of the field for the tribe members.                                                 |
-| `create_report_field_name_steam_names` | "Steam Names"                                                                       | The name of the field for the steam names.                                                   |
-| `create_report_field_name_steam_ids`   | "Steam IDs"                                                                         | The name of the field for the steam IDs.                                                     |
-| `create_report_footer`                 | "Reported on"                                                                       | The footer of the embed.                                                                     |
+| Message Name                           | Default                                                                                         | Description                                                                                  |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `create_report_error`                  | "Something went wrong while trying to create the report."                                       | The message that should be sent when something went wrong while trying to create the report. |
+| `create_report_success`                | "Report created -> {message}"                                                                   | The message that should be sent when the report has been created.                            |
+| `create_report_embed_title`            | "Report {reportId}"                                                                             | The title of the embed.                                                                      |
+| `create_report_embed_description`      | "\*\*Reported by:\*\* {reporter}\n\*\*Reason:\*\* {reason}\n\*\*Punishment:\*\* {punishment}\n" | The description of the embed.                                                                |
+| `create_report_field_name_tribe`       | "Reported Tribe"                                                                                | The name of the field for the tribe.                                                         |
+| `create_report_field_name_members`     | "Tribe Members"                                                                                 | The name of the field for the tribe members.                                                 |
+| `create_report_field_name_steam_names` | "Steam Names"                                                                                   | The name of the field for the steam names.                                                   |
+| `create_report_field_name_steam_ids`   | "Steam IDs"                                                                                     | The name of the field for the steam IDs.                                                     |
+| `create_report_footer`                 | "Reported on"                                                                                   | The footer of the embed.                                                                     |
 
 <details> <summary>Availabe placeholders for the Create Report messages </summary>
 
@@ -146,11 +146,11 @@ These placeholders can only be used in the `create_report_error`, `create_report
 
 ##### Remove Report Messages
 
-| Message Name                      | Default                                                                             | Description                                                                                  |
-| --------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `remove_report_error`             | "Something went wrong while trying to remove the report."                           | The message that should be sent when something went wrong while trying to remove the report. |
-| `remove_report_embed_title`       | "Report removed"                                                                    | The title of the embed.                                                                      |
-| `remove_report_embed_description` | "**Reported by:** {reporter}\n**Reason:** {reason}\n**Punishment:** {punishment}\n" | The description of the embed.                                                                |
+| Message Name                      | Default                                                                                         | Description                                                                                  |
+| --------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `remove_report_error`             | "Something went wrong while trying to remove the report."                                       | The message that should be sent when something went wrong while trying to remove the report. |
+| `remove_report_embed_title`       | "Report removed"                                                                                | The title of the embed.                                                                      |
+| `remove_report_embed_description` | "\*\*Reported by:\*\* {reporter}\n\*\*Reason:\*\* {reason}\n\*\*Punishment:\*\* {punishment}\n" | The description of the embed.                                                                |
 
 <details><summary> Availabe placeholders for the Remove Report messages </summary>
 
@@ -180,20 +180,20 @@ These placeholders can only be used in the `remove_report_embed_description` opt
 
 ##### List Reports Messages
 
-| Message Name                                             | Default                                                                             | Description                                                   |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| `list_report_no_reports`                                 | "No reports found."                                                                 | The message that should be sent when there are no reports.    |
-| `list_report_multiple_reports_embed_title`               | "Reports"                                                                           | The title of the embed when there are multiple reports.       |
-| `list_report_multiple_reports_embed_description`         | "Use the buttons to navigate through the pages."                                    | The description of the embed when there are multiple reports. |
-| `list_report_multiple_reports_embed_field_name`          | "Report {reportId}"                                                                 | The name of the field for the report.                         |
-| `list_report_multiple_reports_embed_field_value`         | "> Reported by: {reporter}\n> Reported tribe: {tribe}\n> Reported on: {date}"       | The value of the field for the report.                        |
-| `list_report_single_report_embed_title`                  | "Report {reportId}"                                                                 | The title of the embed when there is a single report.         |
-| `list_report_single_report_embed_description`            | "**Reported by:** {reporter}\n**Reason:** {reason}\n**Punishment:** {punishment}\n" | The description of the embed when there is a single report.   |
-| `list_report_single_report_embed_field_name_tribe`       | "Reported Tribe"                                                                    | The name of the field for the tribe.                          |
-| `list_report_single_report_embed_field_name_members`     | "Tribe Members"                                                                     | The name of the field for the tribe members.                  |
-| `list_report_single_report_embed_field_name_steam_names` | "Steam Names"                                                                       | The name of the field for the steam names.                    |
-| `list_report_single_report_embed_field_name_steam_ids`   | "Steam IDs"                                                                         | The name of the field for the steam IDs.                      |
-| `list_report_single_report_embed_footer`                 | "Reported on"                                                                       | The footer of the embed.                                      |
+| Message Name                                             | Default                                                                                         | Description                                                   |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `list_report_no_reports`                                 | "No reports found."                                                                             | The message that should be sent when there are no reports.    |
+| `list_report_multiple_reports_embed_title`               | "Reports"                                                                                       | The title of the embed when there are multiple reports.       |
+| `list_report_multiple_reports_embed_description`         | "Use the buttons to navigate through the pages."                                                | The description of the embed when there are multiple reports. |
+| `list_report_multiple_reports_embed_field_name`          | "Report {reportId}"                                                                             | The name of the field for the report.                         |
+| `list_report_multiple_reports_embed_field_value`         | "> Reported by: {reporter}\n> Reported tribe: {tribe}\n> Reported on: {date}"                   | The value of the field for the report.                        |
+| `list_report_single_report_embed_title`                  | "Report {reportId}"                                                                             | The title of the embed when there is a single report.         |
+| `list_report_single_report_embed_description`            | "\*\*Reported by:\*\* {reporter}\n\*\*Reason:\*\* {reason}\n\*\*Punishment:\*\* {punishment}\n" | The description of the embed when there is a single report.   |
+| `list_report_single_report_embed_field_name_tribe`       | "Reported Tribe"                                                                                | The name of the field for the tribe.                          |
+| `list_report_single_report_embed_field_name_members`     | "Tribe Members"                                                                                 | The name of the field for the tribe members.                  |
+| `list_report_single_report_embed_field_name_steam_names` | "Steam Names"                                                                                   | The name of the field for the steam names.                    |
+| `list_report_single_report_embed_field_name_steam_ids`   | "Steam IDs"                                                                                     | The name of the field for the steam IDs.                      |
+| `list_report_single_report_embed_footer`                 | "Reported on"                                                                                   | The footer of the embed.                                      |
 
 <details><summary> Availabe placeholders for the List Reports messages </summary>
 
@@ -292,20 +292,20 @@ These placeholders can only be used in the `create_embed_description` option.
 
 ##### Cancel Trade Messages
 
-| Message Name                  | Default                                                                                                    | Description                                                                                            |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `cancel_not_your_trade`       | "You cannot cancel a trade that is not yours."                                                             | The message that should be sent when the user tries to cancel a trade that is not theirs.              |
-| `cancel_error_occurred`       | "Something went wrong while trying to cancel."                                                             | The message that should be sent when something went wrong while trying to cancel a trade.              |
-| `cancel_success`              | "Trade offer cancelled"                                                                                    | The message that should be sent when the trade has been cancelled.                                     |
-| `cancel_dm_embed_title`       | "Trade Offer Cancelled"                                                                                    | The title of the embed that should be sent in the DM of the user who created the trade.                |
-| `cancel_dm_embed_description` | "Your trade has been cancelled."                                                                           | The description of the embed that should be sent in the DM of the user who created the trade.          |
-| `cancel_dm_embed_footer`      | "Trade ID: {tradeId}"                                                                                      | The footer of the embed that should be sent in the DM of the user who created the trade.               |
-| `cancel_dm_embed_color`       | "#038cb5"                                                                                                  | The color of the embed that should be sent in the DM of the user who created the trade. In hex format. |
-| `cancel_embed_title`          | "Trade Offer Cancelled"                                                                                    | The new title of the trade offer embed.                                                                |
-| `cancel_embed_description`    | "This trade offer was cancelled by {interactionUserTag}.\n\n**Trade ID:** {tradeId}\n**Reason:** {reason}" | The new description of the trade offer embed.                                                          |
-| `cancel_embed_footer`         | "Trade ID: {tradeId}"                                                                                      | The new footer of the trade offer embed.                                                               |
-| `cancel_embed_color`          | "#038cb5"                                                                                                  | The new color of the trade offer embed. In hex format.                                                 |
-| `cancel_embed_keep_image`     | `YES`                                                                                                      | `YES` or `NO` - Whether the image should be kept in the trade offer embed.                             |
+| Message Name                  | Default                                                                                                            | Description                                                                                            |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `cancel_not_your_trade`       | "You cannot cancel a trade that is not yours."                                                                     | The message that should be sent when the user tries to cancel a trade that is not theirs.              |
+| `cancel_error_occurred`       | "Something went wrong while trying to cancel."                                                                     | The message that should be sent when something went wrong while trying to cancel a trade.              |
+| `cancel_success`              | "Trade offer cancelled"                                                                                            | The message that should be sent when the trade has been cancelled.                                     |
+| `cancel_dm_embed_title`       | "Trade Offer Cancelled"                                                                                            | The title of the embed that should be sent in the DM of the user who created the trade.                |
+| `cancel_dm_embed_description` | "Your trade has been cancelled."                                                                                   | The description of the embed that should be sent in the DM of the user who created the trade.          |
+| `cancel_dm_embed_footer`      | "Trade ID: {tradeId}"                                                                                              | The footer of the embed that should be sent in the DM of the user who created the trade.               |
+| `cancel_dm_embed_color`       | "#038cb5"                                                                                                          | The color of the embed that should be sent in the DM of the user who created the trade. In hex format. |
+| `cancel_embed_title`          | "Trade Offer Cancelled"                                                                                            | The new title of the trade offer embed.                                                                |
+| `cancel_embed_description`    | "This trade offer was cancelled by {interactionUserTag}.\n\n\*\*Trade ID:\*\* {tradeId}\n\*\*Reason:\*\* {reason}" | The new description of the trade offer embed.                                                          |
+| `cancel_embed_footer`         | "Trade ID: {tradeId}"                                                                                              | The new footer of the trade offer embed.                                                               |
+| `cancel_embed_color`          | "#038cb5"                                                                                                          | The new color of the trade offer embed. In hex format.                                                 |
+| `cancel_embed_keep_image`     | `YES`                                                                                                              | `YES` or `NO` - Whether the image should be kept in the trade offer embed.                             |
 
 <details><summary> Availabe placeholders for the Cancel Trade messages </summary>
 
@@ -372,19 +372,19 @@ These placeholders can be used in the `create_offer_button_cannot_offer_on_own_t
 
 ##### Create Offer Modal Messages
 
-| Message Name                                  | Default                                                                                                                                                                                              | Description                                                                                                  |
-| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `create_offer_modal_error_occurred`           | "Something went wrong while trying to create the offer. Please try again later."                                                                                                                     | The message that should be sent when something went wrong while trying to create the offer.                  |
-| `create_offer_modal_seller_embed_title`       | "New Trade Offer"                                                                                                                                                                                    | The title of the embed that should be sent in the DM of the user who created the trade.                      |
-| `create_offer_modal_seller_embed_description` | "You have received a new trade offer from {interactionUserTag}.\n\n**You Are Selling**\n{itemsFormatted}\n\n**They Are Offering:**\n{OfferedItemsFormatted}\n\nWould you like to accept this offer?" | The description of the embed that should be sent in the DM of the user who created the trade.                |
-| `create_offer_modal_seller_embed_footer`      | "Trade ID: {tradeId}"                                                                                                                                                                                | The footer of the embed that should be sent in the DM of the user who created the trade.                     |
-| `create_offer_modal_seller_embed_color`       | "#038cb5"                                                                                                                                                                                            | The color of the embed that should be sent in the DM of the user who created the trade.                      |
-| `create_offer_modal_seller_button_accept`     | "Accept"                                                                                                                                                                                             | The text of the accept button in the embed that should be sent in the DM of the user who created the trade.  |
-| `create_offer_modal_seller_button_decline`    | "Decline"                                                                                                                                                                                            | The text of the decline button in the embed that should be sent in the DM of the user who created the trade. |
-| `create_offer_modal_buyer_embed_title`        | "Trade Offer"                                                                                                                                                                                        | The title of the embed that should be sent in the DM of the user who made the offer.                         |
-| `create_offer_modal_buyer_embed_description`  | "You have made a new trade offer to {sellerTag}.\n\n**You Are Offering**\n{OfferedItemsFormatted}\n\n**They Are Selling:**\n{itemsFormatted}\n\nWould you like to cancel this offer?"                | The description of the embed that should be sent in the DM of the user who made the offer.                   |
-| `create_offer_modal_buyer_embed_footer`       | "Trade ID: {tradeId}"                                                                                                                                                                                | The footer of the embed that should be sent in the DM of the user who made the offer.                        |
-| `create_offer_modal_buyer_embed_color`        | "#038cb5"                                                                                                                                                                                            | The color of the embed that should be sent in the DM of the user who made the offer.                         |
+| Message Name                                  | Default                                                                                                                                                                                                      | Description                                                                                                  |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `create_offer_modal_error_occurred`           | "Something went wrong while trying to create the offer. Please try again later."                                                                                                                             | The message that should be sent when something went wrong while trying to create the offer.                  |
+| `create_offer_modal_seller_embed_title`       | "New Trade Offer"                                                                                                                                                                                            | The title of the embed that should be sent in the DM of the user who created the trade.                      |
+| `create_offer_modal_seller_embed_description` | "You have received a new trade offer from {interactionUserTag}.\n\n\*\*You Are Selling\*\*\n{itemsFormatted}\n\n\*\*They Are Offering:\*\*\n{OfferedItemsFormatted}\n\nWould you like to accept this offer?" | The description of the embed that should be sent in the DM of the user who created the trade.                |
+| `create_offer_modal_seller_embed_footer`      | "Trade ID: {tradeId}"                                                                                                                                                                                        | The footer of the embed that should be sent in the DM of the user who created the trade.                     |
+| `create_offer_modal_seller_embed_color`       | "#038cb5"                                                                                                                                                                                                    | The color of the embed that should be sent in the DM of the user who created the trade.                      |
+| `create_offer_modal_seller_button_accept`     | "Accept"                                                                                                                                                                                                     | The text of the accept button in the embed that should be sent in the DM of the user who created the trade.  |
+| `create_offer_modal_seller_button_decline`    | "Decline"                                                                                                                                                                                                    | The text of the decline button in the embed that should be sent in the DM of the user who created the trade. |
+| `create_offer_modal_buyer_embed_title`        | "Trade Offer"                                                                                                                                                                                                | The title of the embed that should be sent in the DM of the user who made the offer.                         |
+| `create_offer_modal_buyer_embed_description`  | "You have made a new trade offer to {sellerTag}.\n\n\*\*You Are Offering\*\*\n{OfferedItemsFormatted}\n\n\*\*They Are Selling:\*\*\n{itemsFormatted}\n\nWould you like to cancel this offer?"                | The description of the embed that should be sent in the DM of the user who made the offer.                   |
+| `create_offer_modal_buyer_embed_footer`       | "Trade ID: {tradeId}"                                                                                                                                                                                        | The footer of the embed that should be sent in the DM of the user who made the offer.                        |
+| `create_offer_modal_buyer_embed_color`        | "#038cb5"                                                                                                                                                                                                    | The color of the embed that should be sent in the DM of the user who made the offer.                         |
 
 <details><summary> Availabe placeholders for the Create Offer Modal messages </summary>
 
@@ -404,9 +404,114 @@ These placeholders can be used in all of the `create_offer_modal_*` options exce
 
 These placeholders can only be used in the `create_offer_modal_seller_embed_description` and `create_offer_modal_buyer_embed_description` options.
 
-| Placeholder           | Description                             |
-| --------------------- | --------------------------------------- |
-| `{interactionUserId}` | The ID of the user who used the command |
+| Placeholder               | Description                                                   |
+| ------------------------- | ------------------------------------------------------------- |
+| `{interactionUser}`       | The ID of the user who used the command                       |
+| `{seller}`                | The ID of the user who created the trade                      |
+| `{itemsFormatted}`        | The items that are being sold formatted as a list             |
+| `{costFormatted}`         | The cost of the items that are being sold formatted as a list |
+| `{offeredItemsFormatted}` | The items that are being offered formatted as a list          |
+
+</details>
+
+##### Offer Decline Button Messages
+
+| Message Name                       | Default                             | Description                   |
+| ---------------------------------- | ----------------------------------- | ----------------------------- |
+| `offer_decline_button_modal_title` | "Decline Trade Offer"               | The title of the modal.       |
+| `offer_decline_button_input_label` | "Why are you declining this offer?" | The label of the input field. |
+
+<details> <summary> Availabe placeholders for the Offer Decline Button messages </summary>
+
+| Placeholder            | Description                              |
+| ---------------------- | ---------------------------------------- |
+| `{interactionUserId}`  | The ID of the user who used the command  |
+| `{interactionUserTag}` | The tag of the user who used the command |
+| `{offerId}`            | The ID of the offer                      |
+| `{buyerId}`            | The ID of the user who made the offer    |
+| `{buyerTag}`           | The tag of the user who made the offer   |
+
+</details>
+
+##### Offer Decline Modal Messages
+
+| Message Name                                       | Default                                                                                                                                                                     | Description                                                                                   |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `offer_decline_modal_error_occurred`               | "Something went wrong while trying to decline the offer. Please try again later."                                                                                           | The message that should be sent when something went wrong while trying to decline the offer.  |
+| `offer_decline_modal_offer_message_does_not_exist` | "The offer message does not exist anymore."                                                                                                                                 | The message that should be sent when the offer message does not exist anymore.                |
+| `offer_decline_modal_seller_embed_title`           | "Trade Offer Declined"                                                                                                                                                      | The title of the embed that should be sent in the DM of the user who created the trade.       |
+| `offer_decline_modal_seller_embed_description`     | "You have declined {buyerTag}'s offer.\n\n\*\*Reason:\*\* {reason}\n\n\*\*You Are Selling:\*\*\n{itemsFormatted}\n\n\*\*They Are Offering:\*\*\n{offeredItemsFormatted}"    | The description of the embed that should be sent in the DM of the user who created the trade. |
+| `offer_decline_modal_buyer_embed_title`            | "Trade Offer Declined"                                                                                                                                                      | The title of the embed that should be sent in the DM of the user who made the offer.          |
+| `offer_decline_modal_buyer_embed_description`      | "{interactionUserTag} has declined your offer.\n\n\*\*Reason:\*\* {reason}\n\n\*\*You Offered:\*\*\n{offeredItemsFormatted}\n\n\*\*They Are Selling:\*\*\n{itemsFormatted}" | The description of the embed that should be sent in the DM of the user who made the offer.    |
+
+<details> <summary> Availabe placeholders for the Offer Decline Modal messages </summary>
+
+These placeholders can be used in all of the `offer_decline_modal_*` options except for the `offer_decline_modal_error_occurred` and `offer_decline_modal_offer_message_does_not_exist` option.
+
+| Placeholder            | Description                              |
+| ---------------------- | ---------------------------------------- |
+| `{interactionUserid}`  | The ID of the user who used the command  |
+| `{interactionUserTag}` | The tag of the user who used the command |
+| `{offerId}`            | The ID of the offer                      |
+| `{tradeId}`            | The ID of the trade                      |
+| `{buyerId}`            | The ID of the user who made the offer    |
+| `{buyerTag}`           | The tag of the user who made the offer   |
+
+These placeholders can only be used in the `offer_decline_modal_seller_embed_description` and `offer_decline_modal_buyer_embed_description` options.
+
+| Placeholder               | Description                                          |
+| ------------------------- | ---------------------------------------------------- |
+| `{reason}`                | The reason why the offer was declined                |
+| `{tradeItems}`            | The items that are being sold                        |
+| `{tradeItemsFormatted}`   | The items that are being sold formatted as a list    |
+| `{offeredItems}`          | The items that are being offered                     |
+| `{offeredItemsFormatted}` | The items that are being offered formatted as a list |
+
+</details>
+
+##### Offer Accept Button Messages
+
+| Message Name                                      | Default                                                                                                                                                        | Description                                                                                             |
+| ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `offer_accept_button_error_occurred`              | "Something went wrong while trying to accept the offer. Please try again later."                                                                               | The message that should be sent when something went wrong while trying to accept the offer.             |
+| `offer_accept_button_embed_title`                 | "Trade Offer Accepted"                                                                                                                                         | The title of the embed that should be sent in the trade channel when the offer is accepted.             |
+| `offer_accept_button_embed_description`           | "\*\*Trade Owner:\*\* {sellerTag}\n\*\*Selling:\*\* \n{tradeItemsFormatted}\n\n\*\*Trade Partner:\*\* {buyerTag}\n\*\*Offering:\*\*\n {offeredItemsFormatted}" | The description of the embed that should be sent in the trade channel when the offer is accepted.       |
+| `offer_accept_button_embed_color`                 | "#038cb5"                                                                                                                                                      | The color of the embed that should be sent in the trade channel when the offer is accepted.             |
+| `offer_accept_button_embed_footer`                | "Trade ID: {tradeId}"                                                                                                                                          | The footer of the embed that should be sent in the trade channel when the offer is accepted.            |
+| `offer_accept_button_complete_trade_button_label` | "Complete Trade"                                                                                                                                               | The label of the complete button                                                                        |
+| `offer_accept_button_cancel_trade_button_label`   | "Cancel Trade"                                                                                                                                                 | The label of the cancel button                                                                          |
+| `offer_accept_button_buyer_accepted_offer`        | "{interactionUser} accepted your offer. Please check {channel} for more information."                                                                          | The message that should be sent in the DM of the user who made the offer when the offer is accepted.    |
+| `offer_accept_button_seller_accepted_offer`       | "You accepted {buyerTag}'s offer. Please check {channel} for more information."                                                                                | The message that should be sent in the DM of the user who created the trade when the offer is accepted. |
+
+<details> <summary> Availabe placeholders for the Offer Accept Button messages </summary>
+
+These placeholders can be used in all of the `offer_accept_button_*` options except for the `offer_accept_button_error_occurred`, `offer_accept_button_complete_trade_button_label` and `offer_accept_button_cancel_trade_button_label` option.
+
+| Placeholder            | Description                               |
+| ---------------------- | ----------------------------------------- |
+| `{interactionUserId}`  | The ID of the user who used the command   |
+| `{interactionUserTag}` | The tag of the user who used the command  |
+| `{offerId}`            | The ID of the offer                       |
+| `{tradeId}`            | The ID of the trade                       |
+| `{buyerId}`            | The ID of the user who made the offer     |
+| `{buyerTag}`           | The tag of the user who made the offer    |
+| `{sellerId}`           | The ID of the user who created the trade  |
+| `{sellerTag}`          | The tag of the user who created the trade |
+
+These placeholders can only be used in the `offer_accept_button_embed_description`, `offer_accept_button_buyer_accepted_offer` and `offer_accept_button_seller_accepted_offer` options.
+
+| Placeholder | Description |
+| ----------- | ----------- |
+| `{channel}` | The channel |
+
+These placeholders can only be used in the `offer_accept_button_embed_description` option.
+
+| Placeholder               | Description                                          |
+| ------------------------- | ---------------------------------------------------- |
+| `{tradeItems}`            | The items that are being sold                        |
+| `{tradeItemsFormatted}`   | The items that are being sold formatted as a list    |
+| `{offeredItems}`          | The items that are being offered                     |
+| `{offeredItemsFormatted}` | The items that are being offered formatted as a list |
 
 </details>
 
