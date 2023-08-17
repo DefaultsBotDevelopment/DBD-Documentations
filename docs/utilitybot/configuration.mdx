@@ -24,9 +24,9 @@ Below you can find all the general options for the bot.
 
 | Option           | Default               | Description                                                                                                                   |
 | ---------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `licenseKey  `   | `-`                   | The account ID of your DBD account, more info about this can be found [here](/docs/information#bot-activation)                |
+| `licenseKey  `   | `-`                   | The account ID of your DBD account, more info about this can be found [here](/docs/activations)                               |
 | `token`          | `-`                   | The token of the bot, you can get this token from the [Discord Developer Portal](https://discord.com/developers/applications) |
-| `guildId`        | `-`                   | The ID of the guild where the bot should be activated, more info about this can be found [here](/docs/information)            |
+| `guildId`        | `-`                   | The ID of the guild where the bot should be activated.                                                                        |
 | `database`       | `Database Options`    | The database options for the bot. Options can be found on the _Database_ tab.                                                 |
 | `moderatorRoles` | `[]`                  | The role IDs that can use the moderation commands.                                                                            |
 | `nextWipe`       | `NextWipe Options`    | The next wipe options for the bot. Options can be found on the _Next Wipe_ tab.                                               |
@@ -57,14 +57,14 @@ Below you can find all the options for the database.
 
 Below you can find all the options for the next wipe.
 
-| Option                | Default                                           | Description                                                                                                                          |
-| --------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `wipeInterval`        | `-`                                               | The interval of the wipe in cron format. See [**What is cron?**](/docs/dbdutilitybot/information#what-is-cron) for more information. |
-| `invalid_cron_string` | "Invalid cron string."                            | The message that should be sent when the cron string is invalid.                                                                     |
-| `embed_title`         | "Next Wipe"                                       | The title of the embed.                                                                                                              |
-| `embed_description`   | "The next wipe will be on {wipeDateLongDateTime}" | The description of the embed.                                                                                                        |
-| `embed_color`         | "#038cb5"                                         | The color of the embed in hex format.                                                                                                |
-| `embed_footer`        | "requested by {interactionUserName}"              | The footer of the embed.                                                                                                             |
+| Option                | Default                                           | Description                                                                                                                       |
+| --------------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `wipeInterval`        | `-`                                               | The interval of the wipe in cron format. See [**What is cron?**](/docs/utilitybot/information#what-is-cron) for more information. |
+| `invalid_cron_string` | "Invalid cron string."                            | The message that should be sent when the cron string is invalid.                                                                  |
+| `embed_title`         | "Next Wipe"                                       | The title of the embed.                                                                                                           |
+| `embed_description`   | "The next wipe will be on {wipeDateLongDateTime}" | The description of the embed.                                                                                                     |
+| `embed_color`         | "#038cb5"                                         | The color of the embed in hex format.                                                                                             |
+| `embed_footer`        | "requested by {interactionUserName}"              | The footer of the embed.                                                                                                          |
 
 <details>
 <summary>Availabe placeholders for the Next Wipe messages </summary>
