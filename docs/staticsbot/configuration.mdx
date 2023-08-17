@@ -1,0 +1,163 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configuration
+
+This bot is highly configurable, there are a ton of settings you can change to make the bot work exactly how you want it to. Below are all the settings you can change, and what they do.
+
+## Multiple Database Support
+
+The bot supports multiple databases, this means you can select multiple stats from multiple database to display into one. This is useful if you want to display stats from multiple plugins into one leaderboard or stats page.
+
+To make this work the bot uses bpPaths in the configuration file, this is basically a path to the database column so the bot knows where to get the data from. Below is an example of a bpPath:
+
+Config option: `lethalquests>lethalquests_stats>Name`
+
+This bpPath will get the Name column from the lethalquests_stats table in the lethalquests database.
+
+:::warning
+Please keep in mind that each step is separated by a `>` and that the first step is the database name, the second step is the table name and the third step is the column name.
+:::
+
+## Configuration File
+
+The configurable is structured into sections so its easier to read, below is each section explained in detail.
+
+### General
+
+The general section contains all the general settings for the bot, below is a list of all the settings and what they do.
+
+| Setting      | Description                                                                                                                   |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| `token`      | The bot token, this is used to login to discord. you can get this token in the discord developer portal                       |
+| `licenseKey` | The license key, this is used to verify your license. you can get this key from the [license page](/docs/activations)         |
+| `guildId`    | The discord server id, this is used to get the guild the bot is in. you can get this id by enabling developer mode in discord |
+
+### databases
+
+The databases section contains all the databases the bot will use. In this section is a list of all the databases and their settings.
+
+| Setting    | Description                                       |
+| ---------- | ------------------------------------------------- |
+| `host`     | The database host. by default this is 'localhost' |
+| `user`     | The database user. by default this is 'root'      |
+| `port`     | The database port. by default this is '3306'      |
+| `password` | The database password.                            |
+| `database` | The database name.                                |
+| `tables`   | The database tables that the bot uses             |
+
+Here are the options for the tables setting:
+
+| Setting            | Description                                                                                                     |
+| ------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `name`             | The table name.                                                                                                 |
+| `identifierColumn` | The column that the bot need to determine the player, most of the time this is the steam id column in the table |
+
+### Linking
+
+The bot supports linking discord accounts to game accounts, this is useful if you want to display your stats based on your discord account. Below is a list of all the settings and what they do.
+
+| Setting            | Description                                          |
+| ------------------ | ---------------------------------------------------- |
+| `host`             | The database host. by default this is 'localhost'    |
+| `user`             | The database user. by default this is 'root'         |
+| `port`             | The database port. by default this is '3306'         |
+| `password`         | The database password.                               |
+| `database`         | The database name.                                   |
+| `linkingTable`     | The name of the table that contains the linking data |
+| `discordIdColumn`  | The name of the column that contains the discord id  |
+| `identifierColumn` | The name of the column that contains the identifier  |
+
+### Commands
+
+The bot supports custom commands, this is useful if you want to add custom commands to the bot. Below is a list of all the settings and what they do.
+
+#### Stats Command
+
+| Setting            | Description                                                              |
+| ------------------ | ------------------------------------------------------------------------ |
+| `commandName`      | The name of the command                                                  |
+| `shortenStats`     | When enabled this will shorten the stats. example: 1555000 -> 1.56m      |
+| `localizeStats`    | When enabled this will localize the stats. example: 1555000 -> 1,555,000 |
+| `ephemeral`        | When enabled this will make the response only visible to the user        |
+| `playerNameDbPath` | Path to the player name in the database (database>table>column)          |
+| `tribeNameDbPath`  | Path to the tribe name in the database (database>table>column)           |
+
+**Pages settings:**
+
+The stats command has pages, this allows you to display multiple stats on grouped pages. Below is a list of all the settings and what they do.
+
+| Setting       | Description                                         |
+| ------------- | --------------------------------------------------- |
+| `title`       | The title of the page                               |
+| `description` | The description of the page                         |
+| `footer`      | The footer of the page                              |
+| `color`       | The color of the embed                              |
+| `thumbnail`   | The thumbnail of the embed                          |
+| `timestamp`   | When enabled this will add a timestamp to the embed |
+
+**Stats settings:**
+
+Each stat is a field on the page that displays the stat. Below is a list of all the settings and what they do.
+
+| Setting  | Description                                              |
+| -------- | -------------------------------------------------------- |
+| `dbPath` | Path to the stat in the database (database>table>column) |
+| `name`   | The name of the stat, this will be the field name        |
+| `value`  | The value of the stat, this will be the field value      |
+| `inline` | When enabled this will make the field inline             |
+
+#### Leaderboard Command
+
+| Setting       | Description                                                       |
+| ------------- | ----------------------------------------------------------------- |
+| `commandName` | The name of the command                                           |
+| `ephemeral`   | When enabled this will make the response only visible to the user |
+
+### Leaderboards
+
+The bot supports leaderboards, this is useful if you want to display the top players based on a stat. Below is a list of all the settings and what they do.
+
+| Setting      | Description                                                        |
+| ------------ | ------------------------------------------------------------------ |
+| `name`       | The name of the leaderboard                                        |
+| `identifier` | The identifier of the leaderboard. (this must be unique)           |
+| `enabled`    | When enabled this will enable the leaderboard                      |
+| `tribeStats` | When enabled this will display tribe stats                         |
+| `channelId`  | The channel id where the leaderboard will be displayed and updated |
+
+**Formatting settings:**
+
+| Setting            | Description                                                              |
+| ------------------ | ------------------------------------------------------------------------ |
+| `userCount`        | The amount of users to display on the leaderboard.                       |
+| `fieldInline`      | When enabled this will make the fields inline.                           |
+| `shortenStats`     | When enabled this will shorten the stats. example: 1555000 -> 1.56m      |
+| `localizeStats`    | When enabled this will localize the stats. example: 1555000 -> 1,555,000 |
+| `displayType`      | The display type can be 'fields' or 'table'                              |
+| `dataFormat`       | When display type is 'fields' this will format the data.                 |
+| `playerNameDbPath` | Path to the player name in the database (database>table>column)          |
+| `tribeNameDbPath`  | Path to the tribe name in the database (database>table>column)           |
+
+**Message settings:**
+
+| Setting       | Description                                         |
+| ------------- | --------------------------------------------------- |
+| `title`       | The title of the message                            |
+| `description` | The description of the message                      |
+| `footer`      | The footer of the message                           |
+| `color`       | The color of the embed                              |
+| `thumbnail`   | The thumbnail of the embed                          |
+| `timestamp`   | When enabled this will add a timestamp to the embed |
+
+**Stats settings:**
+
+| Setting  | Description                                              |
+| -------- | -------------------------------------------------------- |
+| `dbPath` | Path to the stat in the database (database>table>column) |
+| `name`   | The name of the stat, this will be the field name        |
+| `value`  | The value of the stat, this will be the field value      |
