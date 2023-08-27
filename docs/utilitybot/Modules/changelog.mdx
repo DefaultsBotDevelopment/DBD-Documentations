@@ -1,0 +1,58 @@
+---
+sidebar_position: 1
+description: The changelog module allows staff members to create changelogs quickly and easily.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Changelogs
+
+## Information
+
+The changelog module allows staff members to create changelogs quickly and easily. When you use the changelog command you will get a popup where you can enter the changelog details, once you have entered the details the bot will send the changelog to the changelogs channel that visualizes the changelog in a nice embed.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/changelog`** - Shows the changelog popup.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `changelog` section inside the `modules` object.
+
+### Options
+
+````js title="config.js → modules → changelog"
+changelog: {
+	enabled: true, // Whether or not the changelog module will be enabled.
+	channel_id: '', // The ID of the channel where the changelog will be sent. This channel should only be accessible by the bot and the staff team.
+	message_content: '', // The message content that will be sent above the changelog embed.
+	embed_enabled: true, // Whether or not the changelog embed will be enabled.
+	embed_title: '{title}', // The title of the changelog embed.
+	embed_description: '**Changes:**\n```{changelog}```\n**Extra Info:**```{info}```', // The description of the changelog embed.
+	embed_footer_text: 'Changelog by {author}', // The footer of the changelog embed.
+	embed_color: '#00ff00', // The color of the changelog embed.
+	embed_timestamp: true, // Whether or not the changelog embed will have a timestamp.
+}
+````
+
+### Placeholders
+
+This is a list of all the placeholders that you can use in the configuration shown above.
+
+| Placeholder   | Description                                          |
+| ------------- | :--------------------------------------------------- |
+| `{title}`     | The title                                            |
+| `{changelog}` | The changelog list                                   |
+| `{info}`      | The extra info that may be provided in the changelog |
+| `{author}`    | The username of the person who created the changelog |
+
+## Translations
+
+The translations are located in the `config.js` file like the configuration options. The translations are located in the `changelog` section inside the `translations` object.
+
+## Showcase
+
+Coming soon...

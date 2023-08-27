@@ -1,0 +1,82 @@
+---
+sidebar_position: 1
+description: Welcomers new members to your server, or says goodbye to members who have left your server.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Welcomer
+
+## Information
+
+The welcomer module is a module that allows you to welcome new members to your server, or say goodbye to members who have left your server.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `welcomer` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → welcomer"
+welcomer: {
+	joiners: {
+		enabled: true, // Whether or not the bot will send a message when a user joins
+		channel_id: '', // The ID of the channel where the joiner messages will be sent
+		message_content: 'Welcome {user}', // The message content that the bot will send when a user joins
+		embed_enabled: true, // Whether or not the bot will send an embed when a user joins
+		embed_title: 'Welcome {username}', // The title of the welcomer embed
+		embed_description: 'We hope you will have a great time here at **{server}**', // The description of the welcomer embed
+		embed_footer_text: '{username} is the {membercount}th member', // The footer of the welcomer embed
+		embed_color: '#00ff00', // The color of the welcomer embed
+		embed_timestamp: true, // Whether or not the welcomer embed will have a timestamp
+		embed_thumbnail: '', // The thumbnail of the welcomer embed
+		embed_image: '', // The image of the welcomer embed
+	},
+	joiners_dm: {
+		enabled: true, // Whether or not the bot will send a message when a user joins
+		channel_id: '', // The ID of the channel where the joiner messages will be sent
+		message_content: 'Welcome to the server, {user}!', // The message content that the bot will send when a user joins
+		embed_enabled: true, // Whether or not the bot will send an embed when a user joins
+		embed_title: 'Welcome', // The title of the welcomer embed
+		embed_description: 'Welcome to the server, {user}!', // The description of the welcomer embed
+		embed_footer_text: 'Welcome to the server, {username}!', // The footer of the welcomer embed
+		embed_color: '#00ff00', // The color of the welcomer embed
+		embed_timestamp: true, // Whether or not the welcomer embed will have a timestamp
+		embed_thumbnail: '', // The thumbnail of the welcomer embed
+		embed_image: '', // The image of the welcomer embed
+	},
+	leavers: {
+		enabled: true, // Whether or not the bot will send a message when a user leaves
+		channel_id: '', // The ID of the channel where the leaver messages will be sent
+		message_content: 'Goodbye, {username}!', // The message content that the bot will send when a user leaves
+		embed_enabled: true, // Whether or not the bot will send an embed when a user leaves
+		embed_title: 'Goodbye', // The title of the welcomer embed
+		embed_description: 'Goodbye, {username}!', // The description of the welcomer embed
+		embed_footer_text: 'Goodbye, {username}!', // The footer of the welcomer embed
+		embed_color: '#00ff00', // The color of the welcomer embed
+		embed_timestamp: true, // Whether or not the welcomer embed will have a timestamp
+		embed_thumbnail: '', // The thumbnail of the welcomer embed
+		embed_image: '', // The image of the welcomer embed
+	},
+},
+```
+
+### Placeholders
+
+This is a list of all the placeholders that you can use in the configuration shown above.
+
+| Placeholder     | Description                               |
+| --------------- | :---------------------------------------- |
+| `{user}`        | The user that joined/left                 |
+| `{username}`    | The username of the user that joined/left |
+| `{server}`      | The name of the server                    |
+| `{membercount}` | The amount of members in the server       |
+
+## Translations
+
+The translations are located in the `config.js` file like the configuration options. The translations are located in the `welcomer` section inside the `translations` object.
+
+## Showcase
+
+Coming soon...

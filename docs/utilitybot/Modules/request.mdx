@@ -1,0 +1,90 @@
+---
+sidebar_position: 1
+description: The requests module allows users to request items and dinos.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Requests
+
+## Information
+
+The requests module allows users to request items and dinos. When a user requests an item or dino the module will send a message to the requests channel with the request.
+
+When a player wants to trade with the user who requested the item or dino the player can click the trade button under the request message. Once clicked the module will create a private negotiation channel where both players can negotiate the trade.
+
+Once the request is completed the user who requested the item or dino can click the complete button in the negotiation channel. Once clicked the module will close the negotiation channel and remove the request message from the requests channel. This way the requests channel will only contain active requests.
+
+If the user who requested the item or dino wants to cancel the request they can click the cancel button in the negotiation channel. Once clicked the module will close the negotiation channel but will keep the request available in the requests channel.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/request <item> <amount> <map> (info) (image)`** - Creates a request in the requests channel.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `request` section inside the `modules` object.
+
+### Options
+
+````js title="config.js → modules → request"
+request: {
+	enabled: true, // Whether or not the request module will be enabled.
+	channel_id: '', // The ID of the channel where the request messages will be sent.
+	category_id: '', // The ID of the category where the negotiation channels will be created.
+	embed_title: 'New Request', // The title of the request embed.
+	embed_description: '{user} has created a new request', // The description of the request embed.
+	embed_footer_text: 'Request by {user}', // The footer of the request embed.
+	embed_color: '#77B255', // The color of the request embed.
+	embed_fields: [
+    // To delete all fields just leave the array empty. []
+		{
+			name: 'Item', // The name of the field.
+			value: '```{item}```', // The value of the field.
+			inline: false, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Amount', // The name of the field.
+			value: '```{amount}```', // The value of the field.
+			inline: true, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Map', // The name of the field.
+			value: '```{map}```', // The value of the field.
+			inline: true, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Info', // The name of the field.
+			value: '```{info}```', // The value of the field.
+			inline: false, // Whether or not the field will be inline.
+		},
+	],
+}
+````
+
+:::note Additional information
+**Embed fields** → The embed fields are a list of fields. Each field has its own configuration options. To remove all the fields you can set the `embed_fields` option to an empty array (`[]`). To add more fields you can copy the field object and change the information and place it in the array.
+:::
+
+### Placeholders
+
+This is a list of all the placeholders that you can use in the configuration shown above.
+
+| Placeholder | Description                              |
+| :---------- | :--------------------------------------- |
+| `{user}`    | The user who created the sale.           |
+| `{item}`    | The item that is being sold.             |
+| `{amount}`  | The amount of items that are being sold. |
+| `{map}`     | The map where the item is located.       |
+| `{info}`    | The info of the item.                    |
+
+## Translations
+
+The translations are located in the `config.js` file like the configuration options. The translations are located in the `request` section inside the `translations` object.
+
+## Showcase
+
+Coming soon...

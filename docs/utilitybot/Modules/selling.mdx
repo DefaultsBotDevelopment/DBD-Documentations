@@ -1,0 +1,97 @@
+---
+sidebar_position: 1
+description: Provides a way for players to sell their items and dinos trough your discord server.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Selling
+
+## Information
+
+The selling module offers a way for players to sell their items and dinos trough your discord server. The true power of this module is that it allows you to create a marketplace for your players to trade their items and dinos with each other.
+
+When a player uses the `/sell` command it creates a sale embed in the sales channel where other players can react to by clicking on the button below. When someone clicks on the button the module will create a private negotiation channel where the 2 players can negotiate the sale.
+
+Once both players have completed the trade the seller can click on the `Complete Sale` button in the private channel to complete the sale. The module will then remove the sale embed from the sales channel and the private negotiation channel. This way you can keep your sales channel clean and only show active sales.
+
+If the buyer or seller does not complete the sale or cancel the sale the negotiation channel will be deleted and the sale will stay available in the sales channel.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/sell <item> <amount> <price> <map> (info) (image)`** - Creates a sale message in the sales channel.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `selling` section inside the `modules` object.
+
+### Options
+
+````js title="config.js → modules → selling"
+selling: {
+	enabled: true, // Whether or not the selling module will be enabled.
+	channel_id: '', // The ID of the channel where the selling messages will be sent.
+	category_id: '', // The ID of the category where the negotiation channels will be created.
+	embed_title: '{user} is selling!', // The title of the selling embed.
+	embed_description: 'New item has been listed', // The description of the selling embed.
+	embed_footer_text: 'Selling by {user}', // The footer of the selling embed.
+	embed_color: '#77B255', // The color of the selling embed.
+	embed_timestamp: true, // Whether or not the selling embed will have a timestamp.
+	embed_fields: [
+    // To delete all fields just leave the array empty. []
+		{
+			name: 'Item', // The name of the field.
+			value: '```{item}```', // The value of the field.
+			inline: false, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Amount', // The name of the field.
+			value: '```{amount}```', // The value of the field.
+			inline: true, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Price', // The name of the field.
+			value: '```{price}```', // The value of the field.
+			inline: true, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Map', // The name of the field.
+			value: '```{map}```', // The value of the field.
+			inline: true, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Info', // The name of the field.
+			value: '```{info}```', // The value of the field.
+			inline: false, // Whether or not the field will be inline.
+		},
+	],
+}
+````
+
+:::note Additional information
+**Embed fields** → The embed fields are a list of fields. Each field has its own configuration options. To remove all the fields you can set the `embed_fields` option to an empty array (`[]`). To add more fields you can copy the field object and change the information and place it in the array.
+:::
+
+### Placeholders
+
+This is a list of all the placeholders that you can use in the configuration shown above.
+
+| Placeholder | Description                              |
+| :---------- | :--------------------------------------- |
+| `{user}`    | The user who created the sale.           |
+| `{item}`    | The item that is being sold.             |
+| `{amount}`  | The amount of items that are being sold. |
+| `{price}`   | The price of the item.                   |
+| `{map}`     | The map where the item is located.       |
+| `{info}`    | The info of the item.                    |
+
+## Translations
+
+The translations are located in the `config.js` file like the configuration options. The translations are located in the `selling` section inside the `translations` object.
+
+## Showcase
+
+Coming soon...

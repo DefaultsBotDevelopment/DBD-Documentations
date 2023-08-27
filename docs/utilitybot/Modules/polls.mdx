@@ -1,0 +1,41 @@
+---
+sidebar_position: 1
+description: Allows staff members to create polls for users to vote on.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Polls
+
+## Information
+
+This module allows staff members to create polls for users to vote on. The polls can be created by using the poll command, once a poll is created users can vote on it by using the reactions below. This module allows you to get feedback from your users on certain topics, or just to have fun with them.
+
+A common way to use this module is to create a poll for next wipes maps, so players can vote on which map they prefer for the next wipe.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/poll <topic> <options> <channel> (description)`** - Creates a poll and sends it to the specified channel.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `polls` section inside the `modules` object.
+
+```js title="config.js → modules → polls"
+polls: {
+	enabled: true, // Whether or not the poll module will be enabled.
+	embed_color: '#00ff00', // The color of the poll embed.
+	reaction_emojis: ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'], // These emojis are used for the poll reactions.
+}
+```
+
+## Translations
+
+The translations are located in the `config.js` file like the configuration options. The translations are located in the `polls` section inside the `translations` object.
+
+## Showcase
+
+Coming soon...
