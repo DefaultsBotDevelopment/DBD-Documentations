@@ -34,10 +34,16 @@ wipe_countdown: {
 	embed_title: 'Wipe Countdown', // The title of the wipe countdown embed.
 	embed_description: '{date} {time}\n\nThe next wipe is in **{days}** days, **{hours}** hours, **{minutes}** minutes and **{seconds}** seconds.', // The description of the wipe countdown embed.
 	embed_footer_text: 'Last updated At', // The footer of the wipe countdown embed.
+	embed_footer_icon: '', // The footer icon of the embed.
 	embed_color: '#00ff00', // The color of the wipe countdown embed.
+	embed_author_name: '', // The author name of the embed.
+	embed_author_url: '', // The author url of the embed.
+	embed_author_icon: '', // The author icon of the embed.
 	embed_timestamp: true, // Whether or not the wipe countdown embed will have a timestamp.
 	embed_thumbnail: '', // The thumbnail of the wipe countdown embed.
 	embed_image: '', // The image of the wipe countdown embed.
+	embed_url: '', // The url of the responder embed
+	embed_fields: [], // The fields of the responder embed
 }
 ```
 
@@ -56,8 +62,16 @@ This is a list of all the placeholders that you can use in the configuration sho
 
 ## Translations
 
-The translations are located in the `config.js` file like the configuration options. The translations are located in the `wipe_countdown` section inside the `translations` object.
+The translations are located in the `translation.js` file. The translations are prefixed with `module_changelog_`.
+
+```js title="translation.js"
+module_wipe_countdown_command_name: 'wipe',
+module_wipe_countdown_command_description: 'Get the next wipe time and date',
+module_wipe_countdown_invalid_interval: '❌ Admin has not set a valid wipe interval',
+```
 
 ## Showcase
 
-Coming soon...
+Example message
+
+![Example Message](https://imgur.com/4bkCVhy.png)

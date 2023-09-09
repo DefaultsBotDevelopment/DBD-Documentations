@@ -29,14 +29,19 @@ The configuration options are located in the `config.js` file under the `suggest
 ````js title="config.js → modules → suggestions"
 suggestions: {
 	enabled: true, // Whether or not the suggestions module will be enabled.
-	channel_id: '', // The ID of the channel where the suggestions will be sent. This channel should only be accessible by the bot and the staff team.
+	channel_id: '1144246574667534498', // The ID of the channel where the suggestions will be sent. This channel should only be accessible by the bot and the staff team.
 	embed_title: '', // The title of the suggestion embed.
 	embed_description: '```{topic}```', // The description of the suggestion embed.
 	embed_footer_text: 'Suggestion by {username}', // The footer of the suggestion embed.
+	embed_footer_icon: '', // The footer icon of the embed.
 	embed_color: '#00ff00', // The color of the suggestion embed.
 	embed_timestamp: true, // Whether or not the suggestion embed will have a timestamp.
 	embed_author_name: 'Suggestion by {username}', // The author name of the suggestion embed.
-	embed_author_icon: true, // Whether or not the suggestion embed will have an author icon.
+	embed_author_url: '', // The author url of the embed.
+	embed_author_icon: '{userpfp}', // Whether or not the suggestion embed will have an author icon.
+	embed_image: '', // The image of the wipe countdown embed.
+	embed_url: '', // The url of the responder embed
+	embed_fields: [], // The fields of the responder embed
 	accept_emoji: '✅', // The emoji that will be used to accept a suggestion.
 	deny_emoji: '❌', // The emoji that will be used to deny a suggestion.
 }
@@ -51,11 +56,22 @@ This is a list of all the placeholders that you can use in the configuration sho
 | `{topic}`    | The suggestion message                                 |
 | `{user}`     | The user that suggested the suggestion                 |
 | `{username}` | The username of the user that suggested the suggestion |
+| `{userpfp}`  | The profile picture of the user                        |
 
 ## Translations
 
-The translations are located in the `config.js` file like the configuration options. The translations are located in the `suggestions` section inside the `translations` object.
+The translations are located in the `translation.js` file. The translations are prefixed with `module_suggestions_`.
+
+```js title="translation.js"
+module_suggestions_command_name: 'suggest',
+module_suggestions_command_description: 'Suggest something for the server',
+module_suggestions_command_option_suggestion_name: 'suggestion',
+module_suggestions_command_option_suggestion_description: 'The suggestion',
+module_suggestions_success: '✅ Successfully sent suggestion in {channel}',
+```
 
 ## Showcase
 
-Coming soon...
+Suggestion message examples
+
+![Suggestion message example](https://imgur.com/qQvtOmh.png)

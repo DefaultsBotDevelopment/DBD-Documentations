@@ -21,13 +21,22 @@ responder: [
 	{
 		enabled: true, // Whether or not the responder will be enabled
 		keywords: ['info'], // The keywords that the bot will respond to
-		exact_match: true, // Whether or not the bot will only respond to exact matches
+		exact_match: false, // Whether or not the bot will only respond to exact matches
 		message_content: 'I am a bot', // The message content that the bot will respond with above the embed
 		embed_enabled: true, // Whether or not the bot will send an embed
 		embed_title: 'Bot', // The title of the responder embed
 		embed_description: 'I am a bot', // The description of the responder embed
 		embed_footer_text: 'I am a bot', // The footer of the responder embed
+		embed_footer_icon: '', // The footer icon of the responder embed
+		embed_author_name: '', // The author name of the responder embed
+		embed_author_icon: '', // The author icon of the responder embed
+		embed_author_url: '', // The author url of the responder embed
+		embed_timestamp: true, // Whether or not the responder embed will have a timestamp
+		embed_thumbnail: '', // The thumbnail of the responder embed
+		embed_image: '', // The image of the responder embed
 		embed_color: '#00ff00', // The color of the responder embed
+		embed_url: '', // The url of the responder embed
+		embed_fields: [], // The fields of the responder embed
 	},
 ];
 ```
@@ -36,10 +45,8 @@ responder: [
 **Multiple responders** → If you want to add more responders you can copy the object and change the information and place it in the array.
 :::
 
-## Translations
-
-The translations are located in the `config.js` file like the configuration options. The translations are located in the `responder` section inside the `translations` object.
-
 ## Showcase
 
-Coming soon...
+Responder message example
+
+![Responder example](https://imgur.com/zLGEOeq.png)

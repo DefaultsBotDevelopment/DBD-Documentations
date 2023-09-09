@@ -1,0 +1,148 @@
+---
+sidebar_position: 1
+description: The requests module allows users to request items and dinos.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Requests
+
+## Information
+
+The requests module allows users to request items and dinos. When a user requests an item or dino the module will send a message to the requests channel with the request.
+
+When a player wants to trade with the user who requested the item or dino the player can click the trade button under the request message. Once clicked the module will create a private negotiation channel where both players can negotiate the trade.
+
+Once the request is completed the user who requested the item or dino can click the complete button in the negotiation channel. Once clicked the module will close the negotiation channel and remove the request message from the requests channel. This way the requests channel will only contain active requests.
+
+If the user who requested the item or dino wants to cancel the request they can click the cancel button in the negotiation channel. Once clicked the module will close the negotiation channel but will keep the request available in the requests channel.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/request <item> <amount> <map> (info) (image)`** - Creates a request in the requests channel.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `request` section inside the `modules` object.
+
+### Options
+
+````js title="config.js → modules → request"
+request: {
+	enabled: true, // Whether or not the request module will be enabled.
+	channel_id: '1145327784802136075', // The ID of the channel where the request messages will be sent.
+	category_id: '1139515434522116179', // The ID of the category where the negotiation channels will be created.
+	negotiation_duration_hours: 1, // The amount of hours the negotiation channels will last.
+	embed_title: 'New Request', // The title of the request embed.
+	embed_description: '{user} has created a new request', // The description of the request embed.
+	embed_footer_text: 'Request by {username}', // The footer of the request embed.
+	embed_footer_icon: '', // The footer icon of the report embed.
+	embed_author_name: '', // The author name of the report embed.
+	embed_author_url: '', // The author url of the report embed.
+	embed_author_icon: '', // The author icon of the report embed.
+	embed_color: '#77B255', // The color of the request embed.
+	embed_url: '', // The url of the responder embed
+	embed_fields: [
+    // To delete all fields just leave the array empty. []
+		{
+			name: 'Item', // The name of the field.
+			value: '```{item}```', // The value of the field.
+			inline: false, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Amount', // The name of the field.
+			value: '```{amount}```', // The value of the field.
+			inline: true, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Map', // The name of the field.
+			value: '```{map}```', // The value of the field.
+			inline: true, // Whether or not the field will be inline.
+		},
+		{
+			name: 'Info', // The name of the field.
+			value: '```{info}```', // The value of the field.
+			inline: false, // Whether or not the field will be inline.
+		},
+	],
+}
+````
+
+:::note Additional information
+**Embed fields** → The embed fields are a list of fields. Each field has its own configuration options. To remove all the fields you can set the `embed_fields` option to an empty array (`[]`). To add more fields you can copy the field object and change the information and place it in the array.
+:::
+
+### Placeholders
+
+This is a list of all the placeholders that you can use in the configuration shown above.
+
+| Placeholder  | Description                                           |
+| :----------- | :---------------------------------------------------- |
+| `{user}`     | The user who created the sale.                        |
+| `{username}` | The username of the user who created the sale.        |
+| `{userpfp}`  | The profile picture of the user who created the sale. |
+| `{item}`     | The item that is being sold.                          |
+| `{amount}`   | The amount of items that are being sold.              |
+| `{map}`      | The map where the item is located.                    |
+| `{info}`     | The info of the item.                                 |
+
+## Translations
+
+The translations are located in the `translation.js` file. The translations are prefixed with `module_request_`.
+
+```js title="translation.js"
+module_request_command_name: 'request',
+module_request_command_description: 'Request an item or dino',
+module_request_command_option_item_name: 'item',
+module_request_command_option_item_description: 'The item or dino that is being requested',
+module_request_command_option_amount_name: 'amount',
+module_request_command_option_amount_description: 'The amount of the item or dino that is being requested',
+module_request_command_option_map_name: 'map',
+module_request_command_option_map_description: 'The map where the item or dino that is being requested is located',
+module_request_command_option_info_name: 'info',
+module_request_command_option_info_description: 'Additional info about the item or dino that is being requested',
+module_request_command_option_image_name: 'image',
+module_request_command_option_image_description: 'The image of the item or dino that is being requested',
+module_request_invalid_channel: '❌ Could not find the request channel!',
+module_request_no_info: 'No info provided',
+module_request_button_buy: 'Trade Item/Dino',
+module_request_success: '✅ Successfully created request in {channel}',
+module_request_deleted: '❌ This request no longer exists',
+module_request_only_owner_can_decline: '❌ Only the owner of the request can decline the request',
+module_request_only_owner_can_accept: '❌ Only the owner of the request can accept the request',
+module_request_cant_buy_own: "❌ You cannot trade your own items or dino's",
+module_request_already_negotiating: '❌ This request is already in negotiation.',
+module_request_negotiation_channel_topic: 'Negotiation for request case {id}',
+module_request_negotiation_embed_title: 'Request Negotiation',
+module_request_negotiation_embed_description:
+'This channel is for negotiating the request of **{item}**.\n\n**Request Information:**\nItem: `{item}`\nAmount: `{amount}`\nMap: `{map}`\nInfo: `{info}`\nImage: {image}\n\nPlease use this channel to discuss the details of the request. Once you have come to an agreement, please use the buttons below to accept or decline the request.\n\nIf you have any questions, please contact a member of staff.',
+module_request_negotiation_embed_footer: 'Request ID: {id}',
+module_request_negotiation_button_complete: 'Complete Request',
+module_request_negotiation_button_decline: 'Decline Request',
+module_request_claimed: '✅ Successfully claimed the request, you can now negotiate in {channel}',
+module_request_completed_embed_title: 'Request completed',
+module_request_completed_embed_description: 'The request has been completed by {user}.\n\nThis channel will be deleted in {time}.',
+module_request_completed_embed_footer: 'Request ID: {id} • Completed',
+module_request_completed_dm_embed_title: 'Request completed',
+module_request_completed_dm_embed_description: 'Your request has been completed by {user}. You can read the request negotiation below.',
+module_request_completed_dm_embed_footer: 'Request ID: {id} • Completed',
+module_request_declined_embed_title: 'Request declined',
+module_request_declined_embed_description: 'The request has been declined by {user}.\n\nThis channel will be deleted in {time}.',
+module_request_declined_embed_footer: 'Request ID: {id} • Declined',
+module_request_declined_dm_embed_title: 'Request declined',
+module_request_negotiation_deleting_embed_title: 'Request Negotiation deleting!',
+module_request_negotiation_deleting_embed_description: 'Your request negotiation channel will be deleted in {time}.',
+module_request_negotiation_deleting_embed_footer: 'This channel will be deleted in 10 seconds',
+module_request_negotiation_closing_embed_title: 'Request Negotiation ending soon!',
+module_request_negotiation_closing_embed_description: 'Your request negotiation channel is about to be deleted in {time}.',
+module_request_negotiation_closing_embed_footer: 'This channel will be deleted soon',
+```
+
+## Showcase
+
+Reqeust message example
+
+![Request message](https://imgur.com/Uf4vf3S.png)

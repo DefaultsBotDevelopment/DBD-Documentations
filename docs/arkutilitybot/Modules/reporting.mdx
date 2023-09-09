@@ -1,0 +1,130 @@
+---
+sidebar_position: 1
+description: A module that allows staff to create reports on players.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Reporting
+
+## Information
+
+The reporting module allows staff to create reports on players. The module keeps track of all reports and allows staff to search and filter trough them. This way its easy to find reports on a specific player or reports that are still open.
+
+When a staff member creates a report, the module will store the data inside a database. Once the report is created it will also send a message inside the reports channel to notify other staff members. You can also make this channel public so players can see the reports too.
+
+When filtering trough reports you can list all reports, tribe reports, player reports, reports by moderator and plenty more.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/report create <name> <reason> <punishment> <player_names> <player_ids> (proof)`** - Creates a new report.
+
+**`/report delete <case>`** - Deletes a report by case number.
+
+**`/report search <search_by> <value> (exact)`** - Searches for a report.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `reporting` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → reporting"
+reporting: {
+	enabled: true, // Whether or not the reporting module will be enabled.
+	channel_id: '1139515489849192530', // The ID of the channel where the reports will be sent. This channel should only be accessible by the bot and the staff team.
+	allowed_role_id: '1015588499971395614', // The roles that are allowed to use the report command.
+	message_content: '', // The message content that will be sent above the report embed.
+	embed_enabled: true, // Whether or not the report embed will be enabled.
+	embed_title: '{name} got reported', // The title of the report embed.
+	embed_description: '**Moderator:** {moderator}\n**Tribe/Player:** {name}\n**Punishment:** {punishment}\n**Reason:** {reason}\n**Proof:**', // The description of the report embed.
+	embed_footer_text: 'Report by {moderator}', // The footer of the report embed.
+	embed_footer_icon: '', // The footer icon of the report embed.
+	embed_color: '#00ff00', // The color of the report embed.
+	embed_timestamp: true, // Whether or not the report embed will have a timestamp.
+	embed_thumbnail: '', // The thumbnail of the report embed.
+	embed_author_name: '', // The author name of the report embed.
+	embed_author_url: '', // The author url of the report embed.
+	embed_author_icon: '', // The author icon of the report embed.
+	embed_url: '', // The url of the responder embed
+	embed_fields: [], // The fields of the responder embed
+}
+```
+
+### Placeholders
+
+This is a list of all the placeholders that you can use in the configuration shown above.
+
+| Placeholder      | Description                                                  |
+| :--------------- | :----------------------------------------------------------- |
+| `{moderator}`    | The username of the moderator that created the report        |
+| `{moderatorpfp}` | The profile picture of the moderator that created the report |
+| `{name}`         | The name of the player or tribe that is being reported       |
+| `{punishment}`   | The punishment that was given to the player or tribe         |
+| `{reason}`       | The reason for the report                                    |
+| `{playernames}`  | The names of the players that are in the tribe               |
+| `{playerids}`    | The IDs of the players that are in the tribe                 |
+| `{id}`           | The case number of the report                                |
+
+## Translations
+
+The translations are located in the `translation.js` file. The translations are prefixed with `module_reporting_`.
+
+```js title="translation.js"
+module_reporting_command_name: 'report',
+module_reporting_command_description: 'Create a report for a player or tribe',
+module_reporting_sub_command_option_create_name: 'create',
+module_reporting_sub_command_option_create_description: 'Create a new report',
+module_reporting_sub_command_option_delete_name: 'delete',
+module_reporting_sub_command_option_delete_description: 'Delete a report',
+module_reporting_sub_command_option_search_name: 'search',
+module_reporting_sub_command_option_search_description: 'Search for reports',
+module_reporting_command_option_name_name: 'name',
+module_reporting_command_option_name_description: 'The name of the player or tribe',
+module_reporting_command_option_reason_name: 'reason',
+module_reporting_command_option_reason_description: 'The reason of the report',
+module_reporting_command_option_punishment_name: 'punishment',
+module_reporting_command_option_punishment_description: 'The punishment of the report',
+module_reporting_command_option_playernames_name: 'player_names',
+module_reporting_command_option_playernames_description: 'The player names of the player or tribe',
+module_reporting_command_option_playerids_name: 'player_ids',
+module_reporting_command_option_playerids_description: 'The player IDs of the player or tribe',
+module_reporting_command_option_proof_name: 'proof',
+module_reporting_command_option_proof_description: 'The proof of the report',
+module_reporting_command_option_case_name: 'case',
+module_reporting_command_option_case_description: 'The case number of the report',
+module_reporting_command_option_search_name: 'search_by',
+module_reporting_command_option_search_description: 'The search type',
+module_reporting_command_option_value_name: 'value',
+module_reporting_command_option_value_description: 'The search value',
+module_reporting_command_option_exact_name: 'exact',
+module_reporting_command_option_exact_description: 'Whether or not the search value should be an exact match',
+module_reporting_command_choice_any: 'any',
+module_reporting_command_choice_moderator: 'moderator',
+module_reporting_invalid_proof_type: '❌ The proof must be a image!',
+module_reporting_invalid_channel: '❌ Could not find the reports channel!',
+module_reporting_invalid_case: '❌ Could not find the report with case number **{case}**',
+module_reporting_no_reports_found: '❌ Could not find any reports with **{search_type}** **{search_value}**',
+module_reporting_success_create: '✅ Successfully created report in {channel}',
+module_reporting_success_delete: '✅ Successfully deleted report with case number **{case}**',
+module_reporting_search_embed_title: 'Reports for {search_type} {search_value}',
+module_reporting_search_embed_description: 'Below is a list of all the reports that match your search',
+module_reporting_search_embed_field_name: '📋 Case {id} - {date}',
+module_reporting_search_embed_field_value: '┃ **Name:** {name}\n┃ **Player Names:** {playerNames}\n┃ **Player IDs:** {playerIds}\n┃ **Moderator:** {moderator}\n┃ **Punishment:** {punishment}\n┗ **Reason:** {reason}',
+module_reporting_search_button_previous_label: 'Previous',
+module_reporting_search_button_next_label: 'Next',
+module_reporting_search_button_page_label: 'Page {page} of {pages}',
+```
+
+## Showcase
+
+Report messages in the reports channel
+
+![report messages](https://imgur.com/wB9RbEM.png)
+
+Report search command
+
+![report search command](https://imgur.com/ys1udtW.png)

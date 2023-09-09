@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Here is some general information about the to help you get started.
 
-This bot comes with a variety of utility features such as a reporting system, a trading system, a recruitment command, and more. You can find all the configuration options [**here**](/docs/utilitybot/configuration).
+This bot comes with a variety of utility features such as a reporting system, a trading system, a recruitment command, and more. You can find all the configuration options [**here**](/docs/arkutilitybot/configuration).
 
 ## What is Cron?
 

@@ -34,8 +34,26 @@ polls: {
 
 ## Translations
 
-The translations are located in the `config.js` file like the configuration options. The translations are located in the `polls` section inside the `translations` object.
+The translations are located in the `translation.js` file. The translations are prefixed with `module_polls_`.
+
+```js title="translation.js"
+module_polls_command_name: 'poll',
+module_polls_command_description: 'Create a poll',
+module_polls_command_option_topic_name: 'topic',
+module_polls_command_option_topic_description: 'The topic of the poll',
+module_polls_command_option_options_name: 'options',
+module_polls_command_option_options_description: 'Separate options with a comma. (max 10)',
+module_polls_command_option_channel_name: 'channel',
+module_polls_command_option_channel_description: 'The channel to send the poll to',
+module_polls_command_option_description_name: 'description',
+module_polls_command_option_description_description: 'The description of the poll',
+module_polls_embed_description: '{description}\n\n**Options:**\n{options}',
+module_polls_invalid_options: '❌ You must provide between 2 and 10 options',
+module_polls_success: '✅ Successfully sent poll in {channel}',
+```
 
 ## Showcase
 
-Coming soon...
+Poll embed
+
+![poll](https://imgur.com/mtHf1JZ.png)

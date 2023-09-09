@@ -1,0 +1,93 @@
+---
+sidebar_position: 1
+description: The ArkShop Module allows players to trade kits and points.
+---
+
+# ArkShop
+
+## Information
+
+The ArkShop Module allows players to trade kits and points with other players, when the player has linked their steam account with the discord server they can use the module to trade points and kits with other players. The target player must also have linked their steam account with the discord server for this to work.
+
+Players can also display their Ark Shop data with the display command. This will show the player their points, kits and how many points they have spent.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/arkshop points trade <player> <amount>`** - Trade points with another player.
+
+**`/arkshop points display`** - Display your Ark Shop data.
+
+**`/arkshop kits trade <player> <kit> <amount>`** - Trade kits with another player.
+
+**`/arkshop kits display`** - Display your Ark Shop data.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `arkshop` section inside the `modules` object.
+
+```js title="config.js → modules → arkshop"
+arkshop: {
+	enabled: true, // Whether or not the arkshop module will be enabled.
+	kits_blacklist: [], // A list of kit names that will be blacklisted by the module.
+	max_points_per_trade: 1000, // The maximum amount of points that can be traded at once.
+	max_kits_per_trade: 10, // The maximum amount of kits that can be traded at once.
+	trade_cooldown: 60, // The cooldown in seconds between trades.
+},
+```
+
+## Translations
+
+The translations are located in the `translation.js` file. The translations are prefixed with `module_arkshop_`.
+
+```js title="translation.js"
+module_arkshop_command_name: 'arkshop',
+module_arkshop_command_description: 'Manage arkshop points and kits',
+module_arkshop_sub_command_option_points_name: 'points',
+module_arkshop_sub_command_option_points_description: 'Manage arkshop points',
+module_arkshop_sub_command_option_kits_name: 'kits',
+module_arkshop_sub_command_option_kits_description: 'Manage arkshop kits',
+module_arkshop_sub_command_option_points_trade_name: 'trade',
+module_arkshop_sub_command_option_points_trade_description: 'Trade arkshop points with another player',
+module_arkshop_sub_command_option_points_player_name: 'player',
+module_arkshop_sub_command_option_points_player_description: 'The player to trade with',
+module_arkshop_sub_command_option_points_amount_name: 'amount',
+module_arkshop_sub_command_option_points_amount_description: 'The amount of points to trade',
+module_arkshop_sub_command_option_kits_trade_name: 'trade',
+module_arkshop_sub_command_option_kits_trade_description: 'Trade arkshop kits with another player',
+module_arkshop_sub_command_option_kits_player_name: 'player',
+module_arkshop_sub_command_option_kits_player_description: 'The player to trade with',
+module_arkshop_sub_command_option_kits_kit_name: 'kit',
+module_arkshop_sub_command_option_kits_kit_description: 'The kit to trade',
+module_arkshop_sub_command_option_kits_amount_name: 'amount',
+module_arkshop_sub_command_option_kits_amount_description: 'The amount of kits to trade',
+module_arkshop_sub_command_option_display_name: 'display',
+module_arkshop_sub_command_option_display_description: 'Display your arkshop points and kits',
+module_arkshop_not_linked: '❌ You must link your steam account with discord to use this command.',
+module_arkshop_not_enough_points: '❌ You do not have enough points to trade',
+module_arkshop_not_enough_kits: '❌ You do not have enough kits to trade',
+module_arkshop_no_data: "❌ It seems like you don't have any arkshop data to display.",
+module_arkshop_target_not_linked: '❌ The target user must link their steam account with discord to use this command.',
+module_arkshop_points_trade_success_embed_title: 'Arkshop Points Traded',
+module_arkshop_points_trade_success_embed_description: '✅ You have traded **{amount}** points with {user}',
+module_arkshop_points_trade_error_embed_title: 'Arkshop Points Trade Failed',
+module_arkshop_points_trade_error_embed_description: '❌ An error occurred while trading points.',
+module_arkshop_kits_trade_success_embed_title: 'Arkshop Kits Traded',
+module_arkshop_kits_trade_success_embed_description: '✅ You have traded **{amount}** **{kit}** kits with {user}',
+module_arkshop_display_embed_title: 'Your Arkshop Data',
+module_arkshop_display_embed_description: 'Here is your arkshop data',
+module_arkshop_display_embed_field_points_title: 'Points',
+module_arkshop_display_embed_field_total_title: 'Total Spent',
+module_arkshop_display_embed_field_kits_title: 'Kits',
+module_arkshop_menu_name: 'Show Kits/Points',
+module_arkshop_menu_display_user_not_found: '❌ Selected user not found',
+module_arkshop_menu_display_user_not_linked: '❌ Selected user is not linked',
+module_arkshop_menu_display_user_no_data: '❌ The selected user has no ark shop data',
+module_arkshop_menu_display_embed_title: "{user}'s Shop Data",
+module_arkshop_menu_display_embed_description: 'Below is the shop data for the selected user displayed',
+```
+
+## Showcase
+
+![Example](https://imgur.com/SvWqtYN.png)
