@@ -1,0 +1,77 @@
+---
+sidebar_position: 1
+description: A module that allows you to display a countdown to the next wipe in your server.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Wipe Countdown
+
+## Information
+
+This module allows you to display a countdown to the next wipe in your server. When a player uses the wipe command it will return a message with the time until the next wipe. The module automatically updates the next wipe date automatically every time the server wipes.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/wipe`** - Displays the time until the next wipe.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `wipe_countdown` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → wipe_countdown"
+wipe_countdown: {
+	enabled: true, // Whether or not the wipe countdown will be enabled.
+	wipe_interval_cron: '0 0/10 * 1/1 * ? *', // The interval of the wipe countdown. This should be a cron expression. You can use http://www.cronmaker.com/ to generate a cron expression.
+	ephemeral: false, // Whether or not the wipe countdown message will be ephemeral.
+	message_content: '', // The message content that will be sent above the wipe countdown embed.
+	embed_enabled: true, // Whether or not the wipe countdown embed will be enabled.
+	embed_title: 'Wipe Countdown', // The title of the wipe countdown embed.
+	embed_description: '{date} {time}\n\nThe next wipe is in **{days}** days, **{hours}** hours, **{minutes}** minutes and **{seconds}** seconds.', // The description of the wipe countdown embed.
+	embed_footer_text: 'Last updated At', // The footer of the wipe countdown embed.
+	embed_footer_icon: '', // The footer icon of the embed.
+	embed_color: '#00ff00', // The color of the wipe countdown embed.
+	embed_author_name: '', // The author name of the embed.
+	embed_author_url: '', // The author url of the embed.
+	embed_author_icon: '', // The author icon of the embed.
+	embed_timestamp: true, // Whether or not the wipe countdown embed will have a timestamp.
+	embed_thumbnail: '', // The thumbnail of the wipe countdown embed.
+	embed_image: '', // The image of the wipe countdown embed.
+	embed_url: '', // The url of the responder embed
+	embed_fields: [], // The fields of the responder embed
+}
+```
+
+### Placeholders
+
+This is a list of all the placeholders that you can use in the configuration shown above.
+
+| Placeholder | Description                                                                 |
+| ----------- | --------------------------------------------------------------------------- |
+| `{days}`    | The amount of days until the next wipe.                                     |
+| `{hours}`   | The amount of hours until the next wipe.                                    |
+| `{minutes}` | The amount of minutes until the next wipe.                                  |
+| `{seconds}` | The amount of seconds until the next wipe.                                  |
+| `{time}`    | The time until the next wipe in the format `in 5 days`                      |
+| `{date}`    | The date of the next wipe in the format `Thursday, August 24, 2023 2:20 PM` |
+
+## Translations
+
+The translations are located in the `translation.js` file. The translations are prefixed with `module_changelog_`.
+
+```js title="translation.js"
+module_wipe_countdown_command_name: 'wipe',
+module_wipe_countdown_command_description: 'Get the next wipe time and date',
+module_wipe_countdown_invalid_interval: '❌ Admin has not set a valid wipe interval',
+```
+
+## Showcase
+
+Example message
+
+![Example Message](https://imgur.com/4bkCVhy.png)

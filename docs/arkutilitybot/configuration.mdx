@@ -1,0 +1,128 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configuration
+
+Here is some information about the configuration of the bot.
+
+## Configuration file
+
+The `config.js` file is located in the same folder as the app executable. This file contains all the configuration options for the app. You can find a list of all the configuration options below.
+
+## Configuration options
+
+### General
+
+Here are the general configuration options. These options are located at the top of the configuration file.
+
+| Option       | Description                                                                                                                   |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| `token`      | The token of the bot. You can find this token in the [Discord Developer Portal](https://discord.com/developers/applications). |
+| `licenseKey` | The license key of the bot. You can find your license keys by typing `/license display` in the support server.                |
+| `guildId`    | The ID of the discord server where the bot should be active. You can find this ID by enabling developer mode in Discord.      |
+| `debugMode`  | If enabled the bot will log more information to the console.                                                                  |
+
+---
+
+### databases
+
+Here are the configuration options for the databases. These options are located in the `databases` object.
+
+<Tabs>
+<TabItem value="arkutilitybot" label="Utility Bot">
+
+<h3>Utility Bot Database</h3>
+
+This database is required for the bot to function, it stores all the data of the bot. Incorrect configuration of this database will result in errors on startup.
+
+| Option     | Description               |
+| ---------- | ------------------------- |
+| `host`     | The host of the database. |
+| `user`     | The user of the database. |
+| `port`     | The port of the database. |
+| `password` | The pass of the database. |
+| `database` | The name of the database. |
+
+</TabItem>
+<TabItem value="linking" label="Linking">
+
+<h3>Linking Database</h3>
+
+This database is used to link the discord users to their steam accounts.
+
+| Option              | Description                                              |
+| ------------------- | -------------------------------------------------------- |
+| `host`              | The host of the database.                                |
+| `user`              | The user of the database.                                |
+| `port`              | The port of the database.                                |
+| `password`          | The pass of the database.                                |
+| `database`          | The name of the database.                                |
+| `table`             | The name of the table that contains all the linking data |
+| `discord_id_column` | The name of the column that contains the discord ids     |
+| `steam_id_column`   | The name of the column that contains the steam ids       |
+
+</TabItem>
+<TabItem value="arkshop" label="ArkShop">
+
+<h3>ArkShop Database</h3>
+
+This database is used to get all the player data of the ArkShop.
+
+| Option     | Description                                         |
+| ---------- | --------------------------------------------------- |
+| `host`     | The host of the database.                           |
+| `user`     | The user of the database.                           |
+| `port`     | The port of the database.                           |
+| `password` | The pass of the database.                           |
+| `database` | The name of the database.                           |
+| `table`    | The name of the table that contains all player data |
+
+</TabItem>
+</Tabs>
+
+---
+
+### Servers
+
+Here are the configuration options for the servers. These options are located in the `servers` object. This object contains an array of servers. Each server has its own configuration options.
+
+| Option                  | Description                                                                                        |
+| ----------------------- | -------------------------------------------------------------------------------------------------- |
+| `identifier`            | The identifier of the server. This identifier is used to identify the server in the configuration. |
+| `name`                  | The name of the server. This name is used in the messages.                                         |
+| `server_ip`             | The IP of the server.                                                                              |
+| `query_port`            | The query port of the server.                                                                      |
+| `rcon_port`             | The RCON port of the server.                                                                       |
+| `rcon_password`         | The RCON password of the server.                                                                   |
+| `steam_cmd_folder_path` | The folder path of the steam cmd. this is only used for the server controller module.              |
+| `install_folder_path`   | The folder path of the server. this is only used for the server controller module.                 |
+
+:::note
+If you have multiple servers you can copy the server object and change the information to match the other server and place it in the array.
+:::
+
+---
+
+### Modules
+
+This bot has a lot of modules that can be enabled or disabled. These modules are located in the `modules` object. Each module has its own configuration options.
+
+| Module name             | Documentation                                   |
+| ----------------------- | :---------------------------------------------- |
+| `Auctions Module`       | [Link](/docs/arkutilitybot/modules/auctions)    |
+| `Changelogs Module`     | [Link](/docs/arkutilitybot/modules/changelog)   |
+| `Controller Module`     | [Link](/docs/arkutilitybot/modules/controller)  |
+| `Embedder Module`       | [Link](/docs/arkutilitybot/modules/embedder)    |
+| `Polls Module`          | [Link](/docs/arkutilitybot/modules/polls)       |
+| `Recruiting Module`     | [Link](/docs/arkutilitybot/modules/recruiting)  |
+| `Reporting Module`      | [Link](/docs/arkutilitybot/modules/reporting)   |
+| `Requests Module`       | [Link](/docs/arkutilitybot/modules/request)     |
+| `Responder Module`      | [Link](/docs/arkutilitybot/modules/responder)   |
+| `Selling Module`        | [Link](/docs/arkutilitybot/modules/selling)     |
+| `Suggestions Module`    | [Link](/docs/arkutilitybot/modules/suggestions) |
+| `Welcomer Module`       | [Link](/docs/arkutilitybot/modules/welcomer)    |
+| `Wipe Countdown Module` | [Link](/docs/arkutilitybot/modules/wipe)        |

@@ -1,0 +1,76 @@
+---
+sidebar_position: 1
+description: The server controller module allows users from discord to control your severs. This module can be used to start, stop, restart, update and view the status of your servers.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Controller
+
+## Information
+
+The server controller module allows users from discord to control your severs. This module can be used to start, stop, restart, update and view the status of your servers.
+
+To control a server you need to use the `/controller` command followed by action and server name. Once the command is sent the bot will reply with a message once the action has been completed.
+
+With this module you can allow staff to control your servers without giving them access to sensetive information.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/controller <action> <server>`** - Sends the action to the server.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `controller` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → controller"
+controller: {
+	enabled: true, // Whether or not the server controller will be enabled.
+	allowed_role_id: '', // The roles that are allowed to use the server controller.
+}
+
+```
+
+## Translations
+
+The translations are located in the `translation.js` file. The translations are prefixed with `module_controller_`.
+
+```js title="translation.js"
+module_controller_command_name: 'controller',
+module_controller_command_description: 'Control the serverStop, start, restart, update or get the status of a server',
+module_controller_command_option_action_name: 'action',
+module_controller_command_option_action_description: 'The action to perform',
+module_controller_command_option_server_name: 'server',
+module_controller_command_option_server_description: 'The server to perform the action on',
+module_controller_command_action_choice_start: 'start',
+module_controller_command_action_choice_stop: 'stop',
+module_controller_command_action_choice_restart: 'restart',
+module_controller_command_action_choice_update: 'update',
+module_controller_command_action_choice_status: 'status',
+module_controller_invalid_server: '❌ The selected server does not exist',
+module_controller_already_running: '❌ The selected server is already running',
+module_controller_already_stopped: '❌ The selected server is already stopped',
+module_controller_starting: '⚙️ Starting server...',
+module_controller_started: '✅ Server is now starting',
+module_controller_stopping: '⚙️ Stopping server...',
+module_controller_stopped: '✅ Server is now stopping',
+module_controller_restarting: '⚙️ Restarting server...',
+module_controller_restarted: '✅ Server is now restarting',
+module_controller_updating: '⚙️ Updating server...',
+module_controller_updated: '✅ Server is now updating',
+module_controller_getting_status: '⚙️ Getting server status...',
+module_controller_status: '✅ Server status: {status}',
+module_controller_status_online: 'Online',
+module_controller_status_offline: 'Offline',
+```
+
+## Showcase
+
+Controller command options
+
+![controller](https://imgur.com/iZgY14v.png)

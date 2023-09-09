@@ -1,6 +1,6 @@
 {
-	"label": "Utility Bot",
-	"position": 10,
+	"label": "Frequently Asked Questions",
+	"position": 5,
 	"link": {
 		"type": "generated-index",
 		"description": "Everything you need to know about the Utility Bot"
