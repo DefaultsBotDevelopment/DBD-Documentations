@@ -1,0 +1,67 @@
+---
+sidebar_position: 1
+description: A module that allows you to display a countdown to the next wipe in your server.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Counter Bots
+
+## Information
+
+This module allows you to display the status of your server(s) inside additional bots. This is useful if you want to display the status of your server(s) on multiple bot status.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `counterBots` section.
+
+### Options
+
+```js title="config.js → counterBots"
+counterBots: [
+	// the list of counter bots
+	{
+		token: '', // the bot token. make sure this token is not used by any other bot
+		servers: ['Server1', 'Server2'], // a list of server ids to include in the counter bot
+		presence: {
+			// the bot's presence
+			username: 'Sub Counter 2', // the bot's username
+			status: 'Idle', // Online, Idle, Dnd, Invisible
+			activity: '{totalPlayers} players on {totalServers} servers', // the bot's activity messagee
+			type: 'Watching', // Playing, Streaming, Listening, Watching
+		},
+		statusEmojis: {
+			// the emojis to use for the status of the servers
+			online: '✅', // will be used if the server is online
+			offline: '❌', // will be used if the server is offline
+			locked: '🔒', // used when the server has a password
+		},
+	},
+],
+```
+
+### Placeholders
+
+This is a list of all the placeholders that you can use in the counter bot activity.
+
+| Placeholder         | Multi Server | Description                                               |
+| ------------------- | ------------ | --------------------------------------------------------- |
+| `{name}`            | ❌           | The name of the server.                                   |
+| `{locked}`          | ❌           | The lock emoji.                                           |
+| `{statusEmoji}`     | ❌           | The emoji for the server status.                          |
+| `{maxPlayers}`      | ❌           | The max players of the server.                            |
+| `{ping}`            | ❌           | The ping of the server.                                   |
+| `{info}`            | ❌           | The info of the server.                                   |
+| `{map}`             | ❌           | The map of the server.                                    |
+| `{totalPlayers}`    | ✅           | The total players of all servers in the servers list.     |
+| `{totalMaxPlayers}` | ✅           | The total max players of all servers in the servers list. |
+| `{totalServers} `   | ✅           | The total servers in the servers list.                    |
+
+:::note Multi Server Placeholders
+Multi server placeholders are placeholders that will take the data from all the servers in the counter channel servers list and combine them into one total value. The others will take the data from the first server in the servers list.
+:::
+
+## Showcase
+
+Coming soon!

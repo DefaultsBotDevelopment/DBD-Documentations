@@ -15,237 +15,65 @@ The `config.js` file is located in the same folder as the bot executable. This f
 
 ## Configuration Options
 
-<Tabs>
-<TabItem value="general" label="General">
+### General
 
-### General Options
+| Command             | Description                                                                                                                                                                                                |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `token`             | Discord Bot token, You can obtain a bot token in the [Discord Developers Portal](https://discord.com/developers/applications/) make sure to use 1 bot per token, else you will get rate limited by Discord |
+| `licenseKey`        | Your account ID of your DBD account, more info about this [here](/docs/information#bot-activation)                                                                                                         |
+| `guildId`           | The Discord server ID where the bot will be used in                                                                                                                                                        |
+| `updateIntervalSec` | The amount of seconds between data updates by the bot                                                                                                                                                      |
+| `debugMode`         | Whether the bot should be in debug mode or not, this will enable more logging                                                                                                                              |
 
-| Command             | Default | Description                                                                                                                                                                                                |
-| ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `token`             | `-`     | Discord Bot token, You can obtain a bot token in the [Discord Developers Portal](https://discord.com/developers/applications/) make sure to use 1 bot per token, else you will get rate limited by Discord |
-| `dbdAccountId`      | `-`     | Your account ID of your DBD account, more info about this [here](/docs/information#bot-activation)                                                                                                         |
-| `guildId`           | `-`     | The Discord server ID where the bot will be used in                                                                                                                                                        |
-| `updateIntervalSec` | `60`    | The amount of seconds between data updates by the bot                                                                                                                                                      |
-
-</TabItem>
-<TabItem value="presence" label="Presence">
-
-### Presence Options
+### Presence
 
 All options inside the `botPresence` config option.
 
-| Command    | Default                                       | Description                                                                  |
-| ---------- | --------------------------------------------- | ---------------------------------------------------------------------------- |
-| `username` | `-`                                           | The username of the bot, keep empty if you don't want the name to be updated |
-| `status`   | `Online`                                      | The status of the bot. (Options: Online, Idle, Dnd, Invisible )              |
-| `activity` | `{totalplayers} players on {servers} servers` | The bot activity message that should be displayed                            |
-| `type`     | `Watching`                                    | The status type. (Options: Playing, Streaming, Listening, Watching)          |
+| Command    | Description                                                                  |
+| ---------- | ---------------------------------------------------------------------------- |
+| `username` | The username of the bot, keep empty if you don't want the name to be updated |
+| `status`   | The status of the bot. (Options: Online, Idle, Dnd, Invisible )              |
+| `activity` | The bot activity message that should be displayed                            |
+| `type`     | The status type. (Options: Playing, Streaming, Listening, Watching)          |
 
 <details>
 <summary>Available Placeholders for the main bot presence</summary>
 
-These placeholders can be used in the `server` and `totals` fields.
+These placeholders can be used in the `botPresence.activity` field.
 
 | Placeholder         | Description                                             |
 | ------------------- | ------------------------------------------------------- |
 | `{totalplayers}`    | Displays the total amount of players on all servers     |
 | `{totalmaxplayers}` | Displays the total amount of max players on all servers |
-| `{servers}`         | Displays the total amount of servers                    |
+| `{totalServers}`    | Displays the total amount of servers                    |
 
 </details>
 
-</TabItem>
-<TabItem value="servers" label="Servers">
-
-### Servers Options
-
-:::info
-You can list as many servers as you want, make sure to follow the format of the example config!
-:::
+### Servers
 
 All options inside the `servers` config option.
 
-| Command     | Default           | Description                                                                                                  |
-| ----------- | ----------------- | ------------------------------------------------------------------------------------------------------------ |
-| `name`      | `Server1`         | The name of the server, this will be displayed in the bot activity message                                   |
-| `ip`        | `123.123.123.123` | The IP of the server                                                                                         |
-| `queryPort` | `12345`           | The query port of the server                                                                                 |
-| `gameId`    | `arkse`           | The game ID of the server, you can find a list of all game IDs [here](https://www.npmjs.com/package/gamedig) |
-| `joinLink`  | `-`               | The join link of the server, keep empty if you don't want the join link to be displayed                      |
-| `info`      | `-`               | The info of the server, you can use this however you like. you can use it anywhere in the server fields.     |
+| Command     | Description                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------ |
+| `id`        | The ID of the server, this is used to identify the server. duplicated ids will result it issues              |
+| `name`      | The name of the server, this will be displayed in the bot activity message                                   |
+| `ip`        | The IP of the server                                                                                         |
+| `queryPort` | The query port of the server                                                                                 |
+| `gameId`    | The game ID of the server, you can find a list of all game IDs [here](https://www.npmjs.com/package/gamedig) |
+| `joinLink`  | The join link of the server, keep empty if you don't want the join link to be displayed                      |
+| `info`      | The info of the server, you can use this however you like. you can use it anywhere in the server fields.     |
 
-</TabItem>
-<TabItem value="counterPanels" label="counterPanels">
+### CounterPanels
 
-### CounterPanels Options
+This section is located inside the `counterPanels` config option. More information about this module can be found [here](/docs/playercounter/modules/panels).
 
-:::info
-You can list as many counter panels as you want, make sure to follow the format of the example config!
-:::
+### CounterChannels
 
-All options inside the `counterPanels` config option.
-
-| Command      | Default   | Description                                                                                                          |
-| ------------ | --------- | -------------------------------------------------------------------------------------------------------------------- |
-| `uniqueId`   | `-`       | The unique ID of the counter panel, this is used to identify the counter panel. duplicated ids will result it issues |
-| `channelId`  | `-`       | The channel ID where the counter panel should be displayed                                                           |
-| `servers`    | `[]`      | The servers that should be displayed in the counter panel list them by their names from the `servers` list           |
-| `formatting` | `options` | More information about formatting is listed below                                                                    |
-
-### CounterPanels Formatting Options
-
-All options inside the `counterPanels.formatting` config option. There are 2 types of fields in the counter panel, one is the server field and the other is the totals field. The server field is the field that displays the information about a specific server. The totals field is the field that displays the total amount of players and servers.
-
-<Tabs>
-<TabItem value="options" label="Server Field" default>
-
-All options inside the `counterPanels.formatting.server` config option.
-
-| Command   | Default | Description                                                                    |
-| --------- | ------- | ------------------------------------------------------------------------------ |
-| `title`   | `-`     | The title of the server field, this will be displayed above the server field   |
-| `message` | `-`     | The message of the server field, this will be displayed below the server title |
-| `inline`  | `true`  | Whether the server field should be displayed inline or not                     |
-
-</TabItem>
-<TabItem value="totals" label="Totals Field">
-
-All options inside the `counterPanels.formatting.totals` config option.
-
-| Command   | Default | Description                                                                    |
-| --------- | ------- | ------------------------------------------------------------------------------ |
-| `title`   | `-`     | The title of the totals field, this will be displayed above the totals field   |
-| `message` | `-`     | The message of the totals field, this will be displayed below the totals title |
-| `inline`  | `true`  | Whether the totals field should be displayed inline or not                     |
-| `enabled` | `true`  | Whether the totals field should be displayed or not                            |
-
-</TabItem>
-</Tabs>
-
-<details>
-<summary>Available Placeholders for the server and totals fields</summary>
-
-These placeholders can be used in the `server` and `totals` fields.
-
-| Placeholder     | Description                                             |
-| --------------- | ------------------------------------------------------- |
-| `{statusEmoji}` | Displays a status emoji depending on the server status. |
-| `{locked}`      | Displays a lock emoji if the server is locked.          |
-| `{serverName}`  | Displays the name of the server.                        |
-| `{map}`         | Displays the map of the server.                         |
-| `{name}`        | Displays the config name of the server.                 |
-| `{players}`     | Displays the amount of players on the server.           |
-| `{maxPlayers}`  | Displays the max amount of players on the server.       |
-| `{ping}`        | Displays the ping of the server.                        |
-| `{playerList}`  | Displays a list of players on the server.               |
-| `{disclaimer}`  | Only shows when a server is offline                     |
-
-</details>
-
-### CounterPanels StatusEmojis Options
-
-All options inside the `counterPanels.statusEmojis` config option.
-
-| Command   | Default | Description                                                   |
-| --------- | ------- | ------------------------------------------------------------- |
-| `online`  | `🟢`    | The emoji that should be displayed when the server is online  |
-| `offline` | `🔴`    | The emoji that should be displayed when the server is offline |
-| `locked`  | `🔒`    | The emoji that should be displayed when the server is locked  |
-
-### CounterPanels Message Options
-
-All options inside the `counterPanels.message` config option.
-
-| Command            | Default | Description                                                                   |
-| ------------------ | ------- | ----------------------------------------------------------------------------- |
-| `content`          | `-`     | The content of the message that should be displayed above the counter panel   |
-| `embed`            | `true`  | The embed that should be displayed above the counter panel                    |
-| `embedTile`        | `-`     | The title of the embed that should be displayed above the counter panel       |
-| `embedDescription` | `-`     | The description of the embed that should be displayed above the counter panel |
-| `embedFooter`      | `-`     | The footer of the embed that should be displayed above the counter panel      |
-| `embedColor`       | `-`     | The color of the embed that should be displayed above the counter panel       |
-| `embedThumbnail`   | `-`     | The thumbnail of the embed that should be displayed above the counter panel   |
-| `embedImage`       | `-`     | The image of the embed that should be displayed above the counter panel       |
-| `embedUrl`         | `-`     | The url of the embed that should be displayed above the counter panel         |
-
-</TabItem>
-<TabItem value="counterChannels" label="counterChannels">
-
-### CounterChannels Options
-
-:::info
-You can list as many counterChannels as you want, make sure to follow the format of the example config!
-:::
-
-All options inside the `counterChannels` config option.
-
-| Command        | Default | Description                                                                                                                                       |
-| -------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `channelId`    | `-`     | The channel ID where the counter channel should be displayed                                                                                      |
-| `servers`      | `[]`    | The servers that should be displayed in the counter channel                                                                                       |
-| `channelName`  | `-`     | The name of the channel that should be displayed in the counter channel                                                                           |
-| `statusEmojis` | `-`     | The status emojis that should be displayed in the counter channel, these are configured the same way as for the statusEmojis in the counterPanels |
-
-<details>
-<summary>Available Placeholders for the counterChannels</summary>
-
-These placeholders can be used in `counterChannels`.
-
-| Placeholder         | Description                                              |
-| ------------------- | -------------------------------------------------------- |
-| `{statusEmoji}`     | Displays a status emoji depending on the server status.  |
-| `{locked}`          | Displays a lock emoji if the server is locked.           |
-| `{serverName}`      | Displays the name of the server.                         |
-| `{map}`             | Displays the map of the server.                          |
-| `{name}`            | Displays the config name of the server.                  |
-| `{players}`         | Displays the amount of players on the server.            |
-| `{maxPlayers}`      | Displays the max amount of players on the server.        |
-| `{totalplayers}`    | Displays the total amount of players on all servers.     |
-| `{totalMaxPlayers}` | Displays the total max amount of players on all servers. |
-| `{ping}`            | Displays the ping of the server.                         |
-
-</details>
-
-</TabItem>
-<TabItem value="counterBots" label="counterBots">
+This section is located inside the `counterChannels` config option. More information about this module can be found [here](/docs/playercounter/modules/channels).
 
 ### CounterBots Options
 
-:::info
-You can list as many counterBots as you want, make sure to follow the format of the example config!
-:::
-
-All options inside the `counterBots` config option.
-
-| Command       | Default               | Description                                                                                                                                    |
-| ------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `token`       | `-`                   | The token of the bot that should be used to display the counter bots, make sure this token is a new token!                                     |
-| `servers`     | `[]`                  | The servers that should be displayed in the counter bots                                                                                       |
-| `presence`    | `presence options`    | The presence of the bot that should be displayed in the counter bots, this is configured the same way as for the main bot presence             |
-| `statusEmojis | statusEmojis options` | The status emojis that should be displayed in the counter bots, these are configured the same way as for the statusEmojis in the counterPanels |
-
-<details>
-<summary>Available Placeholders for the counterBot presence activity</summary>
-
-These placeholders can be used in `counterBots.presence.activity`.
-
-| Placeholder         | Description                                              |
-| ------------------- | -------------------------------------------------------- |
-| `{statusEmoji}`     | Displays a status emoji depending on the server status.  |
-| `{locked}`          | Displays a lock emoji if the server is locked.           |
-| `{serverName}`      | Displays the name of the server.                         |
-| `{map}`             | Displays the map of the server.                          |
-| `{name}`            | Displays the config name of the server.                  |
-| `{players}`         | Displays the amount of players on the server.            |
-| `{maxPlayers}`      | Displays the max amount of players on the server.        |
-| `{totalplayers}`    | Displays the total amount of players on all servers.     |
-| `{totalMaxPlayers}` | Displays the total max amount of players on all servers. |
-| `{ping}`            | Displays the ping of the server.                         |
-
-</details>
-
-</TabItem>
-</Tabs>
+This section is located inside the `counterBots` config option. More information about this module can be found [here](/docs/playercounter/modules/bots).
 
 ## Cache File
 
