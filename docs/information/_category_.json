@@ -1,6 +1,6 @@
 {
-	"label": "🧮 PlayerCounter Bot",
-	"position": 6,
+	"label": "ℹ️ DBD Information",
+	"position": 0,
 	"link": {
 		"type": "generated-index",
 		"description": "Everything you need to know about the PlayerCounter bot."

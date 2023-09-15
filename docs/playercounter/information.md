@@ -19,7 +19,7 @@ There are 2 ways to setup the bot, you can either use the compiled version or th
 The compiled version of the bot is the easiest way to setup the bot. You can download the latest version of the bot in the support server.
 
 1. Download the latest version of the bot from the support server.
-2. Run the bot and activate it with the hwid thats displayed in the console. (more information on activation [**here**](/docs/activations))
+2. Run the bot and activate it with the hwid thats displayed in the console. (more information on activation [**here**](/docs/information/activations))
 3. Once activated, you can start configuring the bot. (more information on configuration [**here**](/docs/playercounter/configuration))
 4. Finally you can start the bot, and it should run without any issues.
 
