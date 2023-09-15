@@ -1,0 +1,38 @@
+---
+sidebar_position: 1
+description: A module that allows you to display a countdown to the next wipe in your server.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Role Permissions
+
+## Information
+
+This section will explain how to use the role permissions module. The Rcon Commander bot has a system that allows you to allow users with a specific role to only allow them to use specific commands. This is useful if you want to give your moderators access to the `kick` command but not the `ban` command.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `rolePermissions` section.
+
+### Options
+
+```js title="config.js → rolePermissions"
+rolePermissions: {
+	// role ids that have access to the bot
+	fullAccess: ['1015588499971395614'], // list of roles ids with full bot permission
+	limitedAccess: [
+		// roles that have access to specific commands and scripts
+		{
+			roleId: '1004718841844207646', // role id
+			commands: ['listplayers'], // list of commands
+			scripts: ['script1'], // list of script names
+		},
+	],
+},
+```
+
+## Showcase
+
+Coming soon!

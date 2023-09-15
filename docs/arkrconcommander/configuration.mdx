@@ -1,0 +1,73 @@
+---
+sidebar_position: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configuration
+
+Here is some information about the configuration of the bot.
+
+## Configuration File
+
+The `config.js` file is located in the same folder as the bot executable. This file contains all the configuration options for the bot. You can find a list of all the configuration options below.
+
+## Configuration Options
+
+### General
+
+| Command      | Description                                                                                                                                                                                                |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `token`      | Discord Bot token, You can obtain a bot token in the [Discord Developers Portal](https://discord.com/developers/applications/) make sure to use 1 bot per token, else you will get rate limited by Discord |
+| `licenseKey` | Your account ID of your DBD account, more info about this [here](/docs/information#bot-activation)                                                                                                         |
+| `guildId`    | The Discord server ID where the bot will be used in                                                                                                                                                        |
+| `debugMode`  | Whether the bot should be in debug mode or not, this will enable more logging                                                                                                                              |
+
+### Presence
+
+All options inside the `presence` config option.
+
+| Command   | Description                                                         |
+| --------- | ------------------------------------------------------------------- |
+| `status`  | The status of the bot. (Options: Online, Idle, Dnd, Invisible )     |
+| `type`    | The status type. (Options: Playing, Streaming, Listening, Watching) |
+| `message` | The bot activity message that should be displayed                   |
+
+### Colors
+
+All options inside the `colors` config option.
+
+| Command   | Description                                                                                       |
+| --------- | ------------------------------------------------------------------------------------------------- |
+| `primary` | The primary color of the bot, this color is used for the embeds and the buttons. (Hex color code) |
+| `success` | The success color of the bot, this color is used for the embeds and the buttons. (Hex color code) |
+| `error`   | The error color of the bot, this color is used for the embeds and the buttons. (Hex color code)   |
+
+### Role Permissions
+
+This section is located inside the `rolePermissions` config option. More information about this module can be found [here](/docs/arkrconcommander/modules/permissions).
+
+### Timed Commands
+
+This section is located inside the `timedCommands` config option. More information about this module can be found [here](/docs/arkrconcommander/modules/timed).
+
+### Rcon Commands
+
+More information about this module can be found [here](/docs/arkrconcommander/modules/rcon).
+
+### Script Commands
+
+This section is located inside the `scriptCommands` config option. More information about this module can be found [here](/docs/arkrconcommander/modules/script).
+
+### Servers
+
+All options inside the `servers` config option.
+
+| Command    | Description                                                                            |
+| ---------- | -------------------------------------------------------------------------------------- |
+| `name`     | The name of the server.                                                                |
+| `ip`       | The IP address of the server.                                                          |
+| `rconPort` | The RCON port of the server.                                                           |
+| `password` | The RCON password of the server.                                                       |
+| `tags`     | The tags of the server. With tags you can select groups of serevrs labeled by the tag. |
