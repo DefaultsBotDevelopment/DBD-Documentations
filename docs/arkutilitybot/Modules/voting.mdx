@@ -1,0 +1,69 @@
+---
+sidebar_position: 1
+description: The votes module allows players to claim their rewards for voting for your server(s) on various websites.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Votes
+
+## Information
+
+The votes module allows players to claim their rewards for voting for your server(s) on various websites.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/votes status`** - Check your vote status.
+
+**`/votes claim`** - Claim your vote rewards.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `suggestions` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → voting"
+voting: {
+	enabled: true, // Whether or not the voting module will be enabled.
+	ephemeral: false, // Whether or not the voting messages will be visible for everyone.
+	api_keys: [
+		{
+			// The identifier of the server. This should be the identifier used in the servers section.
+			server: 'Server 1', // The name of the server vote
+			site: 'ark-servers.net', // The name of the site that the server is listed on. This can be 'ark-servers.net' or 'topgameservers.net
+			url: 'https://ark-servers.net/server/329828', // The url to the site the user should vote.
+			api_key: 'XsJtPofMLix5eVDstoIXoR9hFbubmvLT5n', // The api key from the vote site.
+			rewards: [
+        // A list of rcon commands the bot will send as rewards for voting.
+				'addpoints {id} 1000', // Will add 1000 points to the player that voted.
+			],
+		},
+		{
+			server: 'Server 1', // The name of the server vote
+			site: 'topgameservers.net', // The name of the site that the server is listed on. This can be 'ark-servers.net' or 'topgameservers.net
+			url: 'https://topgameservers.net/ark/server/213.239.209.61:5040', // The url to the site the user should vote.
+			api_key: '6136386967835892636775040', // The api key from the vote site.
+			rewards: [
+        // A list of rcon commands the bot will send as rewards for voting.
+				'addpoints {id} 1000', // Will add 1000 points to the player that voted.
+			],
+		},
+	],
+},
+```
+
+### Placeholders
+
+These placeholders can only be used inside the reward rcon commands.
+
+| Placeholder | Description             |
+| ----------- | :---------------------- |
+| `{id}`      | The steamId of the user |
+
+## Showcase
+
+Coming soon!
