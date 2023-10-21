@@ -1,0 +1,40 @@
+---
+sidebar_position: 1
+description: Information about the roll module.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Roll A Dice
+
+## Information
+
+The Roll A Dice module allows users to roll a dice and win points.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/roll <bet>`** - Play roll a dice with the bot.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `roll` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → roll"
+roll: {
+	enabled: true, // Whether the roll module is enabled
+	ephemeral: true, // Whether the bot response should be only visible to the user
+	cooldownMin: 1, // The amount of minutes between each roll game
+	multiplier: 5, // The amount of points to multiply the bet with
+	minBet: 100, // The min amount of points that can be bet
+	maxBet: 1000, // The max amount of points that can be bet
+},
+```
+
+## Showcase
+
+Coming Soon!

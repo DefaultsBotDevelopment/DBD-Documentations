@@ -1,0 +1,43 @@
+---
+sidebar_position: 1
+description: Information about the jackpot module.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Jackpot
+
+## Information
+
+The Jackpot module allows users to play jackpot with the bot.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/jackpot <bet>`** - Play jackpot with the bot.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `jackpot` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → jackpot"
+jackpot: {
+	enabled: true, // Whether the jackpot module is enabled
+	ephemeral: true, // Whether the bot response should be only visible to the user
+	minBet: 100, // The min amount of points that can be bet
+	maxBet: 1000, // The max amount of points that can be bet
+	cooldownMin: 1, // The amount of minutes between each jackpot game
+	cherryMultiplier: 20, // The multiplier for 3 cherries
+	grapeMultiplier: 15, // The multiplier for 3 grapes
+	melonMultiplier: 10, // The multiplier for 3 melons
+	pineappleMultiplier: 5, // The multiplier for 3 pineapples
+},
+```
+
+## Showcase
+
+Coming Soon!

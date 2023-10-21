@@ -1,0 +1,38 @@
+---
+sidebar_position: 1
+description: information about the chatting module
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Chatting
+
+## Information
+
+This module allows players to gain Coins by chatting and talking in voice channels.
+
+## Command(s)
+
+This module has no commands.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `chatting` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → chatting"
+chatting: {
+	enabled: true, // Whether the chatting module is enabled
+	ephemeral: true, // Whether the bot should log the messages ephemerally
+	threshold: 5, // The amount of chat messages or voice minutes required to get rewarded
+	minPoints: 500, // The min amount of points rewarded per 100 chat messages or voice minutes
+	maxPoints: 1000, // The max amount of points rewarded per 100 chat messages or voice minutes
+	logChannelId: '', // The channel ID to log the reward messages to
+},
+```
+
+## Showcase
+
+Coming Soon!

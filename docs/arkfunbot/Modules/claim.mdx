@@ -1,0 +1,39 @@
+---
+sidebar_position: 1
+description: Information about the claim module.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Claim
+
+## Information
+
+This module allows your users to claim coins, you can configure the amount of coins they can claim and the cooldown between claims.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/claim`** - Rewards the user with coins.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `claim` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → claim"
+claim: {
+	enabled: true, // Whether the claim module is enabled
+	ephemeral: true, // Whether the bot response should be only visible to the user
+	cooldownHours: 24, // The amount of hours between each claim
+	minPoints: 1000, // The min amount of points rewarded per claim
+	maxPoints: 2000, // The max amount of points rewarded per claim
+},
+```
+
+## Showcase
+
+Coming Soon!
