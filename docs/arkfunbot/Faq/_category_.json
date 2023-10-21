@@ -1,0 +1,8 @@
+{
+	"label": "Frequently Asked Questions",
+	"position": 5,
+	"link": {
+		"type": "generated-index",
+		"description": "Everything you need to know about the Ark Fun Bot"
+	}
+}

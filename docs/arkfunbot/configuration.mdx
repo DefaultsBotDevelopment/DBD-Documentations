@@ -1,0 +1,96 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configuration
+
+Here is some information about the configuration of the bot.
+
+## Configuration file
+
+The `config.js` file is located in the same folder as the app executable. This file contains all the configuration options for the app. You can find a list of all the configuration options below.
+
+## Configuration options
+
+### General
+
+Here are the general configuration options. These options are located at the top of the configuration file.
+
+| Option         | Description                                                                                                                   |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `token`        | The token of the bot. You can find this token in the [Discord Developer Portal](https://discord.com/developers/applications). |
+| `licenseKey`   | The license key of the bot. You can find your license keys by typing `/license display` in the support server.                |
+| `guildId`      | The ID of the discord server where the bot should be active. You can find this ID by enabling developer mode in Discord.      |
+| `debugMode`    | If enabled the bot will log more information to the console.                                                                  |
+| `adminRoleId`  | The ID of the admin role. This role will have access to the admin commands.                                                   |
+| `logChannelId` | The ID of the log channel. This channel will be used to log all the bot actions.                                              |
+
+---
+
+### databases
+
+Here are the configuration options for the databases. These options are located in the `databases` object.
+
+<Tabs>
+<TabItem value="arkfunbot" label="Bot">
+
+<h3>Bot Database</h3>
+
+This database is required for the bot to function, it stores all the data of the bot. Incorrect configuration of this database will result in errors on startup.
+
+| Option     | Description               |
+| ---------- | ------------------------- |
+| `host`     | The host of the database. |
+| `user`     | The user of the database. |
+| `port`     | The port of the database. |
+| `password` | The pass of the database. |
+| `database` | The name of the database. |
+
+</TabItem>
+<TabItem value="linking" label="Links">
+
+<h3>Linking Database</h3>
+
+This database is used to link the discord users to their steam accounts.
+
+| Option            | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| `host`            | The host of the database.                                |
+| `user`            | The user of the database.                                |
+| `port`            | The port of the database.                                |
+| `password`        | The pass of the database.                                |
+| `database`        | The name of the database.                                |
+| `tableName`       | The name of the table that contains all the linking data |
+| `steamIdColumn`   | The name of the column that contains the discord ids     |
+| `discordIdColumn` | The name of the column that contains the steam ids       |
+
+</TabItem>
+</Tabs>
+
+---
+
+### Servers
+
+Here are the configuration options for the servers. These options are located in the `servers` object. This object contains an array of servers. Each server has its own configuration options.
+
+| Option     | Description                                                |
+| ---------- | ---------------------------------------------------------- |
+| `name`     | The name of the server. This name is used in the messages. |
+| `ip`       | The IP of the server.                                      |
+| `port`     | The RCON port of the server.                               |
+| `password` | The RCON password of the server.                           |
+
+:::note
+If you have multiple servers you can copy the server object and change the information to match the other server and place it in the array.
+:::
+
+---
+
+### Modules
+
+This bot has a lot of modules that can be enabled or disabled. These modules are located in the `modules` object. Each module has its own configuration options.
+
+You can find all information about the bot modules [HERE](/docs/category/modules-1)

@@ -1,0 +1,40 @@
+---
+sidebar_position: 1
+description: Information about the rps module.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Rock Paper Scissors
+
+## Information
+
+The Rock Paper Scissors module allows users to play rock paper scissors with the bot.
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/rps <bet> <choice>`** - Play rock paper scissors with the bot.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `rps` section inside the `modules` object.
+
+### Options
+
+```js title="config.js → modules → rps"
+rps: {
+	enabled: true, // Whether the rps module is enabled
+	ephemeral: true, // Whether the bot response should be only visible to the user
+	cooldownMin: 1, // The amount of minutes between each rps game
+	multiplier: 2, // The amount of points to multiply the bet with
+	minBet: 100, // The min amount of points that can be bet
+	maxBet: 1000, // The max amount of points that can be bet
+},
+```
+
+## Showcase
+
+Coming Soon!
