@@ -1,0 +1,69 @@
+---
+sidebar_position: 1
+description: A module that allows you to display a countdown to the next wipe in your server.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Rcon Panels
+
+## Information
+
+This module allows you to execute commands from a select menu
+
+## Command(s)
+
+`<>` Required `()` Optional
+
+**`/panel <panel>`** - Sends the panel in the channel you ran the command in.
+
+## Configuration
+
+The configuration options are located in the `config.js` file under the `panels` section.
+
+```js title="config.js → panels"
+panels: [
+	{
+		uniqueId: 'panel1', // unique id of the panel
+		name: '{server} Commands', // name of the panel
+		description: 'Select a command to send to the {server} server.', // description of the panel
+		server: 'Ragnarok', // server name (must match the name of the server in the servers list below)
+		commands: [
+			{
+				label: 'List Players', // label of the command
+				command: 'listplayers', // command to execute
+				description: 'List all players on the server.', // description of the command
+				args: [], // list of arguments (max 5 args)
+			},
+			{
+				label: 'Kick Player', // label of the command
+				command: 'kickplayer {id}', // command to execute
+				description: 'List all players on the server.', // description of the command
+				args: [
+					// list of arguments (max 5 args)
+					{
+						name: '{id}', // name of the argument. (make sure include this in the command where you want the argument to be placed)
+						label: 'Player ID', // label of the argument
+						placeholder: 'Player ID', // placeholder of the argument
+					},
+				],
+			},
+		],
+	},
+],
+```
+
+## Showcase
+
+Select a command to send to the server.
+
+![Example 1](https://imgur.com/yjjNclu.png)
+
+Command without arguments.
+
+![Example 2](https://imgur.com/jMHSrsy.png)
+
+Command with arguments will show a modal where you can enter the argument values.
+
+![Example 3](https://imgur.com/cIXogtV.png)
