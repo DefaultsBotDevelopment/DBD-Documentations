@@ -31,8 +31,17 @@ The configuration options are located in the `config.js` file under the `control
 ```js title="config.js → modules → controller"
 controller: {
 	enabled: true, // Whether or not the server controller will be enabled.
-	allowed_role_id: '', // The roles that are allowed to use the server controller.
-}
+	allowed_role_id: '1015588499971395614', // The roles that are allowed to use the server controller.
+	panels: [
+		{
+			unique_id: 'panel1', // The unique ID of the panel. This should be a unique value based on the other panels.
+			channel_id: '1165970057919217724', // The ID of the channel where the panel will be sent.
+			title: '{server} Controller Panel', // The title of the panel.
+			description: 'Status: {status}', // The description of the panel.
+			server_identifier: 'server1', // The identifier of the server. This should be the identifier used in the servers section.
+		},
+	],
+},
 
 ```
 
@@ -55,6 +64,8 @@ module_controller_command_action_choice_status: 'status',
 module_controller_invalid_server: '❌ The selected server does not exist',
 module_controller_already_running: '❌ The selected server is already running',
 module_controller_already_stopped: '❌ The selected server is already stopped',
+module_controller_not_allowed: '❌ You are not allowed to use the server controller!',
+module_controller_invalid_panel: '❌ The selected panel does not exist',
 module_controller_starting: '⚙️ Starting server...',
 module_controller_started: '✅ Server is now starting',
 module_controller_stopping: '⚙️ Stopping server...',
@@ -74,3 +85,7 @@ module_controller_status_offline: 'Offline',
 Controller command options
 
 ![controller](https://imgur.com/iZgY14v.png)
+
+Controller panel
+
+![controller](https://imgur.com/yR61m84.png)
