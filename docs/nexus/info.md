@@ -21,7 +21,7 @@ To run your bot with DBD Nexus, each user will have to download their own DBD Ne
 
 # Setup
 
-For the full setup guide, please refer to the [**Setup Guide**](/docs/nexus/dev-portal).
+For the full setup guide, please refer to the [**Setup Guide**](/docs/nexus/setup).
 
 :::note
 If you face any issues while setting up the Nexus panel, feel free to ask for help in the [DBD Community Discord Server](https://discord.gg/Rc2TGdQ37g).
