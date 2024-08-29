@@ -18,7 +18,7 @@ To activate modules, you need to purchase the desired tokens from the [DBD Nexus
 
 ## How can i manage my bot?
 
-Follow the [**Setup Guide**](/docs/nexus/dev-portal) to set up your bot with DBD Nexus. Once you have set up your bot, you can manage your bot through the DBD Nexus dashboard.
+Follow the [**Setup Guide**](/docs/nexus/setup) to set up your bot with DBD Nexus. Once you have set up your bot, you can manage your bot through the DBD Nexus dashboard.
 
 ## How can i get support?
 
