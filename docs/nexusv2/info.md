@@ -2,9 +2,7 @@
 sidebar_position: 1
 ---
 
-# Get Started
-
-## Introduction
+# Introduction
 
 DBD Nexus is a platform where you can manage all DBD products in one place. DBD Nexus provides a simple and intuitive interface to manage your DBD products. You can easily activate and configure your products.
 

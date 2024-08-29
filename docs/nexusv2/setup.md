@@ -73,7 +73,7 @@ This method is recommended for experienced users who are familiar with the confi
 1. Download the DBD Nexus Daemon from the [DBD Support Server](https://discord.com/channels/488177151946915841/1207711313132916878).
 2. Extract the downloaded file.
 
-   ![DBD Nexus Bot](/img/nexusv2/bot-folder.png)
+   ![DBD Nexus Bot](/img/nexus/bot-folder.png)
 
 3. Edit the `config.json` file with a text editor like [VSC](https://code.visualstudio.com/download).
 
@@ -92,11 +92,11 @@ This method is recommended for experienced users who are familiar with the confi
 7. The bot will now start and install the necessary files and modules.
 8. On the first start, the bot will ask for your DBD Account Secret. This can be found on the DBD Nexus site under the "Account" tab. Make sure to enter this and keep it hidden from others.
 
-   ![DBD Account Secret](/img/nexusv2/bot-start-secret.png)
+   ![DBD Account Secret](/img/nexus/bot-start-secret.png)
 
 9.  Secondly, the bot will ask the config id. If you wanna use an existing config from the site make sure to enter the config id. If you don't have a remote config you can enter a any new config id to create a new config.
 
-   ![Config ID](/img/nexusv2/bot-start-config.png)
+   ![Config ID](/img/nexus/bot-start-config.png)
 
 10. Once the bot is started, you can see the bot running in your server.
 
