@@ -14,11 +14,11 @@ Navigate to the [DBD Nexus store](https://nexus.defaultsbotdev.com/store) page a
 
 ## How can i activate modules?
 
-To activate modules, you need to purchase the desired tokens from the [DBD Nexus store](https://nexus.defaultsbotdev.com/store). Once you have purchased the tokens, you can activate the desired modules using the tokens.
+To activate modules, you need to purchase the desired tokens from the [DBD Nexus store](https://nexus.defaultsbotdev.com/store). Once you have purchased the tokens, you can activate the desired modules using the tokens on the [DBD Nexus modules page](https://nexus.defaultsbotdev.com/modules).
 
 ## How can i manage my bot?
 
-Follow the [**Setup Guide**](/docs/nexus/dev-portal) to set up your bot with DBD Nexus. Once you have set up your bot, you can manage your bot through the DBD Nexus dashboard.
+Follow the [**Setup Guide**](/docs/nexus/setup) to set up your bot with DBD Nexus. Once you have set up your bot, you can manage your bot through the DBD Nexus dashboard.
 
 ## How can i get support?
 
@@ -28,6 +28,6 @@ If you face any issues while setting up the Nexus panel, feel free to ask for he
 
 If you encounter any bugs while using DBD Nexus, please report them in the [DBD Community Discord Server](https://discord.gg/Rc2TGdQ37g). Our team will investigate the issue and provide a fix as soon as possible.
 
-## Where can i download the DBD Nexus Daemon?
+## Where can i download the DBD Nexus Bot?
 
-You can download the DBD Nexus Daemon [HERE](https://discord.com/channels/488177151946915841/1207711313132916878).
+You can download the DBD Nexus Bot [HERE](https://discord.com/channels/488177151946915841/1207711313132916878).
