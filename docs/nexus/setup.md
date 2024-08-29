@@ -6,9 +6,8 @@ sidebar_position: 2
 
 - [Setup](#setup)
   - [Create a Discord Bot Application](#create-a-discord-bot-application)
-  - [Setup DBD Bot](#setup-dbd-bot)
-    - [Local Configuration](#local-configuration)
-    - [Remote Configuration](#remote-configuration)
+  - [Setup DBD Nexus](#setup-dbd-nexus)
+  - [Setup DBD Nexus Daemon](#setup-dbd-nexus-daemon)
 
 ## Create a Discord Bot Application
 
@@ -60,52 +59,63 @@ sidebar_position: 2
 
 16. Now the bot is added to your server.
 
-## Setup DBD Bot
+## Setup DBD Nexus
 
-### Local Configuration
+1. Go to the [DBD Nexus](https://nexus.defaultsbotdev.com/) website.
+2. Login with your Discord account.
+   ![Login](/img/nexus/nexus-login.png)
 
-When running the bot with local configuration, you need to configure your config.json file locally on your machine instead of using the configuration page on the DBD Nexus site. This way you can run the bot without the need of configuring it through the DBD Nexus site.
+3. Go to the "CONFIGURATION" page.
 
-:::note
-This method is recommended for experienced users who are familiar with the configuration of JSON files and understand the structure of the configuration files. If you are new to this or not comfortable with editing JSON files, it is recommended to use the remote configuration method instead.
-:::
+   ![Configuration](/img/nexus/nexus-home-page.png)
 
-1. Download the DBD Nexus Daemon from the [DBD Support Server](https://discord.com/channels/488177151946915841/1207711313132916878).
+4. Enter the bot token that you copied earlier into the "Bot Token" field.
+
+   ![Bot Token](/img/nexus/nexus-token-field.png)
+
+5. Go to Discord and copy the ID of the server you added the bot to.
+
+   ![Server ID](/img/nexus/copy-server-id.png)
+
+   :::note
+   If you don't see the server ID, enable the developer mode in Discord settings.
+
+   Go to `User Settings` -> `Advanced` -> `Developer Mode`.
+
+   ![Developer Mode](/img/nexus/enable-dev-mode.png)
+   :::
+
+6. Paste the server ID into the "Server ID" field.
+
+   ![Server ID Field](/img/nexus/nexus-server-id-field.png)
+
+7. Now you have configured the Nexus panel.
+
+## Setup DBD Nexus Daemon
+
+1. Download the DBD Nexus Daemon [HERE](https://discord.com/channels/488177151946915841/1207711313132916878)
+
 2. Extract the downloaded file.
 
-   ![DBD Nexus Bot](/img/nexusv2/bot-folder.png)
+   ![Extracted Folder](/img/nexus/daemon-extract.png)
 
-3. Edit the `config.json` file with a text editor like [VSC](https://code.visualstudio.com/download).
+3. Open the extracted folder and run the `start-windows.bat` file. (For Windows users) else run the `start-other.sh` file.
+4. Copy the Daemon IP from the console and paste it into the "Daemon IP" field in the Nexus Dashboard.
+5. The Nexus Daemon will install all the necessary dependencies and start the daemon.
 
-4. Inside the `config.json` file you will have to enter your bot token in `general_bot_token`, the discord server ID at `general_credentials_guild_id` where you want to run the bot.
+   ![Start Daemon](/img/nexus/daemon-starting.png)
 
-   ```json title="config.json file (Partial)"
-   {
-      "general_bot_token": "", // Your bot token. You can find this on the Discord Developer Portal. Or follow the steps mentioned above. 
-      "general_credentials_guild_id": "", // The Discord server ID where you invited the bot application into.
-      ...
-   }
-   ```
+6. Go to the "DASHBOARD" page and enter the Daemon IP in the "Daemon IP" field.
+7. After entering the Daemon IP, the dashboard will connect and the Daemon badge will turn green.
 
-5. After editing the `config.json` file, save the changes. and close the file.
-6. Inside the extracted folder run the `start-windows.bat` file. (For Windows users) else run the `start-other.sh` file. (For Linux users)
-7. The bot will now start and install the necessary files and modules.
-8. On the first start, the bot will ask for your DBD Account Secret. This can be found on the DBD Nexus site under the "Account" tab. Make sure to enter this and keep it hidden from others.
+   ![Daemon Started](/img/nexus/dashboard-ip.png)
 
-   ![DBD Account Secret](/img/nexusv2/bot-start-secret.png)
+8. Once the badge turns green, you can start your bot from the "DASHBOARD" page.
 
-9.  Secondly, the bot will ask the config id. If you wanna use an existing config from the site make sure to enter the config id. If you don't have a remote config you can enter a any new config id to create a new config.
+   ![Start Bot](/img/nexus/daemon-running.png)
 
-   ![Config ID](/img/nexusv2/bot-start-config.png)
+9. Now your bot is running and you can manage it from the Nexus panel.
 
-10. Once the bot is started, you can see the bot running in your server.
-
-11. For more information about the local `config.json` file, you can refer to the [Configuration](/docs/nexusv2/configuration) page.
-
-### Remote Configuration
-
-When running the bot with remote configuration, you need to configure your bot through the DBD Nexus site. This way you can easily manage your bot's configuration and modules through the DBD Nexus site without the need of editing the configuration file manually.
-
-:::warning
-Currently the remote configuration feature is not available. It will be available in the upcoming updates. For now, you can use the local configuration method to run your bot(s).
+:::note
+If you face any issues while setting up the Nexus panel, feel free to ask for help in the [DBD Community Discord Server](https://discord.gg/Rc2TGdQ37g).
 :::
