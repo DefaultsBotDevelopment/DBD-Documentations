@@ -28,7 +28,7 @@ Make sure when configuring to use a proper text editor like [Visual Studio Code]
 | general_presence_status       | Enum                                         | The status for the bot's presence. (Online, Idle, DND, Invisible)             |
 | general_presence_activity     | String                                       | The activity for the bot's presence.                                          |
 | general_gameservers           | [GameServer](#gameserver-object)             | An array of game server configurations.                                       |
-| **Linker Module**             |                                              |                                                                               |
+| **PlayerCounter Module**      |                                              |                                                                               |
 | playercounter_enabled         | Boolean                                      | Enable the player counter module.                                             |
 | playercounter_update_interval | Number                                       | The interval in seconds to update the data.                                   |
 | playercounter_panels          | [CounterPanel](#counterpanel-object)         | An array of counter panel configurations.                                     |
