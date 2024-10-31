@@ -75,9 +75,9 @@ This method is recommended for experienced users who are familiar with the confi
 
    ![DBD Nexus Bot](/img/nexus/bot-folder.png)
 
-3. Edit the `config.json` file with a text editor like [VSC](https://code.visualstudio.com/download).
+3. Edit the `config.js` file with a text editor like [VSC](https://code.visualstudio.com/download).
 
-4. Inside the `config.json` file you will have to enter your bot token in `general_bot_token`, the discord server ID at `general_credentials_guild_id` where you want to run the bot.
+4. Inside the `config.js` file you will have to enter your bot token in `general_bot_token`, the discord server ID at `general_credentials_guild_id` where you want to run the bot.
 
    ```json title="config.json file (Partial)"
    {
@@ -87,7 +87,7 @@ This method is recommended for experienced users who are familiar with the confi
    }
    ```
 
-5. After editing the `config.json` file, save the changes. and close the file.
+5. After editing the `config.js` file, save the changes. and close the file.
 6. Inside the extracted folder run the `start-windows.bat` file. (For Windows users) else run the `start-other.sh` file. (For Linux users)
 7. The bot will now start and install the necessary files and modules.
 8. On the first start, the bot will ask for your DBD Account Secret. This can be found on the DBD Nexus site under the "Account" tab. Make sure to enter this and keep it hidden from others.
